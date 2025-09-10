@@ -1,114 +1,125 @@
 import React, { useState, useEffect } from 'react';
+import petsData from '../data/pets.json';
 import '../css/Gallery.css';
 
 const Gallery = () => {
   const [pets, setPets] = useState([]);
   const [filteredPets, setFilteredPets] = useState([]);
   const [selectedType, setSelectedType] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
 
   // Load pets from JSON file
   useEffect(() => {
-    // In a real app, we would fetch from a JSON file
-    // For now, we'll use mock data
-    const mockPets = [
-      {
-        id: 1,
-        name: "Buddy",
-        age: "2 years",
-        breed: "Golden Retriever",
-        description: "Friendly and energetic dog who loves to play fetch",
-        type: "dog",
-        image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
-      },
-      {
-        id: 2,
-        name: "Whiskers",
-        age: "1 year",
-        breed: "Domestic Shorthair",
-        description: "Playful kitten who enjoys cuddles and chasing toys",
-        type: "cat",
-        image: "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
-      },
-      {
-        id: 3,
-        name: "Oreo",
-        age: "3 years",
-        breed: "Mixed Breed",
-        description: "Calm and gentle dog who is great with children",
-        type: "dog",
-        image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
-      },
-      {
-        id: 4,
-        name: "Luna",
-        age: "6 months",
-        breed: "Rabbit",
-        description: "Sweet bunny who loves fresh vegetables and hopping around",
-        type: "rabbit",
-        image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
-      }
-    ];
-    
-    setPets(mockPets);
-    setFilteredPets(mockPets);
+    setPets(petsData);
+    setFilteredPets(petsData);
   }, []);
 
-  // Filter pets based on selected type
+  // Filter pets based on selected type and search term
   useEffect(() => {
-    if (selectedType === 'all') {
-      setFilteredPets(pets);
-    } else {
-      const filtered = pets.filter(pet => pet.type === selectedType);
-      setFilteredPets(filtered);
+    let filtered = pets;
+    
+    if (selectedType !== 'all') {
+      filtered = filtered.filter(pet => pet.type === selectedType);
     }
-  }, [selectedType, pets]);
+    
+    if (searchTerm) {
+      filtered = filtered.filter(pet => 
+        pet.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        pet.breed.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        pet.description.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
+    setFilteredPets(filtered);
+  }, [selectedType, searchTerm, pets]);
 
   const handleTypeChange = (type) => {
     setSelectedType(type);
   };
 
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Get unique pet types for filter buttons
+  const getPetTypes = () => {
+    const types = pets.map(pet => pet.type);
+    return [...new Set(types)];
+  };
+
+  // Get pet type icon
+  const getPetTypeIcon = (type) => {
+    switch(type) {
+      case 'dog': return '🐕';
+      case 'cat': return '🐈';
+      case 'rabbit': return '🐇';
+      default: return '🐾';
+    }
+  };
+
   return (
-    <div>
-      <h2>Pet Adoption Gallery</h2>
-      <p>Find your new best friend from our available pets for adoption.</p>
-      
-      <div className="filter-buttons">
-        <button 
-          className={selectedType === 'all' ? 'active' : ''}
-          onClick={() => handleTypeChange('all')}
-        >
-          All Pets
-        </button>
-        <button 
-          className={selectedType === 'dog' ? 'active' : ''}
-          onClick={() => handleTypeChange('dog')}
-        >
-          Dogs
-        </button>
-        <button 
-          className={selectedType === 'cat' ? 'active' : ''}
-          onClick={() => handleTypeChange('cat')}
-        >
-          Cats
-        </button>
-        <button 
-          className={selectedType === 'rabbit' ? 'active' : ''}
-          onClick={() => handleTypeChange('rabbit')}
-        >
-          Rabbits
-        </button>
+    <div className="gallery-container">
+      <div className="gallery-header">
+        <h2>Pet Adoption Gallery</h2>
+        <p>Find your new best friend from our available pets for adoption.</p>
       </div>
       
-      <div className="pet-gallery">
-        {filteredPets.map(pet => (
-          <div key={pet.id} className="pet-card">
-            <img src={pet.image} alt={pet.name} />
-            <h3>{pet.name}</h3>
-            <p><strong>Age:</strong> {pet.age}</p>
-            <p><strong>Breed:</strong> {pet.breed}</p>
-            <p>{pet.description}</p>
+      <div className="gallery-filter">
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search pets by name, breed, or description..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="search-input"
+          />
+        </div>
+        
+        <div className="filter-buttons">
+          <button 
+            className={selectedType === 'all' ? 'active' : ''}
+            onClick={() => handleTypeChange('all')}
+          >
+            All Pets
+          </button>
+          {getPetTypes().map((type, index) => (
+            <button 
+              key={index}
+              className={selectedType === type ? 'active' : ''}
+              onClick={() => handleTypeChange(type)}
+            >
+              {getPetTypeIcon(type)} {type.charAt(0).toUpperCase() + type.slice(1)}s
+            </button>
+          ))}
+        </div>
+      </div>
+      
+      <div className="gallery-grid">
+        {filteredPets.length > 0 ? (
+          filteredPets.map((pet, index) => (
+            <div key={pet.id} className="gallery-item" style={{animationDelay: `${index * 0.1}s`}}>
+              <div className="gallery-image">
+                <img src={pet.image} alt={pet.name} />
+                <div className="gallery-overlay">
+                  <button className="view-button">View Details</button>
+                </div>
+              </div>
+              <div className="gallery-info">
+                <h3>{pet.name}</h3>
+                <p>{pet.description}</p>
+                <div className="pet-meta">
+                  <span className="pet-age">Age: {pet.age}</span>
+                  <span className="pet-breed">Breed: {pet.breed}</span>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="no-pets">
+            <h3>No Pets Found</h3>
+            <p>There are no pets matching your selected filters or search term. Please try different filters or search terms.</p>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
