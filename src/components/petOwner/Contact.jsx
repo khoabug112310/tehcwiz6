@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import contactData from '../data/contactInfo.json';
-import '../css/Contact.css';
+import contactData from '../../data/contactInfo.json';
+import '../../css/Contact.css';
 
 const Contact = () => {
   const [currentTime, setCurrentTime] = useState(new Date());

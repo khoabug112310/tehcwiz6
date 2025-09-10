@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import petsData from '../data/pets.json';
-import '../css/Gallery.css';
+import petsData from '../../data/pets.json';
+import '../../css/Gallery.css';
 
 const Gallery = () => {
   const [pets, setPets] = useState([]);

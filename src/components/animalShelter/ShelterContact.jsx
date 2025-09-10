@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import contactData from '../data/contactInfo.json';
-import '../css/ShelterContact.css';
+import contactData from '../../data/contactInfo.json';
+import '../../css/ShelterContact.css';
 
 const ShelterContact = () => {
   const [formData, setFormData] = useState({

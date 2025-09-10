@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import emergencyContacts from '../data/emergencyContacts.json';
-import emergencySymptoms from '../data/emergencySymptoms.json';
-import emergencyGuidelines from '../data/emergencyGuidelines.json';
-import '../css/Emergency.css';
+import emergencyContacts from '../../data/emergencyContacts.json';
+import emergencySymptoms from '../../data/emergencySymptoms.json';
+import emergencyGuidelines from '../../data/emergencyGuidelines.json';
+import '../../css/Emergency.css';
 
 const Emergency = () => {
   const [contacts] = useState(emergencyContacts);

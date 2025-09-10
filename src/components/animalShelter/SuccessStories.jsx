@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import storiesData from '../data/success_stories.json';
-import '../css/SuccessStories.css';
+import storiesData from '../../data/success_stories.json';
+import '../../css/SuccessStories.css';
 
 const SuccessStories = () => {
   const [stories, setStories] = useState([]);

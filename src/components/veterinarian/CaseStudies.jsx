@@ -1,7 +1,7 @@
 import React from 'react';
-import caseStudiesData from '../data/caseStudies.json';
-import treatmentsData from '../data/treatments.json';
-import '../css/CaseStudies.css';
+import caseStudiesData from '../../data/caseStudies.json';
+import treatmentsData from '../../data/treatments.json';
+import '../../css/CaseStudies.css';
 
 const CaseStudies = () => {
   // Statistics for the stats section

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import vetsData from '../data/veterinarians.json';
-import servicesData from '../data/vetServices.json';
-import '../css/VetProfile.css';
+import vetsData from '../../data/veterinarians.json';
+import servicesData from '../../data/vetServices.json';
+import '../../css/VetProfile.css';
 
 const VetProfile = () => {
   const [vets] = useState(vetsData);

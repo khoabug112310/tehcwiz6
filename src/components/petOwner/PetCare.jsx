@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/PetCare.css';
+import '../../css/PetCare.css';
 
 const PetCare = () => {
   const [petProfile, setPetProfile] = useState({

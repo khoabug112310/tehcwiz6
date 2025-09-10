@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import eventsData from '../data/events.json';
-import '../css/Events.css';
+import eventsData from '../../data/events.json';
+import '../../css/Events.css';
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -52,24 +52,10 @@ const Events = () => {
     setFilteredEvents(filtered);
   }, [selectedMonth, selectedYear, events]);
 
-  // Function to get event icon based on event type
-  const getEventIcon = (title) => {
-    if (title.includes("Adoption")) return "🐾";
-    if (title.includes("Vaccination")) return "💉";
-    if (title.includes("Halloween")) return "🎃";
-    if (title.includes("Contest")) return "🏆";
-    return "📅";
-  };
-
   // Function to format date
   const formatDate = (dateString) => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString(undefined, options);
-  };
-
-  // Function to get location icon
-  const getLocationIcon = () => {
-    return "📍";
   };
 
   // Function to get time icon

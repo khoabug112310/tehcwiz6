@@ -2,30 +2,31 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation.jsx';
 import ScrollingTicker from './components/ScrollingTicker.jsx';
-import './css/Global.css';
+import './App.css';
 
 // Import page components
 import Home from './components/Home.jsx';
-import About from './components/About.jsx';
-import PetCare from './components/PetCare.jsx';
-import PetProfile from './components/PetProfile.jsx';
-import Products from './components/Products.jsx';
-import Emergency from './components/Emergency.jsx';
-import Feedback from './components/Feedback.jsx';
-import Contact from './components/Contact.jsx';
-import VetProfile from './components/VetProfile.jsx';
-import TimeSlots from './components/TimeSlots.jsx';
-import CaseStudies from './components/CaseStudies.jsx';
-import Gallery from './components/Gallery.jsx';
-import SuccessStories from './components/SuccessStories.jsx';
-import Events from './components/Events.jsx';
-import ShelterContact from './components/ShelterContact.jsx';
+import About from './components/petOwner/About.jsx';
+import PetCare from './components/petOwner/PetCare.jsx';
+import PetProfile from './components/petOwner/PetProfile.jsx';
+import Products from './components/petOwner/Products.jsx';
+import Emergency from './components/petOwner/Emergency.jsx';
+import Feedback from './components/petOwner/Feedback.jsx';
+import Contact from './components/petOwner/Contact.jsx';
+import VetProfile from './components/veterinarian/VetProfile.jsx';
+import TimeSlots from './components/veterinarian/TimeSlots.jsx';
+import CaseStudies from './components/veterinarian/CaseStudies.jsx';
+import Gallery from './components/animalShelter/Gallery.jsx';
+import SuccessStories from './components/animalShelter/SuccessStories.jsx';
+import Events from './components/animalShelter/Events.jsx';
+import ShelterContact from './components/animalShelter/ShelterContact.jsx';
 
 function App() {
   const [showPopup, setShowPopup] = useState(true);
   const [userName, setUserName] = useState('');
   const [userType, setUserType] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -75,6 +76,28 @@ function App() {
     }
   }, []);
 
+  // Handle scroll to top button visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <Router>
       <div className="App">
@@ -82,7 +105,7 @@ function App() {
           <div className="popup-overlay">
             <div className="popup-form">
               <div className="popup-logo-container">
-                <img src="/logo_furever_care_nonbackground.png" alt="FurEver Care Logo" className="popup-logo" />
+                <img src="/image/logo/logo_furever_care_nonbackground.png" alt="FurEver Care Logo" className="popup-logo" />
               </div>
               <p className="popup-subtitle">They Deserve Forever Love</p>
               <form onSubmit={handleLogin}>
@@ -141,7 +164,7 @@ function App() {
           <div>
             <header className="app-header">
               <div className="header-logo-container">
-                <img src="/logo_furever_care_nonbackground.png" alt="FurEver Care Logo" className="header-logo" />
+                <img src="/image/logo/logo_furever_care_nonbackground.png" alt="FurEver Care Logo" className="header-logo" />
               </div>
               <div className="user-info">
                 <span>Welcome, {userName}!</span>
@@ -171,7 +194,7 @@ function App() {
             <footer className="app-footer">
               <div className="footer-content">
                 <div className="footer-logo-container">
-                  <img src="/logo_furever_care_icon.png" alt="FurEver Care Icon" className="footer-logo" />
+                  <img src="/image/logo/logo_furever_care_icon.png" alt="FurEver Care Icon" className="footer-logo" />
                   <p className="footer-copyright">&copy; 2025 FurEver Care. They Deserve Forever Love.</p>
                 </div>
                 <div className="footer-links">
@@ -182,6 +205,13 @@ function App() {
               </div>
             </footer>
             <ScrollingTicker />
+            
+            {/* Scroll to Top Button */}
+            {showScrollTop && (
+              <button className="scroll-to-top" onClick={scrollToTop}>
+                ↑
+              </button>
+            )}
           </div>
         )}
       </div>
