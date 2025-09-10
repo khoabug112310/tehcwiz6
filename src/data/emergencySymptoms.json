@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Difficulty Breathing",
+    "description": "Rapid, labored, or noisy breathing; open-mouth breathing in cats; blue or pale gums"
+  },
+  {
+    "id": 2,
+    "title": "Seizures",
+    "description": "Uncontrolled muscle activity, loss of consciousness, drooling, or loss of bladder/bowel control"
+  },
+  {
+    "id": 3,
+    "title": "Severe Vomiting/Diarrhea",
+    "description": "Persistent vomiting or diarrhea, especially with blood or signs of dehydration"
+  },
+  {
+    "id": 4,
+    "title": "Unconsciousness",
+    "description": "Pet is unresponsive to stimuli, unable to wake up, or in a coma-like state"
+  },
+  {
+    "id": 5,
+    "title": "Severe Trauma",
+    "description": "Major injuries from accidents, falls, bites, or penetrating wounds"
+  },
+  {
+    "id": 6,
+    "title": "Toxic Ingestion",
+    "description": "Consumption of poisonous substances, medications, or toxic plants"
+  },
+  {
+    "id": 7,
+    "title": "Heatstroke",
+    "description": "Excessive panting, drooling, weakness, collapse, or bright red gums"
+  },
+  {
+    "id": 8,
+    "title": "Bloat/Gastric Dilation",
+    "description": "Distended abdomen, unsuccessful vomiting attempts, restlessness, and signs of pain"
+  }
+]

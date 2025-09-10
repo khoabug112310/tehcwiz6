@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Surgical Procedures",
+    "description": "Advanced surgical techniques for various conditions including orthopedic, soft tissue, and emergency surgeries.",
+    "icon": "🔪"
+  },
+  {
+    "id": 2,
+    "title": "Dental Care",
+    "description": "Comprehensive dental services including cleanings, extractions, and oral surgery.",
+    "icon": "🦷"
+  },
+  {
+    "id": 3,
+    "title": "Emergency Care",
+    "description": "24/7 emergency services with specialized equipment and critical care support.",
+    "icon": "🚨"
+  },
+  {
+    "id": 4,
+    "title": "Diagnostic Imaging",
+    "description": "Advanced imaging including X-rays, ultrasound, and CT scans for accurate diagnosis.",
+    "icon": "📷"
+  },
+  {
+    "id": 5,
+    "title": "Rehabilitation",
+    "description": "Physical therapy and rehabilitation services to help pets recover from injuries or surgery.",
+    "icon": "💪"
+  },
+  {
+    "id": 6,
+    "title": "Preventive Care",
+    "description": "Routine wellness exams, vaccinations, and preventive treatments to keep pets healthy.",
+    "icon": "🛡️"
+  }
+]

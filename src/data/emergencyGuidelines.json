@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Stay Calm",
+    "description": "Your pet can sense your emotions. Remaining calm will help keep them calm and allow you to think clearly."
+  },
+  {
+    "id": 2,
+    "title": "Ensure Safety",
+    "description": "Make sure the environment is safe for both you and your pet. Remove any immediate dangers."
+  },
+  {
+    "id": 3,
+    "title": "Assess the Situation",
+    "description": "Quickly evaluate your pet's condition. Check for breathing, consciousness, and visible injuries."
+  },
+  {
+    "id": 4,
+    "title": "Contact Emergency Services",
+    "description": "Call your emergency veterinary service immediately. Provide clear information about your location and your pet's condition."
+  },
+  {
+    "id": 5,
+    "title": "Provide Basic First Aid",
+    "description": "If trained, provide basic first aid while waiting for professional help. Do not attempt complex procedures."
+  },
+  {
+    "id": 6,
+    "title": "Transport Safely",
+    "description": "Move your pet carefully to avoid further injury. Use a carrier or blanket as a stretcher if necessary."
+  }
+]

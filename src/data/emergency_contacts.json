@@ -1,0 +1,22 @@
+[
+  {
+    "service": "Emergency Veterinary Services",
+    "phone": "(555) 911-0001",
+    "hours": "24/7"
+  },
+  {
+    "service": "Pet Poison Control",
+    "phone": "(555) 911-0002",
+    "hours": "24/7"
+  },
+  {
+    "service": "Animal Ambulance",
+    "phone": "(555) 911-0003",
+    "hours": "24/7"
+  },
+  {
+    "service": "Lost Pet Hotline",
+    "phone": "(555) 911-0004",
+    "hours": "9AM-9PM"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Successful Hip Surgery on Golden Retriever",
+    "petType": "Dog",
+    "description": "A 6-year-old Golden Retriever presented with severe hip dysplasia causing significant pain and mobility issues. After comprehensive evaluation, our surgical team performed a total hip replacement. The procedure was successful, and with dedicated post-operative care and physical therapy, the dog made a full recovery.",
+    "outcome": "Full recovery after 3 months with restored mobility and pain-free movement",
+    "image": "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "treatment": "Total hip replacement surgery with post-operative physical therapy",
+    "duration": "3 months"
+  },
+  {
+    "id": 2,
+    "title": "Treatment of Feline Diabetes",
+    "petType": "Cat",
+    "description": "A 12-year-old domestic cat was diagnosed with diabetes after showing symptoms of increased thirst, frequent urination, and weight loss. Through a combination of insulin therapy, dietary changes, and regular monitoring, our veterinary team successfully managed the cat's condition. The owner was trained to administer insulin at home and monitor blood glucose levels.",
+    "outcome": "Condition managed successfully with ongoing treatment and regular check-ups",
+    "image": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "treatment": "Insulin therapy and specialized diabetic diet",
+    "duration": "Ongoing management"
+  },
+  {
+    "id": 3,
+    "title": "Emergency Treatment for Poisoned Dog",
+    "petType": "Dog",
+    "description": "A 2-year-old Beagle was brought to our emergency department after ingesting chocolate, showing signs of poisoning including vomiting, diarrhea, and restlessness. Our emergency team immediately induced vomiting, administered activated charcoal, and provided supportive care including IV fluids and monitoring. The dog responded well to treatment.",
+    "outcome": "Full recovery within 24 hours with no lasting effects",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "treatment": "Induced vomiting, activated charcoal, IV fluids, and supportive care",
+    "duration": "24 hours"
+  },
+  {
+    "id": 4,
+    "title": "Dental Surgery for Severe Periodontal Disease",
+    "petType": "Cat",
+    "description": "A 9-year-old mixed breed cat presented with severe periodontal disease, causing significant pain and difficulty eating. After dental X-rays revealed extensive bone loss, our veterinary dentist performed a comprehensive dental surgery including multiple extractions and deep cleaning. Post-operative pain management and a soft diet were provided.",
+    "outcome": "Pain-free eating and improved quality of life after recovery",
+    "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "treatment": "Comprehensive dental surgery with extractions and deep cleaning",
+    "duration": "2 weeks"
+  },
+  {
+    "id": 5,
+    "title": "Orthopedic Repair for Fractured Leg",
+    "petType": "Dog",
+    "description": "A 4-year-old Border Collie suffered a fractured tibia after a fall. Our orthopedic surgeon performed a complex repair using a bone plate and screws. The surgery was successful, and the dog was placed on strict rest with physical therapy to aid recovery. Regular follow-up X-rays monitored the healing process.",
+    "outcome": "Complete healing of the fracture with full return to normal activity",
+    "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "treatment": "Bone plate and screw fixation with post-operative physical therapy",
+    "duration": "8 weeks"
+  },
+  {
+    "id": 6,
+    "title": "Treatment of Parvovirus in Puppy",
+    "petType": "Dog",
+    "description": "A 4-month-old Labrador puppy was admitted with severe parvovirus, showing symptoms of vomiting, diarrhea, and dehydration. Our intensive care team provided aggressive fluid therapy, antibiotics, anti-nausea medications, and nutritional support. The puppy required constant monitoring and care during the critical period.",
+    "outcome": "Full recovery after 10 days of intensive care",
+    "image": "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "treatment": "Intensive fluid therapy, antibiotics, and supportive care",
+    "duration": "10 days"
+  }
+]

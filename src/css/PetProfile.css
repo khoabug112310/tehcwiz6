@@ -1,0 +1,411 @@
+/* Pet Profile Page Styles */
+.pet-profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: contentAppear 0.8s ease-out;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  transform: rotate(30deg);
+  z-index: 0;
+}
+
+.profile-header h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.profile-meta {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 1;
+}
+
+.meta-label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.profile-detail-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.profile-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-detail-card h4 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.profile-detail-card p {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.vaccination-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.vaccination-section h4 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.vaccination-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1px;
+  background: #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header {
+  display: contents;
+  font-weight: bold;
+  background: #3498db;
+  color: white;
+}
+
+.table-header > div {
+  padding: 1rem;
+  text-align: center;
+}
+
+.table-row {
+  display: contents;
+  background: white;
+}
+
+.table-row > div {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.table-row:last-child > div {
+  border-bottom: none;
+}
+
+.feeding-guide-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feeding-chart h4,
+.feeding-recommendations h4 {
+  color: #2c3e50;
+  margin-top: 0;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.chart-visualization {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.chart-bar {
+  padding: 0.75rem;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chart-bar.protein {
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  width: 75%;
+}
+
+.chart-bar.fat {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  width: 50%;
+}
+
+.chart-bar.carbs {
+  background: linear-gradient(90deg, #f39c12, #d35400);
+  width: 85%;
+}
+
+.feeding-recommendations ul {
+  padding-left: 1.5rem;
+}
+
+.feeding-recommendations li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.grooming-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.video-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.video-card h4 {
+  margin: 0;
+  padding: 1rem;
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+  color: white;
+}
+
+.grooming-tips {
+  padding: 1rem;
+}
+
+.grooming-tips h5 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.grooming-tips ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.grooming-tips li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.video-placeholder {
+  padding: 2rem;
+  text-align: center;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.video-placeholder.small {
+  padding: 1rem;
+}
+
+.play-button {
+  font-size: 3rem;
+  color: #3498db;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+
+.health-tips-content,
+.training-tips-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tip-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tip-card h4 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.tip-card p {
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.tip-card ul {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.tip-card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.audio-placeholder {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.audio-button {
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.audio-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}
+
+.text-tip {
+  background: #e3f2fd;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+  margin-top: 1rem;
+}
+
+.text-tip p {
+  margin: 0;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+.view-profile-button {
+  background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  margin-top: 1.5rem;
+}
+
+.view-profile-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+}
+
+/* Responsive Design for Pet Profile Page */
+@media (max-width: 768px) {
+  .pet-profile-container {
+    padding: 1rem;
+  }
+  
+  .profile-header {
+    padding: 1.5rem;
+  }
+  
+  .profile-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .profile-meta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-details-grid,
+  .feeding-guide-content,
+  .grooming-content,
+  .health-tips-content,
+  .training-tips-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .vaccination-table {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-header,
+  .table-row {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .table-header > div,
+  .table-row > div {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Annual Adoption Fair",
+    "date": "October 15, 2025",
+    "description": "Join us for our biggest adoption event of the year! We'll have over 50 animals available for adoption, along with pet care experts and fun activities for the whole family.",
+    "time": "10:00 AM - 4:00 PM"
+  },
+  {
+    "id": 2,
+    "title": "Vaccination Drive",
+    "date": "November 5, 2025",
+    "description": "Low-cost vaccination clinic for dogs and cats. All proceeds support our shelter operations.",
+    "time": "9:00 AM - 3:00 PM"
+  },
+  {
+    "id": 3,
+    "title": "Pet Halloween Costume Contest",
+    "date": "October 31, 2025",
+    "description": "Dress up your pets in their best costumes and participate in our contest! Prizes for 1st, 2nd, and 3rd place winners.",
+    "time": "2:00 PM - 5:00 PM"
+  }
+]

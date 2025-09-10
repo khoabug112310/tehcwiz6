@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Wellness Exams",
+    "description": "Comprehensive health assessments to ensure your pet stays healthy and happy.",
+    "icon": "🩺"
+  },
+  {
+    "id": 2,
+    "title": "Vaccinations",
+    "description": "Protection against common diseases through our tailored vaccination programs.",
+    "icon": "💉"
+  },
+  {
+    "id": 3,
+    "title": "Surgical Services",
+    "description": "Advanced surgical procedures performed by our board-certified surgeons.",
+    "icon": "🔪"
+  },
+  {
+    "id": 4,
+    "title": "Dental Care",
+    "description": "Professional dental cleanings and oral health treatments.",
+    "icon": "🦷"
+  },
+  {
+    "id": 5,
+    "title": "Emergency Care",
+    "description": "24/7 emergency services for urgent medical situations.",
+    "icon": "🚨"
+  },
+  {
+    "id": 6,
+    "title": "Laboratory Services",
+    "description": "In-house diagnostic testing for quick and accurate results.",
+    "icon": "🔬"
+  }
+]

@@ -1,0 +1,370 @@
+[
+  {
+    "id": 1,
+    "category": "dog-food",
+    "name": "Premium Dog Food",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "High-quality nutrition for adult dogs with real chicken and vegetables",
+    "price": 24.99
+  },
+  {
+    "id": 2,
+    "category": "cat-food",
+    "name": "Organic Cat Food",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Grain-free formula with salmon and sweet potatoes",
+    "price": 19.99
+  },
+  {
+    "id": 3,
+    "category": "toys",
+    "name": "Interactive Dog Toy",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Keeps your dog entertained for hours with treat dispensing feature",
+    "price": 14.99
+  },
+  {
+    "id": 4,
+    "category": "grooming",
+    "name": "Pet Grooming Kit",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Complete grooming set with brush, nail clippers, and shampoo",
+    "price": 29.99
+  },
+  {
+    "id": 5,
+    "category": "bedding",
+    "name": "Orthopedic Pet Bed",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Memory foam bed for joint support and comfort",
+    "price": 39.99
+  },
+  {
+    "id": 6,
+    "category": "health",
+    "name": "Joint Supplement",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Glucosamine and chondroitin for hip and joint health",
+    "price": 17.99
+  },
+  {
+    "id": 7,
+    "category": "dog-food",
+    "name": "Grain-Free Dog Biscuits",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Tasty training treats made with real beef and vegetables",
+    "price": 12.99
+  },
+  {
+    "id": 8,
+    "category": "cat-food",
+    "name": "Kitten Growth Formula",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Nutrient-rich formula for growing kittens with DHA for brain development",
+    "price": 22.99
+  },
+  {
+    "id": 9,
+    "category": "toys",
+    "name": "Catnip Mouse Toy",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Soft plush toy filled with premium catnip for endless fun",
+    "price": 8.99
+  },
+  {
+    "id": 10,
+    "category": "grooming",
+    "name": "Dog Shampoo & Conditioner",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Oatmeal-based formula for sensitive skin with aloe vera",
+    "price": 15.99
+  },
+  {
+    "id": 11,
+    "category": "bedding",
+    "name": "Heated Pet Blanket",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Self-warming blanket with chew-proof cord for winter comfort",
+    "price": 34.99
+  },
+  {
+    "id": 12,
+    "category": "health",
+    "name": "Dental Care Chews",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Vet-recommended chews to reduce plaque and freshen breath",
+    "price": 13.99
+  },
+  {
+    "id": 13,
+    "category": "dog-food",
+    "name": "Senior Dog Formula",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Low-fat formula with glucosamine for aging joints",
+    "price": 27.99
+  },
+  {
+    "id": 14,
+    "category": "cat-food",
+    "name": "Indoor Cat Food",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Hairball control formula with fiber for indoor cats",
+    "price": 21.99
+  },
+  {
+    "id": 15,
+    "category": "toys",
+    "name": "Rope Tug Toy",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Durable rope toy for interactive play and dental health",
+    "price": 9.99
+  },
+  {
+    "id": 16,
+    "category": "grooming",
+    "name": "Cat Brush Set",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "3-piece set with slicker brush, comb, and de-shedding tool",
+    "price": 18.99
+  },
+  {
+    "id": 17,
+    "category": "bedding",
+    "name": "Cooling Pet Mat",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Gel-infused mat that stays cool without refrigeration",
+    "price": 29.99
+  },
+  {
+    "id": 18,
+    "category": "health",
+    "name": "Probiotic Supplement",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Digestive health support with 10 beneficial bacteria strains",
+    "price": 16.99
+  },
+  {
+    "id": 19,
+    "category": "dog-food",
+    "name": "Puppy Training Treats",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Small, soft treats perfect for training sessions",
+    "price": 10.99
+  },
+  {
+    "id": 20,
+    "category": "cat-food",
+    "name": "Hairball Control Treats",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Tasty treats that help reduce hairballs naturally",
+    "price": 11.99
+  },
+  {
+    "id": 21,
+    "category": "toys",
+    "name": "Squeaky Duck Toy",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Classic squeaky toy that floats for bath time fun",
+    "price": 7.99
+  },
+  {
+    "id": 22,
+    "category": "grooming",
+    "name": "Dog Nail Grinder",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Quiet electric grinder with multiple speed settings",
+    "price": 24.99
+  },
+  {
+    "id": 23,
+    "category": "bedding",
+    "name": "Crate Pad",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Machine-washable pad with waterproof liner",
+    "price": 22.99
+  },
+  {
+    "id": 24,
+    "category": "health",
+    "name": "Calming Chews",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Natural ingredients to help reduce anxiety and stress",
+    "price": 19.99
+  },
+  {
+    "id": 25,
+    "category": "dog-food",
+    "name": "Large Breed Formula",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Joint support formula for large breed dogs with optimal calcium levels",
+    "price": 31.99
+  },
+  {
+    "id": 26,
+    "category": "cat-food",
+    "name": "Wet Food Variety Pack",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "12-pack with chicken, tuna, and salmon flavors",
+    "price": 18.99
+  },
+  {
+    "id": 27,
+    "category": "toys",
+    "name": "Puzzle Feeder Ball",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Interactive toy that dispenses treats as your pet plays",
+    "price": 13.99
+  },
+  {
+    "id": 28,
+    "category": "grooming",
+    "name": "Deodorizing Spray",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Fresh scent that neutralizes odors without water",
+    "price": 12.99
+  },
+  {
+    "id": 29,
+    "category": "bedding",
+    "name": "Donut Cuddler Bed",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Soft, plush bed with raised edges for security and comfort",
+    "price": 26.99
+  },
+  {
+    "id": 30,
+    "category": "health",
+    "name": "Flea & Tick Prevention",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Monthly chewable tablets for flea and tick prevention",
+    "price": 23.99
+  },
+  {
+    "id": 31,
+    "category": "dog-food",
+    "name": "Weight Management Food",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Low-calorie formula to help maintain healthy weight",
+    "price": 28.99
+  },
+  {
+    "id": 32,
+    "category": "cat-food",
+    "name": "Senior Cat Formula",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Easily digestible formula with joint support for senior cats",
+    "price": 23.99
+  },
+  {
+    "id": 33,
+    "category": "toys",
+    "name": "Laser Pointer Toy",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Entertaining light show for interactive play with your cat",
+    "price": 11.99
+  },
+  {
+    "id": 34,
+    "category": "grooming",
+    "name": "Ear Cleaning Solution",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Gentle solution for routine ear cleaning and odor control",
+    "price": 9.99
+  },
+  {
+    "id": 35,
+    "category": "bedding",
+    "name": "Elevated Cooling Bed",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Raised bed with breathable mesh for maximum air circulation",
+    "price": 32.99
+  },
+  {
+    "id": 36,
+    "category": "health",
+    "name": "Multivitamin Supplement",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Complete daily vitamins for overall health and vitality",
+    "price": 14.99
+  },
+  {
+    "id": 37,
+    "category": "dog-food",
+    "name": "Grain-Free Wet Food",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Premium wet food with real meat and no fillers",
+    "price": 2.99
+  },
+  {
+    "id": 38,
+    "category": "cat-food",
+    "name": "Urinary Health Formula",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Specialized formula to support urinary tract health",
+    "price": 20.99
+  },
+  {
+    "id": 39,
+    "category": "toys",
+    "name": "Tug Rope Set",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "3-pack of durable rope toys in different sizes",
+    "price": 16.99
+  },
+  {
+    "id": 40,
+    "category": "grooming",
+    "name": "Detangling Spray",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Leave-in conditioner that makes brushing easier",
+    "price": 13.99
+  },
+  {
+    "id": 41,
+    "category": "bedding",
+    "name": "Cave-Style Pet Bed",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Cozy enclosed bed that provides a sense of security",
+    "price": 35.99
+  },
+  {
+    "id": 42,
+    "category": "health",
+    "name": "Omega-3 Supplement",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Fish oil supplement for healthy skin and coat",
+    "price": 15.99
+  },
+  {
+    "id": 43,
+    "category": "dog-food",
+    "name": "Allergy Relief Formula",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Hypoallergenic formula with novel proteins",
+    "price": 33.99
+  },
+  {
+    "id": 44,
+    "category": "cat-food",
+    "name": "Kitten Wet Food",
+    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Nutrient-dense wet food for growing kittens",
+    "price": 1.99
+  },
+  {
+    "id": 45,
+    "category": "toys",
+    "name": "Feather Teaser Wand",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Interactive wand with replaceable feather attachments",
+    "price": 10.99
+  },
+  {
+    "id": 46,
+    "category": "grooming",
+    "name": "Paw Balm",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "description": "Moisturizing balm for dry, cracked paw pads",
+    "price": 8.99
+  }
+]

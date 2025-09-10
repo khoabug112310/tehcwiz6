@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Sarah Johnson",
+    "specialization": "Small Animal Medicine",
+    "bio": "Dr. Johnson has over 15 years of experience in small animal medicine. She specializes in preventive care, internal medicine, and geriatric care for cats and dogs. She is passionate about building long-term relationships with pets and their families.",
+    "image": "https://images.unsplash.com/photo-1559839734-2b71ea811ec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "education": [
+      "DVM, University of Veterinary Medicine",
+      "Board Certified in Small Animal Internal Medicine",
+      "Advanced Certificate in Geriatric Care"
+    ],
+    "contact": {
+      "email": "sarah.johnson@furevercare.com",
+      "phone": "(555) 123-4567",
+      "office": "Building A, Room 101"
+    },
+    "availability": "Monday, Wednesday, Friday: 8AM-4PM"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Michael Chen",
+    "specialization": "Veterinary Surgery",
+    "bio": "Dr. Chen is a board-certified veterinary surgeon with expertise in orthopedic and soft tissue surgeries. He has performed over 2000 surgical procedures and is known for his meticulous approach and compassionate care.",
+    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "education": [
+      "DVM, State University Veterinary School",
+      "Board Certified in Veterinary Surgery",
+      "Fellowship in Orthopedic Surgery"
+    ],
+    "contact": {
+      "email": "michael.chen@furevercare.com",
+      "phone": "(555) 234-5678",
+      "office": "Building B, Room 205"
+    },
+    "availability": "Tuesday, Thursday: 9AM-5PM"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Emily Rodriguez",
+    "specialization": "Exotic Pet Medicine",
+    "bio": "Dr. Rodriguez specializes in the care of exotic pets including birds, reptiles, and small mammals. She has extensive experience with unique species and is dedicated to providing specialized care for these special companions.",
+    "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "education": [
+      "DVM, Exotic Animal Medicine University",
+      "Certificate in Avian Medicine",
+      "Advanced Training in Reptile Care"
+    ],
+    "contact": {
+      "email": "emily.rodriguez@furevercare.com",
+      "phone": "(555) 345-6789",
+      "office": "Building C, Room 301"
+    },
+    "availability": "Monday, Wednesday: 10AM-6PM"
+  },
+  {
+    "id": 4,
+    "name": "Dr. James Wilson",
+    "specialization": "Emergency and Critical Care",
+    "bio": "Dr. Wilson leads our emergency department with over 12 years of critical care experience. He is trained in advanced life support techniques and is available for emergency cases 24/7.",
+    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+    "education": [
+      "DVM, Emergency Medicine Institute",
+      "Board Certified in Emergency and Critical Care",
+      "Advanced Cardiac Life Support Certification"
+    ],
+    "contact": {
+      "email": "james.wilson@furevercare.com",
+      "phone": "(555) 456-7890",
+      "office": "Emergency Department"
+    },
+    "availability": "24/7 Emergency Coverage"
+  }
+]

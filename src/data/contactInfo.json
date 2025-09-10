@@ -1,0 +1,51 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "name": "Alex Johnson",
+      "role": "Project Manager",
+      "email": "alex.johnson@furevercare.com",
+      "phone": "(555) 111-2222",
+      "avatar": "AJ"
+    },
+    {
+      "id": 2,
+      "name": "Maria Garcia",
+      "role": "Lead Developer",
+      "email": "maria.garcia@furevercare.com",
+      "phone": "(555) 222-3333",
+      "avatar": "MG"
+    },
+    {
+      "id": 3,
+      "name": "David Smith",
+      "role": "UI/UX Designer",
+      "email": "david.smith@furevercare.com",
+      "phone": "(555) 333-4444",
+      "avatar": "DS"
+    }
+  ],
+  "contactDetails": {
+    "address": "123 Pet Care Avenue, Animal City, AC 12345",
+    "phone": "(555) 987-6543",
+    "email": "info@furevercare.com",
+    "hours": "Monday-Friday: 9AM-6PM, Saturday: 10AM-4PM, Sunday: Closed"
+  },
+  "socialMedia": [
+    {
+      "name": "Facebook",
+      "url": "https://facebook.com/furevercare",
+      "icon": "📱"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/furevercare",
+      "icon": "📸"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/furevercare",
+      "icon": "🐦"
+    }
+  ]
+}
