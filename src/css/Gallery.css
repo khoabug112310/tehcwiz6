@@ -272,7 +272,39 @@
   }
   
   .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .gallery-item {
+    border-radius: 10px;
+  }
+  
+  .gallery-image {
+    height: 120px;
+  }
+  
+  .gallery-info {
+    padding: 1rem;
+  }
+  
+  .gallery-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .gallery-info p {
+    font-size: 0.8rem;
+  }
+  
+  .pet-meta {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+  }
+  
+  .pet-age,
+  .pet-breed {
+    font-size: 0.8rem;
   }
   
   .close-button,
@@ -293,5 +325,19 @@
   
   .nav-button.next {
     right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gallery-image {
+    height: 100px;
+  }
+  
+  .gallery-info h3 {
+    font-size: 0.9rem;
   }
 }
