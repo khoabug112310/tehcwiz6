@@ -66,7 +66,7 @@ const Events = () => {
   return (
     <div className="events-container">
       <div className="events-header">
-        <h2>Upcoming Events</h2>
+        <h2 className='fs-1 fw-bold'>Upcoming Events</h2>
         <p>Join us for these exciting events at our animal shelter!</p>
       </div>
       

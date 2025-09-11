@@ -14,7 +14,7 @@ const VetProfile = () => {
   return (
     <div className="vet-container">
       <div className="vet-header">
-        <h2>Meet Our Veterinarians</h2>
+        <h2 className='fw-bold fs-1'>Meet Our Veterinarians</h2>
         <p>Our team of experienced and compassionate veterinarians is dedicated to providing the highest quality care for your beloved pets.</p>
       </div>
 

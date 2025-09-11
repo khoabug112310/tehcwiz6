@@ -168,8 +168,8 @@ const FormAdd = () => {
           </div>
           
           <div className="form-buttons">
-            <button type="submit" className="save-button">Save Profile</button>
-            <button type="button" className="cancel-button" onClick={handleCancel}>Cancel</button>
+            <button type="submit" className="button1">Save Profile</button>
+            <button type="button" className="button2" onClick={handleCancel}>Cancel</button>
           </div>
         </form>
       </div>

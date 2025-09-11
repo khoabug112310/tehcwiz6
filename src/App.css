@@ -364,7 +364,6 @@ body {
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
   text-align: left;
   position: relative;
   z-index: 1;
@@ -485,56 +484,78 @@ body {
 }
 
 /* Footer Styles */
-.app-footer {
-  background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
-  color: white;
-  padding: 2rem;
-  margin-top: auto;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+.footer {
+  padding-top: 50px;
+  background-color: #f7f9fc;
+}
+.footer .items {
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.footer .footer-items:last-child {
+  width: 45%;
+}
+.footer .footer-items h3 {
+  color: #2c3038;
+}
+.footer .footer-items a {
+  color: #5a5a5a;
+  margin-top: 10px;
+  font-weight: 300;
+  font-size: 15px;
+}
+.footer .footer-items a:hover {
+  color: #073e6c;
+}
+.footer .footer-items .footer-form {
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.125);
+  padding: 30px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.footer .footer-items .footer-form p {
+  font-size: 18px;
+  line-height: 25px;
+  color: #2c3038;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.footer .footer-items .footer-form input {
+  width: 82%;
+  border: none;
+  background-color: #f7f9fc;
+  padding: 0 14px;
+  font-weight: 700;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.footer .footer-items .footer-form input:focus-visible {
+  outline: 0px;
+}
+.footer .copyright {
+  height: 74px;
+}
+.footer .copyright .content a {
+  color: #2c3038;
 }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+.footer .copyright .icon i {
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #2c3038;
 }
-
-.footer-logo-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.footer .copyright .content a:hover,
+.footer .copyright .icon i:hover {
+  color: #073e6c;
 }
-
-.footer-logo {
-  height: 40px;
-  width: auto;
-}
-
-.footer-copyright {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.footer-links a {
-  color: #3498db;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #5dade2;
-  text-decoration: underline;
-}
-
 /* Main Content */
 
 /* Scroll to Top Button */
@@ -542,10 +563,8 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  width: 30px;
+  height: 30px;
   color: white;
   border: none;
   font-size: 1.5rem;
