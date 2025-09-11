@@ -3,61 +3,32 @@ import { useNavigate } from 'react-router-dom';
 import '../../css/PetCare.css';
 
 const PetCare = () => {
-  const [petProfile, setPetProfile] = useState({
-    name: '',
-    type: '',
-    breed: '',
-    age: '',
-    weight: '',
-    dietaryNeeds: '',
-    medicalHistory: '',
-    lastUpdated: null
-  });
-  
   const [savedProfile, setSavedProfile] = useState(null);
   const navigate = useNavigate();
   
   // Load saved profile from localStorage on component mount
   useEffect(() => {
-    const saved = localStorage.getItem('petProfile');
-    if (saved) {
-      setSavedProfile(JSON.parse(saved));
+    // For backward compatibility, check for single pet profile
+    const singlePet = localStorage.getItem('petProfile');
+    if (singlePet) {
+      setSavedProfile(JSON.parse(singlePet));
+      return;
+    }
+    
+    // Check for multi-pet profiles
+    const pets = JSON.parse(localStorage.getItem('petProfiles') || '[]');
+    if (pets.length > 0) {
+      // Use the first pet as the default
+      setSavedProfile(pets[0]);
     }
   }, []);
   
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setPetProfile(prev => ({
-      ...prev,
-      [name]: value
-    }));
+  const handleAddPet = () => {
+    navigate('/form-add');
   };
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const profileWithTimestamp = {
-      ...petProfile,
-      lastUpdated: Date.now()
-    };
-    localStorage.setItem('petProfile', JSON.stringify(profileWithTimestamp));
-    setSavedProfile(profileWithTimestamp);
-    // Redirect to PetProfile page
+  const handleViewProfile = () => {
     navigate('/pet-profile');
-  };
-  
-  const handleReset = () => {
-    setPetProfile({
-      name: '',
-      type: '',
-      breed: '',
-      age: '',
-      weight: '',
-      dietaryNeeds: '',
-      medicalHistory: '',
-      lastUpdated: null
-    });
-    setSavedProfile(null);
-    localStorage.removeItem('petProfile');
   };
 
   // Function to get feeding guide based on pet type
@@ -223,12 +194,11 @@ const PetCare = () => {
       <h2>Pet Care Guide</h2>
       
       <div className="pet-care-section">
-        <h3>Pet Profile</h3>
+        <h3>Your Pet Profile</h3>
         {savedProfile ? (
           <div className="saved-profile">
             <div className="profile-header">
               <h4>{savedProfile.name}'s Profile</h4>
-              <button onClick={handleReset} className="edit-button">Edit Profile</button>
             </div>
             <div className="profile-details">
               <p><strong>Type:</strong> {savedProfile.type}</p>
@@ -238,105 +208,22 @@ const PetCare = () => {
               <p><strong>Dietary Needs:</strong> {savedProfile.dietaryNeeds || 'None specified'}</p>
               <p><strong>Medical History:</strong> {savedProfile.medicalHistory || 'No medical history recorded'}</p>
             </div>
-            <button onClick={() => navigate('/pet-profile')} className="view-profile-button">
-              View Full Profile
-            </button>
+            <div className="profile-actions">
+              <button onClick={handleViewProfile} className="view-profile-button">
+                View Full Profile
+              </button>
+              <button onClick={handleAddPet} className="edit-button">
+                Edit Profile
+              </button>
+            </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="pet-profile-form">
-            <div className="form-group">
-              <label htmlFor="name">Pet Name:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={petProfile.name}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="type">Pet Type:</label>
-              <select
-                id="type"
-                name="type"
-                value={petProfile.type}
-                onChange={handleInputChange}
-                required
-              >
-                <option value="">Select a pet type</option>
-                <option value="Dog">Dog</option>
-                <option value="Cat">Cat</option>
-                <option value="Bird">Bird</option>
-                <option value="Rabbit">Rabbit</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="breed">Breed:</label>
-              <input
-                type="text"
-                id="breed"
-                name="breed"
-                value={petProfile.breed}
-                onChange={handleInputChange}
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="age">Age (years):</label>
-              <input
-                type="number"
-                id="age"
-                name="age"
-                value={petProfile.age}
-                onChange={handleInputChange}
-                min="0"
-                step="0.1"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="weight">Weight (kg):</label>
-              <input
-                type="number"
-                id="weight"
-                name="weight"
-                value={petProfile.weight}
-                onChange={handleInputChange}
-                min="0"
-                step="0.1"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="dietaryNeeds">Dietary Needs:</label>
-              <textarea
-                id="dietaryNeeds"
-                name="dietaryNeeds"
-                value={petProfile.dietaryNeeds}
-                onChange={handleInputChange}
-                rows="3"
-                placeholder="Special dietary requirements, food allergies, etc."
-              ></textarea>
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="medicalHistory">Medical History:</label>
-              <textarea
-                id="medicalHistory"
-                name="medicalHistory"
-                value={petProfile.medicalHistory}
-                onChange={handleInputChange}
-                rows="3"
-                placeholder="Vaccinations, surgeries, chronic conditions, medications, etc."
-              ></textarea>
-            </div>
-            
-            <button type="submit" className="save-button">Save Profile</button>
-          </form>
+          <div className="no-profile">
+            <p>You haven't added a pet profile yet.</p>
+            <button onClick={handleAddPet} className="add-pet-button">
+              Add Pet Profile
+            </button>
+          </div>
         )}
       </div>
       
@@ -344,32 +231,61 @@ const PetCare = () => {
         <h3>Feeding Guide</h3>
         {savedProfile ? (
           <div className="feeding-guide-content">
-            <h4>{feedingGuide.title}</h4>
-            <p>{feedingGuide.content}</p>
-            <div className="feeding-tips">
-              <h5>Feeding Tips:</h5>
-              <ul>
-                <li>Always provide fresh, clean water</li>
-                <li>Feed at consistent times to establish a routine</li>
-                <li>Monitor your pet's weight and adjust portions accordingly</li>
-                <li>Avoid feeding table scraps or human foods that may be harmful</li>
-                <li>Consult your veterinarian about special dietary needs</li>
-              </ul>
+            <div className="feeding-top-section">
+              <div className="nutritional-requirements">
+                <h4>Nutritional Requirements for {savedProfile.type}s</h4>
+                <div className="nutritional-info">
+                  <p>{feedingGuide.content}</p>
+                  <div className="nutrition-highlights">
+                    <div className="nutrition-item">
+                      <span className="nutrition-label">Protein:</span>
+                      <span className="nutrition-value">25-30%</span>
+                    </div>
+                    <div className="nutrition-item">
+                      <span className="nutrition-label">Fat:</span>
+                      <span className="nutrition-value">15-20%</span>
+                    </div>
+                    <div className="nutrition-item">
+                      <span className="nutrition-label">Carbs:</span>
+                      <span className="nutrition-value">50-55%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="feeding-recommendations">
+                <h4>Feeding Recommendations</h4>
+                <div className="feeding-tips">
+                  <ul>
+                    <li>Always provide fresh, clean water</li>
+                    <li>Feed at consistent times to establish a routine</li>
+                    <li>Monitor your pet's weight and adjust portions accordingly</li>
+                    <li>Avoid feeding table scraps or human foods that may be harmful</li>
+                    <li>Consult your veterinarian about special dietary needs</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div className="feeding-video">
-              <h5>Feeding Demonstration:</h5>
-              <video 
-                controls 
-                width="100%" 
-                style={{ maxWidth: '500px', borderRadius: '8px' }}
-                
-              >
-                <source src="./assets/Videos/feed_cat.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <p className="video-description">
-                Learn proper feeding techniques and portion control for your {savedProfile.type}.
-              </p>
+            
+            <div className="feeding-video-section">
+              <div className="feeding-video">
+                <h5>Feeding Demonstration:</h5>
+                <video 
+                  controls 
+                  width="100%" 
+                  style={{ maxWidth: '100%', borderRadius: '12px' }}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="./assets/Videos/feed_cat.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <p className="video-description">
+                  Learn proper feeding techniques and portion control for your {savedProfile.type}.
+                </p>
+              </div>
             </div>
           </div>
         ) : (
@@ -393,7 +309,10 @@ const PetCare = () => {
                 controls 
                 width="100%" 
                 style={{ maxWidth: '500px', borderRadius: '8px' }}
-                
+                autoPlay
+                loop
+                muted
+                playsInline
               >
                 <source src="./assets/Videos/Brushing.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -426,7 +345,10 @@ const PetCare = () => {
                   controls 
                   width="100%" 
                   style={{ maxWidth: '500px', borderRadius: '8px' }}
-                  
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 >
                   <source src="./assets/Videos/health-tips.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
@@ -463,7 +385,10 @@ const PetCare = () => {
                   controls 
                   width="100%" 
                   style={{ maxWidth: '500px', borderRadius: '8px' }}
-                  
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 >
                   <source src="./assets/Videos/trainning_dog.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
