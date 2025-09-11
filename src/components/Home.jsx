@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../css/Home.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../css/Home.css";
 
 const Home = ({ userName, userType }) => {
   const [petProfile, setPetProfile] = useState({
-    name: '',
-    type: '',
-    breed: '',
-    age: '',
-    weight: '',
-    dietaryNeeds: '',
-    medicalHistory: ''
+    name: "",
+    type: "",
+    breed: "",
+    age: "",
+    weight: "",
+    dietaryNeeds: "",
+    medicalHistory: "",
   });
   const [showPreview, setShowPreview] = useState(false);
   const navigate = useNavigate();
 
   // Load saved profile from localStorage on component mount
   useEffect(() => {
-    const saved = localStorage.getItem('petProfile');
+    const saved = localStorage.getItem("petProfile");
     if (saved) {
       setPetProfile(JSON.parse(saved));
       setShowPreview(true);
@@ -26,84 +26,113 @@ const Home = ({ userName, userType }) => {
 
   const getUserTypeText = () => {
     switch (userType) {
-      case 'pet-owner':
-        return 'Pet Owner';
-      case 'veterinarian':
-        return 'Veterinarian';
-      case 'animal-shelter':
-        return 'Animal Shelter';
+      case "pet-owner":
+        return "Pet Owner";
+      case "veterinarian":
+        return "Veterinarian";
+      case "animal-shelter":
+        return "Animal Shelter";
       default:
-        return 'User';
+        return "User";
     }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setPetProfile(prev => ({
+    setPetProfile((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Save to localStorage
     const profileToSave = {
       ...petProfile,
-      lastUpdated: new Date().toISOString()
+      lastUpdated: new Date().toISOString(),
     };
-    
-    localStorage.setItem('petProfile', JSON.stringify(profileToSave));
+
+    localStorage.setItem("petProfile", JSON.stringify(profileToSave));
     setShowPreview(true);
-    
+
     // Navigate to PetProfile page after saving
-    navigate('/pet-profile');
+    navigate("/pet-profile");
   };
 
   const getPetTypeIcon = (type) => {
     switch (type) {
-      case 'Dog': return '🐕';
-      case 'Cat': return '🐈';
-      case 'Bird': return '🐦';
-      case 'Rabbit': return '🐇';
-      default: return '🐾';
+      case "Dog":
+        return "🐕";
+      case "Cat":
+        return "🐈";
+      case "Bird":
+        return "🐦";
+      case "Rabbit":
+        return "🐇";
+      default:
+        return "🐾";
     }
   };
 
   return (
-    <div className="home-container">
-      <div className="welcome-section">
-        <h2>Welcome {userName}!</h2>
-        <p>You are logged in as a {getUserTypeText()}.</p>
+    <div>
+      <div class="carousel home-container">
+        <div class="carousel-left d-flex flex-column justify-content-center">
+          <div class="title">
+            <h3>Explore professional pet service</h3>
+          </div>
+          <div class="content">
+            <p>
+              We provide a variety of services such as bathing, trimming,
+              daytime care and periodic health care, with experienced staff and
+              modern facilities, ensuring your pet is always healthy, clean and
+              happy.
+            </p>
+            <a href="about.html">
+              <button class="button1">get started</button>
+            </a>
+          </div>
+        </div>
+        <div class="carousel-right">
+          <img
+            src="https://petservicehcm.com/wp-content/uploads/2024/08/pet-care-slide3-img-1.webp"
+            alt=""
+          />
+        </div>
       </div>
 
-      <div className="intro-section">
-        <h3>About FurEver Care</h3>
-        <p className="intro-text">
-          FurEver Care is your comprehensive pet care companion, designed to help you provide the best possible care for your beloved animals. 
-          Whether you're a pet owner, veterinarian, or animal shelter worker, our platform offers tailored solutions to meet your specific needs.
-        </p>
-        
+      <div className="intro-section home-container">
+        <div className="title2">
+          <h3>About FurEver Care</h3>
+          <p>
+            FurEver Care is your comprehensive pet care companion, designed to
+            help you provide the best possible care for your beloved animals.
+            Whether you're a pet owner, veterinarian, or animal shelter worker,
+            our platform offers tailored solutions to meet your specific needs.
+          </p>
+        </div>
+
         <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">📅</div>
-            <h4>Appointment Scheduling</h4>
-            <p>Easily schedule and manage veterinary appointments for your pets.</p>
-          </div>
-          
           <div className="feature-card">
             <div className="feature-icon">📚</div>
             <h4>Care Resources</h4>
-            <p>Access comprehensive guides on pet nutrition, grooming, and health.</p>
+            <p>
+              Access comprehensive guides on pet nutrition, grooming, and
+              health.
+            </p>
           </div>
-          
+
           <div className="feature-card">
             <div className="feature-icon">🏥</div>
             <h4>Health Tracking</h4>
-            <p>Keep detailed records of vaccinations, medications, and medical history.</p>
+            <p>
+              Keep detailed records of vaccinations, medications, and medical
+              history.
+            </p>
           </div>
-          
+
           <div className="feature-card">
             <div className="feature-icon">🛒</div>
             <h4>Product Showcase</h4>
@@ -112,153 +141,67 @@ const Home = ({ userName, userType }) => {
         </div>
       </div>
 
-      {userType === 'pet-owner' && (
-        <div className="pet-profile-section">
-          <h3>Create Your Pet's Profile</h3>
-          <p>Fill out the form below to create a profile for your pet. This information will help us provide personalized care recommendations.</p>
-          
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Pet's Name *</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={petProfile.name}
-                onChange={handleInputChange}
-                placeholder="Enter your pet's name"
-                required
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="type">Species *</label>
-              <select
-                id="type"
-                name="type"
-                value={petProfile.type}
-                onChange={handleInputChange}
-                required
-              >
-                <option value="">Select a species</option>
-                <option value="Dog">Dog</option>
-                <option value="Cat">Cat</option>
-                <option value="Bird">Bird</option>
-                <option value="Rabbit">Rabbit</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="breed">Breed</label>
-              <input
-                type="text"
-                id="breed"
-                name="breed"
-                value={petProfile.breed}
-                onChange={handleInputChange}
-                placeholder="Enter your pet's breed"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="age">Age (years)</label>
-              <input
-                type="number"
-                id="age"
-                name="age"
-                value={petProfile.age}
-                onChange={handleInputChange}
-                placeholder="Enter your pet's age"
-                min="0"
-                step="0.1"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="weight">Weight (kg)</label>
-              <input
-                type="number"
-                id="weight"
-                name="weight"
-                value={petProfile.weight}
-                onChange={handleInputChange}
-                placeholder="Enter your pet's weight"
-                min="0"
-                step="0.1"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="dietaryNeeds">Dietary Needs</label>
-              <textarea
-                id="dietaryNeeds"
-                name="dietaryNeeds"
-                value={petProfile.dietaryNeeds}
-                onChange={handleInputChange}
-                placeholder="Any special dietary requirements or restrictions?"
-              ></textarea>
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="medicalHistory">Medical History</label>
-              <textarea
-                id="medicalHistory"
-                name="medicalHistory"
-                value={petProfile.medicalHistory}
-                onChange={handleInputChange}
-                placeholder="Any medical conditions, allergies, or previous treatments?"
-              ></textarea>
-            </div>
-            
-            <button type="submit" className="submit-button">
-              Save Pet Profile
-            </button>
-          </form>
-          
-          {showPreview && (
-            <div className="profile-preview">
-              <h4>{petProfile.name}'s Profile Preview</h4>
-              <div className="profile-details">
-                <div className="profile-detail">
-                  <strong>Species</strong>
-                  <span>{getPetTypeIcon(petProfile.type)} {petProfile.type}</span>
-                </div>
-                <div className="profile-detail">
-                  <strong>Breed</strong>
-                  <span>{petProfile.breed || 'Not specified'}</span>
-                </div>
-                <div className="profile-detail">
-                  <strong>Age</strong>
-                  <span>{petProfile.age ? `${petProfile.age} years` : 'Not specified'}</span>
-                </div>
-                <div className="profile-detail">
-                  <strong>Weight</strong>
-                  <span>{petProfile.weight ? `${petProfile.weight} kg` : 'Not specified'}</span>
-                </div>
-                <div className="profile-detail">
-                  <strong>Dietary Needs</strong>
-                  <span>{petProfile.dietaryNeeds || 'None specified'}</span>
-                </div>
-                <div className="profile-detail">
-                  <strong>Medical History</strong>
-                  <span>{petProfile.medicalHistory || 'No medical history recorded'}</span>
-                </div>
-              </div>
-            </div>
-          )}
+      <section class="carousel2">
+        <div class="content title2 home-container">
+          <h3 className="text-white">
+            We are true to ourselves, and commit to always perform at our best.
+          </h3>
+          <p className="text-white my-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus, doloribus atque. Corrupti exercitationem voluptatem
+            ipsum iste consequuntur et vitae voluptas temporibus? Maxime dolores
+            amet voluptatum illo consequatur placeat fugit ducimus.
+          </p>
+          <a href="about.html">
+            <button class="button2">Read more</button>
+          </a>
         </div>
-      )}
-      
-      <div className="intro-section">
-        <h3>Getting Started</h3>
-        <p className="intro-text">
-          Navigate through our menu to access different sections of the application. As a {getUserTypeText()}, you have access to 
-          specialized features designed for your role. If you need help, visit our Contact page or check out our FAQ section.
-        </p>
-        <p className="intro-text">
-          Select an option from the menu to get started with your pet care journey.
-        </p>
+      </section>
+
+      <div class="promise d-flex home-container">
+        <div class="promise-left w-50 d-flex flex-column align-items-start">
+          <div class="title me-1 mt-5">
+            <h3>The Furever Care Promise</h3>
+          </div>
+          <div class="content me-2">
+            <div class="accordion-menu">
+              <ul>
+                <li className="d-flex flex-column align-items-start ">
+                  <h2>TOP NOTCH QUALITY</h2>
+                  <p className="text-start">
+                    Vet-approved food, supplements, and medicines from top
+                    brands, ensuring your pet's health and happiness.
+                  </p>
+                </li>
+                <li className="d-flex flex-column align-items-start ">
+                  <h2>FUR-TASTIC SERVICES</h2>
+                  <p className="text-start">
+                    Our friendly and knowledgeable team is here to help with
+                    expert advice and 24/7 support.
+                  </p>
+                </li>
+                <li className="d-flex flex-column align-items-start ">
+                  <h2>Paw-some Deals</h2>
+                  <p className="text-start">
+                    Enjoy exclusive discounts and special offers on premium
+                    products, making pet care affordable and fun.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="promise-right w-50">
+          <figure className="w-100">
+            <video
+              className="w-100 rounded"
+              autoPlay
+              loop
+              muted
+              src="/assets/0911.mp4"
+            ></video>
+          </figure>
+        </div>
       </div>
     </div>
   );

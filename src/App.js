@@ -2,24 +2,24 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation.jsx";
 import ScrollingTicker from "./components/ScrollingTicker.jsx";
-import "./css/Global.css";
+import "./App.css";
 
 // Import page components
 import Home from "./components/Home.jsx";
-import About from "./components/About.jsx";
-import PetCare from "./components/PetCare.jsx";
-import PetProfile from "./components/PetProfile.jsx";
-import Products from "./components/Products.jsx";
-import Emergency from "./components/Emergency.jsx";
-import Feedback from "./components/Feedback.jsx";
-import Contact from "./components/Contact.jsx";
-import VetProfile from "./components/VetProfile.jsx";
-import TimeSlots from "./components/TimeSlots.jsx";
-import CaseStudies from "./components/CaseStudies.jsx";
-import Gallery from "./components/Gallery.jsx";
-import SuccessStories from "./components/SuccessStories.jsx";
-import Events from "./components/Events.jsx";
-import ShelterContact from "./components/ShelterContact.jsx";
+import About from "./components/petOwner/About.jsx";
+import PetCare from "./components/petOwner/PetCare.jsx";
+import PetProfile from "./components/petOwner/PetProfile.jsx";
+import Products from "./components/petOwner/Products.jsx";
+import Emergency from "./components/petOwner/Emergency.jsx";
+import Feedback from "./components/petOwner/Feedback.jsx";
+import Contact from "./components/petOwner/Contact.jsx";
+import VetProfile from "./components/veterinarian/VetProfile.jsx";
+import TimeSlots from "./components/veterinarian/TimeSlots.jsx";
+import CaseStudies from "./components/veterinarian/CaseStudies.jsx";
+import Gallery from "./components/animalShelter/Gallery.jsx";
+import SuccessStories from "./components/animalShelter/SuccessStories.jsx";
+import Events from "./components/animalShelter/Events.jsx";
+import ShelterContact from "./components/animalShelter/ShelterContact.jsx";
 
 function App() {
   const [showPopup, setShowPopup] = useState(true);
@@ -89,15 +89,15 @@ function App() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -109,7 +109,7 @@ function App() {
             <div className="popup-form">
               <div className="popup-logo-container">
                 <img
-                  src="/logo_furever_care_nonbackground.png"
+                  src="/image/logo/logo_furever_care_nonbackground.png"
                   alt="FurEver Care Logo"
                   className="popup-logo"
                 />
@@ -172,7 +172,7 @@ function App() {
             <header className="app-header">
               <div className="header-logo-container">
                 <img
-                  src="/logo_furever_care_nonbackground.png"
+                  src="/image/logo/logo_furever_care_nonbackground.png"
                   alt="FurEver Care Logo"
                   className="header-logo"
                 />
@@ -211,7 +211,7 @@ function App() {
               <div className="footer-content">
                 <div className="footer-logo-container">
                   <img
-                    src="/logo_furever_care_icon.png"
+                    src="/image/logo/logo_furever_care_icon.png"
                     alt="FurEver Care Icon"
                     className="footer-logo"
                   />
@@ -227,7 +227,7 @@ function App() {
               </div>
             </footer>
             <ScrollingTicker />
-            
+
             {/* Scroll to Top Button */}
             {showScrollTop && (
               <button className="scroll-to-top" onClick={scrollToTop}>
