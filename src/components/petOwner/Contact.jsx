@@ -87,7 +87,7 @@ const Contact = () => {
   return (
     <div className="contact-container">
       <div className="contact-header">
-        <h2>Contact Us</h2>
+        <h2 className='fw-bold fs-1'>Contact Us</h2>
         <p>We're here to help you and your furry friends. Reach out to us through any of the channels below.</p>
       </div>
 
@@ -98,7 +98,7 @@ const Contact = () => {
           <div className="contact-detail">
             <div className="contact-icon">📍</div>
             <div className="contact-text">
-              <h4>Our Address</h4>
+              <h4 className='text-start'>Our Address</h4>
               <p>{contactData.contactDetails.address}</p>
             </div>
           </div>
@@ -106,7 +106,7 @@ const Contact = () => {
           <div className="contact-detail">
             <div className="contact-icon">📞</div>
             <div className="contact-text">
-              <h4>Phone Number</h4>
+              <h4 className='text-start'>Phone Number</h4>
               <p>{contactData.contactDetails.phone}</p>
             </div>
           </div>
@@ -114,7 +114,7 @@ const Contact = () => {
           <div className="contact-detail">
             <div className="contact-icon">✉️</div>
             <div className="contact-text">
-              <h4>Email Address</h4>
+              <h4 className='text-start'>Email Address</h4>
               <p>{contactData.contactDetails.email}</p>
             </div>
           </div>
@@ -122,18 +122,18 @@ const Contact = () => {
           <div className="contact-detail">
             <div className="contact-icon">🕒</div>
             <div className="contact-text">
-              <h4>Business Hours</h4>
-              <p>{contactData.contactDetails.hours}</p>
+              <h4 className='text-start'>Business Hours</h4>
+              <p className='text-start'>{contactData.contactDetails.hours}</p>
             </div>
           </div>
           
           <div className="contact-detail">
             <div className="contact-icon">🌐</div>
             <div className="contact-text">
-              <h4>Follow Us</h4>
+              <h4 className='text-start mt-2'>Follow Us</h4>
               <div className="social-links">
                 {contactData.socialMedia.map((social, index) => (
-                  <a key={index} href={social.url} target="_blank" rel="noopener noreferrer">
+                  <a className='text-start' key={index} href={social.url} target="_blank" rel="noopener noreferrer">
                     {social.icon} {social.name}
                   </a>
                 ))}
@@ -197,7 +197,7 @@ const Contact = () => {
               ></textarea>
             </div>
             
-            <button type="submit" className="submit-button">
+            <button type="submit" className="button2">
               {submitted ? "Message Sent! Thank You" : "Send Message"}
             </button>
           </form>

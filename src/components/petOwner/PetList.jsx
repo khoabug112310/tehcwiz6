@@ -84,8 +84,8 @@ const PetList = () => {
   return (
     <div className="pet-profile-container">
       <div className="profile-header">
-        <h2>My Pets</h2>
-        <p>Manage your pet profiles and care information</p>
+        <h2 className='fw-bold fs-1'>My Pets</h2>
+        <p className='fs-5'>Manage your pet profiles and care information</p>
       </div>
 
       {pets.length === 0 ? (
@@ -93,7 +93,7 @@ const PetList = () => {
           <div className="no-pets-content">
             <h3>No Pets Found</h3>
             <p>You haven't added any pets to your profile yet.</p>
-            <button className="add-pet-button" onClick={handleAddPet}>
+            <button className="button1" onClick={handleAddPet}>
               + Add Your First Pet
             </button>
           </div>
@@ -132,10 +132,10 @@ const PetList = () => {
                   </div>
                 </div>
                 <div className="pet-card-actions">
-                  <button className="view-button" onClick={() => handleViewPet(pet)}>
-                    View Profile
+                  <button className="button2" onClick={() => handleViewPet(pet)}>
+                    View
                   </button>
-                  <button className="edit-button" onClick={() => handleEditPet(pet)}>
+                  <button className="button1" onClick={() => handleEditPet(pet)}>
                     Edit
                   </button>
                   <button className="delete-button" onClick={() => handleDeletePet(pet.id)}>

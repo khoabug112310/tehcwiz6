@@ -75,7 +75,7 @@ const Feedback = () => {
   return (
     <div className="feedback-container">
       <div className="feedback-header">
-        <h2>We Value Your Feedback</h2>
+        <h2 className='fw-bold fs-1'>We Value Your Feedback</h2>
         <p>Your opinion matters to us! Help us improve our services by sharing your experience with FurEver Care.</p>
       </div>
 
@@ -147,7 +147,7 @@ const Feedback = () => {
               ></textarea>
             </div>
             
-            <button type="submit" className="submit-button">
+            <button type="submit" className="button2 w-100">
               {submitted ? "Thank You! Feedback Submitted" : "Submit Feedback"}
             </button>
           </form>

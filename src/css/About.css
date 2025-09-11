@@ -102,7 +102,7 @@
 }
 
 .team-member:hover {
- box-shadow: 12px 12px 0 2px #205781;
+  box-shadow: 12px 12px 0 2px #205781;
   border-radius: 20px;
   transition: all ease 0.3s;
 }
@@ -252,12 +252,6 @@
   color: #34495e;
   border-left: 3px solid #205781;
   transition: all 0.3s ease;
-}
-
-.location-details p:hover {
-  transform: translateX(5px);
-  background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design for About Page */
