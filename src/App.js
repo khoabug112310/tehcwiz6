@@ -111,7 +111,7 @@ function App() {
             <div className="popup-form">
               <div className="popup-logo-container">
                 <img
-                  src="/image/logo/logo_furever_care_nonbackground.png"
+                  src="./assets/home/logo1.png"
                   alt="FurEver Care Logo"
                   className="popup-logo"
                 />
@@ -177,7 +177,7 @@ function App() {
               <div className="header-logo-container">
                 <Link to="/">
                   <img
-                    src="/image/logo/logo_furever_care_nonbackground.png"
+                    src="./assets/home/logo1.png"
                     alt="FurEver Care Logo"
                     className="header-logo"
                   />
