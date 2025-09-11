@@ -5,21 +5,23 @@ import ScrollingTicker from "./components/ScrollingTicker.jsx";
 import "./App.css";
 
 // Import page components
-import Home from "./components/Home.jsx";
-import About from "./components/petOwner/About.jsx";
-import PetCare from "./components/petOwner/PetCare.jsx";
-import PetProfile from "./components/petOwner/PetProfile.jsx";
-import Products from "./components/petOwner/Products.jsx";
-import Emergency from "./components/petOwner/Emergency.jsx";
-import Feedback from "./components/petOwner/Feedback.jsx";
-import Contact from "./components/petOwner/Contact.jsx";
-import VetProfile from "./components/veterinarian/VetProfile.jsx";
-import TimeSlots from "./components/veterinarian/TimeSlots.jsx";
-import CaseStudies from "./components/veterinarian/CaseStudies.jsx";
-import Gallery from "./components/animalShelter/Gallery.jsx";
-import SuccessStories from "./components/animalShelter/SuccessStories.jsx";
-import Events from "./components/animalShelter/Events.jsx";
-import ShelterContact from "./components/animalShelter/ShelterContact.jsx";
+import Home from './components/Home.jsx';
+import About from './components/petOwner/About.jsx';
+import PetCare from './components/petOwner/PetCare.jsx';
+import PetProfile from './components/petOwner/PetProfile.jsx';
+import PetList from './components/petOwner/PetList.jsx';
+import FormAdd from './components/petOwner/FormAdd.jsx';
+import Products from './components/petOwner/Products.jsx';
+import Emergency from './components/petOwner/Emergency.jsx';
+import Feedback from './components/petOwner/Feedback.jsx';
+import Contact from './components/petOwner/Contact.jsx';
+import VetProfile from './components/veterinarian/VetProfile.jsx';
+import TimeSlots from './components/veterinarian/TimeSlots.jsx';
+import CaseStudies from './components/veterinarian/CaseStudies.jsx';
+import Gallery from './components/animalShelter/Gallery.jsx';
+import SuccessStories from './components/animalShelter/SuccessStories.jsx';
+import Events from './components/animalShelter/Events.jsx';
+import ShelterContact from './components/animalShelter/ShelterContact.jsx';
 
 function App() {
   const [showPopup, setShowPopup] = useState(true);
@@ -187,13 +189,12 @@ function App() {
             </header>
             <main>
               <Routes>
-                <Route
-                  path="/"
-                  element={<Home userName={userName} userType={userType} />}
-                />
+                <Route path="/" element={<Home userName={userName} userType={userType} />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/pet-care" element={<PetCare />} />
                 <Route path="/pet-profile" element={<PetProfile />} />
+                <Route path="/pet-list" element={<PetList />} />
+                <Route path="/form-add" element={<FormAdd />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/emergency" element={<Emergency />} />
                 <Route path="/feedback" element={<Feedback />} />

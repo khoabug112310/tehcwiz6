@@ -136,6 +136,70 @@
   box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
 }
 
+.pet-care-container .form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pet-care-container .cancel-button {
+  background: #95a5a6;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.pet-care-container .cancel-button:hover {
+  background: #7f8c8d;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(149, 165, 166, 0.3);
+}
+
+.pet-care-container .no-profile {
+  text-align: center;
+  padding: 2rem;
+}
+
+.pet-care-container .no-profile p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+}
+
+.pet-care-container .add-pet-button {
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.pet-care-container .add-pet-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+.pet-care-container .profile-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.pet-care-container .profile-actions button {
+  flex: 1;
+}
+
 /* Saved Profile Styles */
 .saved-profile {
   text-align: center;
@@ -1356,5 +1420,13 @@
   .text-tip p {
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  .pet-care-container .form-buttons {
+    flex-direction: column;
+  }
+  
+  .pet-care-container .profile-actions {
+    flex-direction: column;
   }
 }

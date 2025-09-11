@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import '../css/Navigation.css';
 
 const Navigation = ({ userType }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const getMenuItems = () => {
     switch (userType) {
       case 'pet-owner':
         return [
           { name: 'About Us', path: '/about' },
-          { name: 'Pet Care', path: '/pet-list' },
+          { name: 'Pet Care', path: '/pet-care' },
           { name: 'Product Showcase', path: '/products' },
           { name: 'Emergency Help', path: '/emergency' },
           { name: 'Feedback', path: '/feedback' },
@@ -36,29 +33,14 @@ const Navigation = ({ userType }) => {
 
   const menuItems = getMenuItems();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
     <nav className="navigation">
-      {/* Hamburger Menu Button for Mobile */}
-      <div className="hamburger-menu" onClick={toggleMenu}>
-        <div className={`hamburger-icon ${isMenuOpen ? 'open' : ''}`}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      
-      {/* Navigation Menu */}
-      <ul className={isMenuOpen ? 'nav-menu open' : 'nav-menu'}>
+      <ul>
         {menuItems.map((item, index) => (
           <li key={index}>
             <Link 
               to={item.path}
               className="nav-link"
-              onClick={() => setIsMenuOpen(false)} // Close menu when item is clicked
             >
               {item.name}
             </Link>
