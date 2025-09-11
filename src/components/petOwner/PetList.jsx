@@ -101,7 +101,6 @@ const PetList = () => {
       ) : (
         <div className="pets-list-container">
           <div className="pets-header">
-            <h3>Your Pets</h3>
             <button className="add-pet-button" onClick={handleAddPet}>
               + Add Another Pet
             </button>
