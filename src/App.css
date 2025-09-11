@@ -579,14 +579,6 @@ body {
     font-size: 2rem;
   }
 
-  .navigation ul {
-    flex-direction: column;
-  }
-
-  .nav-link {
-    padding: 0.75rem 1rem;
-  }
-
   .footer-content {
     flex-direction: column;
     text-align: center;
