@@ -10,7 +10,7 @@ const Navigation = ({ userType }) => {
       case 'pet-owner':
         return [
           { name: 'About Us', path: '/about' },
-          { name: 'Pet Care', path: '/pet-care' },
+          { name: 'Pet Care', path: '/pet-list' },
           { name: 'Product Showcase', path: '/products' },
           { name: 'Emergency Help', path: '/emergency' },
           { name: 'Feedback', path: '/feedback' },

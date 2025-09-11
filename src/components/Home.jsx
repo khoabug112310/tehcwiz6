@@ -116,8 +116,8 @@ const Home = ({ userName, userType }) => {
 
         <div className="features-grid">
           <div className="feature-card">
-            <div className="feature-icon">📚</div>
-            <h4>Care Resources</h4>
+            <div className="feature-icon"><img src="/assets/pet-medicine.png" alt="" /></div>
+            <h4>Pet Medicines</h4>
             <p>
               Access comprehensive guides on pet nutrition, grooming, and
               health.
@@ -125,18 +125,17 @@ const Home = ({ userName, userType }) => {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">🏥</div>
-            <h4>Health Tracking</h4>
+            <div className="feature-icon"><img src="/assets/pet-food.png" alt="" /></div>
+            <h4>Pet Food</h4>
             <p>
-              Keep detailed records of vaccinations, medications, and medical
-              history.
+              Purr-fect Bites, Wag-Worthy Delights!
             </p>
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">🛒</div>
-            <h4>Product Showcase</h4>
-            <p>Discover premium pet products recommended by veterinarians.</p>
+            <div className="feature-icon"><img src="/assets/pet-treat.png" alt="" /></div>
+            <h4>Pet Treats</h4>
+            <p>Purr-fect Nibbles, Wag-Worthy Thrills!</p>
           </div>
         </div>
       </div>
@@ -158,7 +157,7 @@ const Home = ({ userName, userType }) => {
         </div>
       </section>
 
-      <div class="promise d-flex home-container">
+      <div class="promise d-flex align-items-center home-container">
         <div class="promise-left w-50 d-flex flex-column align-items-start">
           <div class="title me-1 mt-5">
             <h3>The Furever Care Promise</h3>
@@ -192,17 +191,34 @@ const Home = ({ userName, userType }) => {
           </div>
         </div>
         <div class="promise-right w-50">
-          <figure className="w-100">
-            <video
-              className="w-100 rounded"
-              autoPlay
-              loop
-              muted
-              src="/assets/0911.mp4"
-            ></video>
+          <figure>
+            <video autoPlay loop muted src="/assets/0911.mp4"></video>
           </figure>
         </div>
       </div>
+
+      <section class="ready">
+        <div class="container">
+          <div class="title text-center">
+            <h3>Ready to make your pet happy</h3>
+          </div>
+          <div class="content text-center my-3">
+            <p>
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+              posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus
+              turpis sodales quis. Integer sit amet mattis quam.
+            </p>
+          </div>
+          <div class="items d-flex justify-content-center">
+            <a href="contact.html">
+              <button class="button1 mx-2">Book now</button>
+            </a>
+            <a href="contact.html">
+              <button class="button2 mx-2">get started</button>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

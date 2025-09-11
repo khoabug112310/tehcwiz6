@@ -9,10 +9,21 @@ const PetProfile = () => {
 
   // Load saved profile from localStorage on component mount
   useEffect(() => {
-    const saved = localStorage.getItem('petProfile');
-    if (saved) {
-      setPetProfile(JSON.parse(saved));
-      setLastUpdated(new Date(JSON.parse(saved).lastUpdated || Date.now()));
+    // For backward compatibility, check for single pet profile
+    const singlePet = localStorage.getItem('petProfile');
+    if (singlePet) {
+      const petData = JSON.parse(singlePet);
+      setPetProfile(petData);
+      setLastUpdated(new Date(petData.lastUpdated || Date.now()));
+      return;
+    }
+    
+    // Check for multi-pet profiles
+    const pets = JSON.parse(localStorage.getItem('petProfiles') || '[]');
+    if (pets.length > 0) {
+      // Use the first pet as the default
+      setPetProfile(pets[0]);
+      setLastUpdated(new Date(pets[0].lastUpdated || Date.now()));
     }
   }, []);
 

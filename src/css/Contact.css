@@ -237,15 +237,16 @@
 .team-member {
   text-align: center;
   padding: 1.5rem;
+  border: 1px solid #205781;
   border-radius: 10px;
   background: #f8f9fa;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-member:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  background: white;
+  box-shadow: 12px 12px 0 2px #205781;
+  border-radius: 20px;
+  transition: all ease 0.3s;
 }
 
 .team-member-avatar {
