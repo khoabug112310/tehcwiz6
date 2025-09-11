@@ -194,7 +194,6 @@
   border-radius: 10px;
   padding: 1.5rem;
   text-align: center;
-  border-left: 4px solid #3498db;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
