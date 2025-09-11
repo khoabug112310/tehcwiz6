@@ -43,5 +43,50 @@
     "description": "Beautiful long-haired cat who enjoys sunny spots",
     "type": "cat",
     "image": "assets/animalShelter/galleryPictures/Cat_Beautifullonghaired.jpg"
-  }
+  },
+   {
+    "id": 6,
+    "name": "Sarina",
+    "age": "4 months",
+    "breed": "Rabbit",
+    "description": "Beautiful brown rabbit who enjoys hopping around",
+    "type": "rabbit",
+    "image": "assets/animalShelter/galleryPictures/Rabbit_Beautifulbrown.png"
+  },
+   {
+    "id": 7,
+    "name": "Sunday",
+    "age": "3 years",
+    "breed": "Dobermann Pinscher",
+    "description": "Friendly and loyal dog who play and protect your family",
+    "type": "dog",
+    "image": "assets/animalShelter/galleryPictures/Dog_Friendlyloyal.jpg"
+  },
+    {
+      "id": 8,
+      "name": "Mimi",
+      "age": "2 years",
+      "breed": "Poodle",
+      "description": "Smart and active dog who loves to learn new tricks",
+      "type": "dog",
+      "image": "assets/animalShelter/galleryPictures/Dog_Littlesmartbuddy.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Miu",
+      "age": "3 years",
+      "breed": "Tabby Cat",
+      "description": "Beautiful Orange tabby cat with mischievous eyes",
+      "type": "cat",
+      "image": "assets/animalShelter/galleryPictures/Cat_Mischievous.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Cleopatra",
+      "age": "4 years",
+      "breed": "Sphynx cat",
+      "description": "Beautiful gray skin cat with elegant look",
+      "type": "cat",
+      "image": "assets/animalShelter/galleryPictures/Cat_Elegant.jpg"
+    }
 ]

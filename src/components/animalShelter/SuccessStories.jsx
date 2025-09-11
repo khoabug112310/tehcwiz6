@@ -4,6 +4,7 @@ import '../../css/SuccessStories.css';
 
 const SuccessStories = () => {
   const [stories, setStories] = useState([]);
+  const [selectedStory, setSelectedStory] = useState(null);
 
   // Load success stories from JSON file
   useEffect(() => {
@@ -34,7 +35,8 @@ const SuccessStories = () => {
                 <h3>{story.title}</h3>
                 <p className="story-text">{story.story}</p>
                 <div className="story-meta">
-                  <button className="read-more">Read Full Story</button>
+                  <button className="read-more" onClick={() => setSelectedStory(story)}>Read Full Story</button>
+                  
                 </div>
               </div>
             </div>
@@ -46,6 +48,28 @@ const SuccessStories = () => {
           </div>
         )}
       </div>
+      
+      {selectedStory && (
+        <div className="modal-overlay" onClick={() => setSelectedStory(null)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <h2>{selectedStory.title}</h2>
+            <img
+              src={selectedStory.image}
+              alt={selectedStory.title}
+              style={{ width: '100%', borderRadius: '8px', marginBottom: '1rem' }}
+            />
+            <div>
+              {selectedStory.details
+                ? selectedStory.details.split('\n').map((line, idx) => (
+                    <p key={idx}>{line}</p>
+                  ))
+                : <p>No details available for this story.</p>
+              }
+            </div>
+          </div>
+        </div>
+      )}
+      
     </div>
   );
 };
