@@ -145,10 +145,45 @@
   border-bottom: none;
 }
 
+/* Feeding Guide Content Layout - 50/50 Split */
 .feeding-guide-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  align-items: start;
+}
+
+.feeding-recommendations {
+  grid-column: 1;
+}
+
+.feeding-video {
+  grid-column: 2;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  border: 1px solid #e1e5eb;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feeding-video:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
+}
+
+.feeding-video h5 {
+  color: #2c3e50;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 10px;
+  border: 1px solid #e1e5eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .feeding-chart h4,
@@ -198,23 +233,46 @@
   line-height: 1.5;
 }
 
+/* Grooming Content Layout - 50/50 Split */
 .grooming-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  align-items: start;
 }
 
 .video-card {
   background: white;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e1e5eb;
 }
 
 .video-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Grooming Video Containers */
+.grooming-video,
+.bathing-video {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  margin-top: 1rem;
+  border: 1px solid #e1e5eb;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.grooming-video:hover,
+.bathing-video:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
 }
 
 .video-card h4 {
@@ -266,11 +324,73 @@
   transform: scale(1.1);
 }
 
-.health-tips-content,
-.training-tips-content {
+/* Standardized Video Styling */
+.grooming-video video,
+.bathing-video video,
+.health-video video,
+.training-video video,
+.feeding-video video {
+  width: 100%;
+  max-width: 500px;
+  height: 320px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 3px solid #fff;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 16/9;
+}
+
+.grooming-video video:hover,
+.bathing-video video:hover,
+.health-video video:hover,
+.training-video video:hover,
+.feeding-video video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  border-color: #3498db;
+}
+
+/* Video Description Styling */
+.video-description {
+  font-size: 1rem;
+  color: #5a6c7d;
+  margin: 1rem auto 0;
+  max-width: 500px;
+  line-height: 1.6;
+  font-style: italic;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+  text-align: left;
+}
+
+/* Health Tips Content Layout - 50/50 Split */
+.health-tips-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  align-items: start;
+}
+
+.health-video {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f1f8ff 0%, #e3f2fd 100%);
+  border-radius: 15px;
+  margin-top: 1rem;
+  border: 1px solid #bbdefb;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.health-video:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
 }
 
 .tip-card {
@@ -345,6 +465,57 @@
   line-height: 1.5;
 }
 
+/* Pet Care Section Base Styling */
+.pet-care-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.pet-care-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  border-radius: 20px 20px 0 0;
+}
+
+.pet-care-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.pet-care-section h3 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.pet-care-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  border-radius: 2px;
+}
+
 .view-profile-button {
   background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
   color: white;
@@ -367,6 +538,26 @@
 }
 
 /* Responsive Design for Pet Profile Page */
+@media (max-width: 1023px) {
+  /* Tablet Layout */
+  .feeding-guide-content,
+  .grooming-content,
+  .health-tips-content,
+  .training-tips-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .grooming-video video,
+  .bathing-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    height: 300px;
+    max-width: 450px;
+  }
+}
+
 @media (max-width: 768px) {
   .pet-profile-container {
     padding: 1rem;
@@ -385,12 +576,39 @@
     align-items: center;
   }
   
-  .profile-details-grid,
+  .profile-details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Mobile - Single Column Layout */
   .feeding-guide-content,
   .grooming-content,
   .health-tips-content,
   .training-tips-content {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .feeding-recommendations,
+  .feeding-video,
+  .grooming-video,
+  .bathing-video,
+  .health-video,
+  .training-video {
+    grid-column: 1;
+  }
+  
+  .grooming-video video,
+  .bathing-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    height: 250px;
+    max-width: 100%;
+  }
+  
+  .pet-care-section {
+    padding: 2rem;
   }
   
   .vaccination-table {

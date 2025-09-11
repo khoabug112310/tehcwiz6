@@ -351,6 +351,21 @@ const PetProfile = () => {
               ))}
             </ul>
           </div>
+          
+          <div className="feeding-video">
+            <h5>Feeding Demonstration:</h5>
+            <video 
+              controls 
+              width="100%" 
+              style={{ maxWidth: '500px', borderRadius: '8px' }}
+            >
+              <source src="./assets/Videos/feed_cat.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p className="video-description">
+              Learn proper feeding techniques and portion control for your {petProfile.type}.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -360,9 +375,18 @@ const PetProfile = () => {
         <div className="grooming-content">
           <div className="video-card">
             <h4>Brushing Techniques</h4>
-            <div className="video-placeholder">
-              <p>Video demonstrating proper brushing techniques for {petProfile.type}s</p>
-              <div className="play-button">▶</div>
+            <div className="grooming-video">
+              <video 
+                controls 
+                width="100%" 
+                style={{ maxWidth: '500px', borderRadius: '8px' }}
+              >
+                <source src="./assets/Videos/Brushing.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p className="video-description">
+                Learn proper brushing techniques to keep your {petProfile.type} healthy and comfortable.
+              </p>
             </div>
             <div className="grooming-tips">
               <h5>Grooming Tips:</h5>
@@ -376,9 +400,18 @@ const PetProfile = () => {
           
           <div className="video-card">
             <h4>Bathing Instructions</h4>
-            <div className="video-placeholder">
-              <p>Video showing how to safely bathe your {petProfile.type}</p>
-              <div className="play-button">▶</div>
+            <div className="bathing-video">
+              <video 
+                controls 
+                width="100%" 
+                style={{ maxWidth: '500px', borderRadius: '8px' }}
+              >
+                <source src="./assets/Videos/bathing.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p className="video-description">
+                Step-by-step bathing instructions to keep your {petProfile.type} clean and healthy.
+              </p>
             </div>
             <div className="grooming-tips">
               <h5>Additional Tips:</h5>
@@ -417,9 +450,18 @@ const PetProfile = () => {
                 <li key={index}>{tip}</li>
               ))}
             </ul>
-            <div className="video-placeholder small">
-              <p>Video on recognizing signs of illness</p>
-              <div className="play-button">▶</div>
+            <div className="health-video">
+              <video 
+                controls 
+                width="100%" 
+                style={{ maxWidth: '400px', borderRadius: '8px' }}
+              >
+                <source src="./assets/Videos/health-tips.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p className="video-description">
+                Essential health care and wellness tips for your {petProfile.type}.
+              </p>
             </div>
           </div>
         </div>
@@ -450,6 +492,20 @@ const PetProfile = () => {
                 <li key={index}>{tip}</li>
               ))}
             </ul>
+            <div className="training-video">
+              <h6>Training Demonstration:</h6>
+              <video 
+                controls 
+                width="100%" 
+                style={{ maxWidth: '500px', borderRadius: '8px' }}
+              >
+                <source src="./assets/Videos/trainning_dog.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p className="video-description">
+                Interactive training techniques and exercises for your {petProfile.type}.
+              </p>
+            </div>
             <div className="text-tip">
               <p>Remember: Training is an ongoing process that strengthens the bond between you and your {petProfile.type}.</p>
             </div>

@@ -356,6 +356,21 @@ const PetCare = () => {
                 <li>Consult your veterinarian about special dietary needs</li>
               </ul>
             </div>
+            <div className="feeding-video">
+              <h5>Feeding Demonstration:</h5>
+              <video 
+                controls 
+                width="100%" 
+                style={{ maxWidth: '500px', borderRadius: '8px' }}
+                
+              >
+                <source src="./assets/Videos/feed_cat.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p className="video-description">
+                Learn proper feeding techniques and portion control for your {savedProfile.type}.
+              </p>
+            </div>
           </div>
         ) : (
           <p>Create a pet profile to see species-specific feeding recommendations.</p>
@@ -372,9 +387,20 @@ const PetCare = () => {
                 <li key={index}>{tip}</li>
               ))}
             </ul>
-            <div className="grooming-video-placeholder">
-              <p>Embedded videos demonstrating proper grooming techniques would appear here.</p>
-              <div className="video-placeholder-icon">▶</div>
+            <div className="grooming-video">
+              <h5>Grooming Tutorial:</h5>
+              <video 
+                controls 
+                width="100%" 
+                style={{ maxWidth: '500px', borderRadius: '8px' }}
+                
+              >
+                <source src="./assets/Videos/Brushing.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p className="video-description">
+                Learn proper brushing techniques to keep your {savedProfile.type} healthy and comfortable.
+              </p>
             </div>
           </div>
         ) : (
@@ -394,12 +420,23 @@ const PetCare = () => {
             </ul>
             <div className="health-resources">
               <h5>Additional Resources:</h5>
+              <div className="health-video">
+                <h6>Health Care Demonstration:</h6>
+                <video 
+                  controls 
+                  width="100%" 
+                  style={{ maxWidth: '500px', borderRadius: '8px' }}
+                  
+                >
+                  <source src="./assets/Videos/health-tips.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <p className="video-description">
+                  Essential health care and wellness tips for your {savedProfile.type}.
+                </p>
+              </div>
               <div className="audio-placeholder">
                 <button className="audio-button">🔊 Listen to health care tips</button>
-              </div>
-              <div className="video-placeholder">
-                <p>Video on recognizing signs of illness</p>
-                <div className="play-button">▶</div>
               </div>
             </div>
           </div>
@@ -420,6 +457,21 @@ const PetCare = () => {
             </ul>
             <div className="training-resources">
               <h5>Training Resources:</h5>
+              <div className="training-video">
+                <h6>Training Demonstration:</h6>
+                <video 
+                  controls 
+                  width="100%" 
+                  style={{ maxWidth: '500px', borderRadius: '8px' }}
+                  
+                >
+                  <source src="./assets/Videos/trainning_dog.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <p className="video-description">
+                  Interactive training techniques and exercises for your {savedProfile.type}.
+                </p>
+              </div>
               <div className="audio-placeholder">
                 <button className="audio-button">🔊 Listen to training instructions</button>
               </div>

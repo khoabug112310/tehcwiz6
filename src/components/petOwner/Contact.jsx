@@ -207,19 +207,41 @@ const Contact = () => {
       <div className="team-section">
         <h3>Our Team</h3>
         <div className="team-grid">
-          {contactData.team.map((member) => (
-            <div key={member.id} className="team-member">
-              <div className="team-member-avatar">
-                {member.avatar}
-              </div>
-              <h4>{member.name}</h4>
-              <p className="team-member-role">{member.role}</p>
-              <p className="team-member-contact">
-                <span>📧 {member.email}</span>
-                <span>📞 {member.phone}</span>
-              </p>
+          <div className="team-member">
+            <div className="team-member-image">
+              <img src="./assets/image-pet-owner/tai.jpg" alt="Minh Tài - Project Manager" />
             </div>
-          ))}
+            <h4>Minh Tài</h4>
+            <p className="team-member-role">Project Manager</p>
+            <p className="team-member-contact">
+              <span>📧 tai.minh@furevercare.com</span>
+              <span>📞 +84967373148</span>
+            </p>
+          </div>
+          
+          <div className="team-member">
+            <div className="team-member-image">
+              <img src="./assets/image-pet-owner/hung.jpg" alt="Hùng - Lead Developer" />
+            </div>
+            <h4>Hùng</h4>
+            <p className="team-member-role">Lead Developer</p>
+            <p className="team-member-contact">
+              <span>📧 hung.dev@furevercare.com</span>
+              <span>📞 +84967373149</span>
+            </p>
+          </div>
+          
+          <div className="team-member">
+            <div className="team-member-image">
+              <img src="./assets/image-pet-owner/phong.jpg" alt="Lâm Phong - UI/UX Designer" />
+            </div>
+            <h4>Lâm Phong</h4>
+            <p className="team-member-role">UI/UX Designer</p>
+            <p className="team-member-contact">
+              <span>📧 lamphong0110@gmail.com</span>
+              <span>📞 +84967373150</span>
+            </p>
+          </div>
         </div>
       </div>
 
@@ -234,9 +256,16 @@ const Contact = () => {
       <div className="map-section">
         <h3>Find Us on the Map</h3>
         <div className="map-container">
-          <div className="map-placeholder">
-            Google Maps would be embedded here in a real implementation
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0636479687845!2d106.62663331533507!3d10.79904399230163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529c1c8c8c8c5%3A0x1234567890abcdef!2s21%20H%E1%BA%ADu%20Giang%2C%20T%C3%A2n%20B%C3%ACnh%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vi%E1%BB%87t%20Nam!5e0!3m2!1sen!2s!4v1642345678901!5m2!1sen!2s"
+            width="100%"
+            height="400"
+            style={{ border: 0, borderRadius: '15px' }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="FurEver Care Location - 21 Hậu Giang, Tân Bình"
+          ></iframe>
         </div>
       </div>
     </div>
