@@ -4,6 +4,7 @@ import '../../css/PetProfile.css';
 const PetProfile = () => {
   const [petProfile, setPetProfile] = useState(null);
   const [location, setLocation] = useState(null);
+  const [address, setAddress] = useState(null);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [lastUpdated, setLastUpdated] = useState(null);
 
@@ -32,15 +33,41 @@ const PetProfile = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setLocation({
+          const locationData = {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
-          });
+          };
+          setLocation(locationData);
+          
+          // Convert coordinates to address using BigDataCloud API
+          fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en`)
+            .then(response => response.json())
+            .then(data => {
+              // Extract detailed address components
+              const ward = data.locality || '';
+              const city = data.city || data.locality || '';
+              const country = data.countryName || '';
+              
+              // Create detailed address string
+              const addressParts = [ward, city, country].filter(part => part);
+              if (addressParts.length > 0) {
+                setAddress(addressParts.join(', '));
+              } else {
+                setAddress('Address unavailable');
+              }
+            })
+            .catch(error => {
+              console.error('Error getting address:', error);
+              setAddress('Address unavailable');
+            });
         },
         (error) => {
           console.error('Error getting location:', error);
+          setAddress('Location unavailable');
         }
       );
+    } else {
+      setAddress('Geolocation not supported');
     }
   }, []);
 
@@ -271,8 +298,10 @@ const PetProfile = () => {
         <div className="profile-meta">
           <div className="location-info">
             <span className="meta-label">Location:</span>
-            {location ? (
-              <span>{location.latitude.toFixed(4)}, {location.longitude.toFixed(4)}</span>
+            {address ? (
+              <span>{address}</span>
+            ) : location ? (
+              <span>Getting address...</span>
             ) : (
               <span>Location unavailable</span>
             )}
