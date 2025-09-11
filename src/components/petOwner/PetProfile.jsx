@@ -358,6 +358,10 @@ const PetProfile = () => {
               controls 
               width="100%" 
               style={{ maxWidth: '500px', borderRadius: '8px' }}
+              autoPlay
+              loop
+              muted
+              playsInline
             >
               <source src="./assets/Videos/feed_cat.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -380,6 +384,10 @@ const PetProfile = () => {
                 controls 
                 width="100%" 
                 style={{ maxWidth: '500px', borderRadius: '8px' }}
+                autoPlay
+                loop
+                muted
+                playsInline
               >
                 <source src="./assets/Videos/Brushing.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -405,6 +413,10 @@ const PetProfile = () => {
                 controls 
                 width="100%" 
                 style={{ maxWidth: '500px', borderRadius: '8px' }}
+                autoPlay
+                loop
+                muted
+                playsInline
               >
                 <source src="./assets/Videos/bathing.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -455,6 +467,10 @@ const PetProfile = () => {
                 controls 
                 width="100%" 
                 style={{ maxWidth: '400px', borderRadius: '8px' }}
+                autoPlay
+                loop
+                muted
+                playsInline
               >
                 <source src="./assets/Videos/health-tips.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -498,6 +514,10 @@ const PetProfile = () => {
                 controls 
                 width="100%" 
                 style={{ maxWidth: '500px', borderRadius: '8px' }}
+                autoPlay
+                loop
+                muted
+                playsInline
               >
                 <source src="./assets/Videos/trainning_dog.mp4" type="video/mp4" />
                 Your browser does not support the video tag.

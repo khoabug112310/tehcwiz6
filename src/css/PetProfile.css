@@ -153,12 +153,29 @@
   align-items: start;
 }
 
+.feeding-chart {
+  grid-column: 1;
+  grid-row: 1;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid #e1e5eb;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
 .feeding-recommendations {
   grid-column: 1;
+  grid-row: 2;
+  background: white;
+  border: 1px solid #e1e5eb;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .feeding-video {
   grid-column: 2;
+  grid-row: 1 / 3;
   text-align: center;
   padding: 2rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -166,6 +183,8 @@
   border: 1px solid #e1e5eb;
   transition: all 0.3s ease;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 2rem;
 }
 
 .feeding-video:hover {
@@ -548,6 +567,12 @@
     gap: 1.5rem;
   }
   
+  .feeding-video {
+    position: static;
+    top: auto;
+    grid-row: auto;
+  }
+  
   .grooming-video video,
   .bathing-video video,
   .health-video video,
@@ -596,6 +621,11 @@
   .health-video,
   .training-video {
     grid-column: 1;
+  }
+  
+  .feeding-video {
+    position: static;
+    top: auto;
   }
   
   .grooming-video video,

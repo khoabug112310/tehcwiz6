@@ -55,11 +55,11 @@ const Feedback = () => {
     {
       id: 2,
       name: "Sơn tùng Mtp",
-      pet: "Mèo",
+      pet: "Dog",
       avatar: "MC",
       image: "./assets/pet-owner/sontung.jpg",
       rating: 5,
-      content: "The grooming tips saved me hundreds of dollars. My cat looks and feels better than ever. Highly recommend their services!"
+      content: "The grooming tips saved me hundreds of dollars. My Dog looks and feels better than ever. Highly recommend their services!"
     },
     {
       id: 3,
