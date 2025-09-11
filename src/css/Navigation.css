@@ -1,8 +1,7 @@
 /* Navigation Styles */
 .navigation {
-  background: linear-gradient(90deg, #3498db 0%, #2c3e50 100%);
+  background: #8DBCC7;
   padding: 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .navigation ul {
@@ -30,9 +29,10 @@
 }
 
 .nav-link:hover {
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
 .nav-link::before {
@@ -46,9 +46,9 @@
   transition: 0.5s;
 }
 
-.nav-link:hover::before {
+/* .nav-link:hover::before {
   left: 100%;
-}
+} */
 
 /* Responsive Design */
 @media (max-width: 768px) {

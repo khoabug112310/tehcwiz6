@@ -1,72 +1,75 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation.jsx';
-import ScrollingTicker from './components/ScrollingTicker.jsx';
-import './css/Global.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navigation from "./components/Navigation.jsx";
+import ScrollingTicker from "./components/ScrollingTicker.jsx";
+import "./css/Global.css";
 
 // Import page components
-import Home from './components/Home.jsx';
-import About from './components/About.jsx';
-import PetCare from './components/PetCare.jsx';
-import PetProfile from './components/PetProfile.jsx';
-import Products from './components/Products.jsx';
-import Emergency from './components/Emergency.jsx';
-import Feedback from './components/Feedback.jsx';
-import Contact from './components/Contact.jsx';
-import VetProfile from './components/VetProfile.jsx';
-import TimeSlots from './components/TimeSlots.jsx';
-import CaseStudies from './components/CaseStudies.jsx';
-import Gallery from './components/Gallery.jsx';
-import SuccessStories from './components/SuccessStories.jsx';
-import Events from './components/Events.jsx';
-import ShelterContact from './components/ShelterContact.jsx';
+import Home from "./components/Home.jsx";
+import About from "./components/About.jsx";
+import PetCare from "./components/PetCare.jsx";
+import PetProfile from "./components/PetProfile.jsx";
+import Products from "./components/Products.jsx";
+import Emergency from "./components/Emergency.jsx";
+import Feedback from "./components/Feedback.jsx";
+import Contact from "./components/Contact.jsx";
+import VetProfile from "./components/VetProfile.jsx";
+import TimeSlots from "./components/TimeSlots.jsx";
+import CaseStudies from "./components/CaseStudies.jsx";
+import Gallery from "./components/Gallery.jsx";
+import SuccessStories from "./components/SuccessStories.jsx";
+import Events from "./components/Events.jsx";
+import ShelterContact from "./components/ShelterContact.jsx";
 
 function App() {
   const [showPopup, setShowPopup] = useState(true);
-  const [userName, setUserName] = useState('');
-  const [userType, setUserType] = useState('');
+  const [userName, setUserName] = useState("");
+  const [userType, setUserType] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log('Form submitted', { userName, userType }); // Debug log
-    
+    console.log("Form submitted", { userName, userType }); // Debug log
+
     // Trim whitespace from inputs
     const trimmedName = userName.trim();
     const trimmedType = userType.trim();
-    
+
     if (trimmedName && trimmedType) {
-      console.log('Login successful'); // Debug log
+      console.log("Login successful"); // Debug log
       setIsLoggedIn(true);
       setShowPopup(false);
       // Save to localStorage for persistence
-      localStorage.setItem('userName', trimmedName);
-      localStorage.setItem('userType', trimmedType);
+      localStorage.setItem("userName", trimmedName);
+      localStorage.setItem("userType", trimmedType);
     } else {
-      console.log('Login failed: missing data', { userName: trimmedName, userType: trimmedType }); // Debug log
+      console.log("Login failed: missing data", {
+        userName: trimmedName,
+        userType: trimmedType,
+      }); // Debug log
       // Show an alert if form is incomplete
       if (!trimmedName) {
-        alert('Please enter your name');
+        alert("Please enter your name");
       } else if (!trimmedType) {
-        alert('Please select a user type');
+        alert("Please select a user type");
       }
     }
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    setUserName('');
-    setUserType('');
+    setUserName("");
+    setUserType("");
     setShowPopup(true);
     // Clear localStorage
-    localStorage.removeItem('userName');
-    localStorage.removeItem('userType');
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userType");
   };
 
   // Check if user is already logged in
   useEffect(() => {
-    const savedName = localStorage.getItem('userName');
-    const savedType = localStorage.getItem('userType');
+    const savedName = localStorage.getItem("userName");
+    const savedType = localStorage.getItem("userType");
     if (savedName && savedType) {
       setUserName(savedName);
       setUserType(savedType);
@@ -82,7 +85,11 @@ function App() {
           <div className="popup-overlay">
             <div className="popup-form">
               <div className="popup-logo-container">
-                <img src="/logo_furever_care_nonbackground.png" alt="FurEver Care Logo" className="popup-logo" />
+                <img
+                  src="/logo_furever_care_nonbackground.png"
+                  alt="FurEver Care Logo"
+                  className="popup-logo"
+                />
               </div>
               <p className="popup-subtitle">They Deserve Forever Love</p>
               <form onSubmit={handleLogin}>
@@ -104,7 +111,7 @@ function App() {
                         type="radio"
                         name="userType"
                         value="pet-owner"
-                        checked={userType === 'pet-owner'}
+                        checked={userType === "pet-owner"}
                         onChange={(e) => setUserType(e.target.value)}
                       />
                       Pet Owner
@@ -114,7 +121,7 @@ function App() {
                         type="radio"
                         name="userType"
                         value="veterinarian"
-                        checked={userType === 'veterinarian'}
+                        checked={userType === "veterinarian"}
                         onChange={(e) => setUserType(e.target.value)}
                       />
                       Veterinarian
@@ -124,7 +131,7 @@ function App() {
                         type="radio"
                         name="userType"
                         value="animal-shelter"
-                        checked={userType === 'animal-shelter'}
+                        checked={userType === "animal-shelter"}
                         onChange={(e) => setUserType(e.target.value)}
                       />
                       Animal Shelter
@@ -136,22 +143,31 @@ function App() {
             </div>
           </div>
         )}
-        
+
         {isLoggedIn && (
           <div>
             <header className="app-header">
               <div className="header-logo-container">
-                <img src="/logo_furever_care_nonbackground.png" alt="FurEver Care Logo" className="header-logo" />
+                <img
+                  src="/logo_furever_care_nonbackground.png"
+                  alt="FurEver Care Logo"
+                  className="header-logo"
+                />
               </div>
+              <Navigation userType={userType} />
               <div className="user-info">
                 <span>Welcome, {userName}!</span>
-                <button onClick={handleLogout} className="logout-btn">Logout</button>
+                <button onClick={handleLogout} className="logout-btn">
+                  Logout
+                </button>
               </div>
             </header>
-            <Navigation userType={userType} />
             <main>
               <Routes>
-                <Route path="/" element={<Home userName={userName} userType={userType} />} />
+                <Route
+                  path="/"
+                  element={<Home userName={userName} userType={userType} />}
+                />
                 <Route path="/about" element={<About />} />
                 <Route path="/pet-care" element={<PetCare />} />
                 <Route path="/pet-profile" element={<PetProfile />} />
@@ -171,8 +187,14 @@ function App() {
             <footer className="app-footer">
               <div className="footer-content">
                 <div className="footer-logo-container">
-                  <img src="/logo_furever_care_icon.png" alt="FurEver Care Icon" className="footer-logo" />
-                  <p className="footer-copyright">&copy; 2025 FurEver Care. They Deserve Forever Love.</p>
+                  <img
+                    src="/logo_furever_care_icon.png"
+                    alt="FurEver Care Icon"
+                    className="footer-logo"
+                  />
+                  <p className="footer-copyright">
+                    &copy; 2025 FurEver Care. They Deserve Forever Love.
+                  </p>
                 </div>
                 <div className="footer-links">
                   <a href="/about">About Us</a>
