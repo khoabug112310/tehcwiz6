@@ -3,12 +3,6 @@
 .carousel {
   display: flex;
   padding-top: 60px;
-  /* background: #e9e8d4; */
-  /* background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.92)),
-    url(../img/banner.jpg); */
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: center;
-  background-attachment: fixed;
 }
 .carousel .container {
   display: flex;
