@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Navigation from "./components/Navigation.jsx";
 import ScrollingTicker from "./components/ScrollingTicker.jsx";
 import "./App.css";
@@ -173,11 +173,13 @@ function App() {
           <div>
             <header className="app-header">
               <div className="header-logo-container">
-                <img
-                  src="/image/logo/logo_furever_care_nonbackground.png"
-                  alt="FurEver Care Logo"
-                  className="header-logo"
-                />
+                <Link to="/">
+                  <img
+                    src="/image/logo/logo_furever_care_nonbackground.png"
+                    alt="FurEver Care Logo"
+                    className="header-logo"
+                  />
+                </Link>
               </div>
               <Navigation userType={userType} />
               <div className="user-info">
