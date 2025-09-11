@@ -105,7 +105,10 @@ const Events = () => {
           filteredEvents.map((event, index) => (
             <div key={event.id} className="event-card" style={{animationDelay: `${index * 0.1}s`}}>
               <div className="event-image">
-                <img src={`https://picsum.photos/seed/event${event.id}/600/400`} alt={event.title} />
+               <img
+  src={event.image ? `/${event.image}` : "/assets/animalShelter/eventsPictures/interfest2026.png"}
+  alt={event.title}
+/>
               </div>
               <div className="event-content">
                 <span className="event-date">{formatDate(event.date)}</span>

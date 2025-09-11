@@ -6,7 +6,7 @@
     "breed": "Golden Retriever",
     "description": "Friendly and energetic dog who loves to play fetch",
     "type": "dog",
-    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+    "image":"assets/animalShelter/galleryPictures/Dog_Friendlyandenergetic.png"
   },
   {
     "id": 2,
@@ -15,16 +15,16 @@
     "breed": "Domestic Shorthair",
     "description": "Playful kitten who enjoys cuddles and chasing toys",
     "type": "cat",
-    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+    "image": "assets/animalShelter/galleryPictures/Cat_Playfulkitten.jpg"
   },
   {
     "id": 3,
     "name": "Oreo",
     "age": "3 years",
-    "breed": "Mixed Breed",
+    "breed": " Mixed Breed ",
     "description": "Calm and gentle dog who is great with children",
     "type": "dog",
-    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+    "image": "assets/animalShelter/galleryPictures/Dog_Calmandgentle.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "breed": "Rabbit",
     "description": "Sweet bunny who loves fresh vegetables and hopping around",
     "type": "rabbit",
-    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+    "image": "assets/animalShelter/galleryPictures/Bunny_Lovesfreshvegetables.jpg"
   },
   {
     "id": 5,
@@ -42,6 +42,6 @@
     "breed": "Persian Cat",
     "description": "Beautiful long-haired cat who enjoys sunny spots",
     "type": "cat",
-    "image": "https://images.unsplash.com/photo-1589924671690-7c1d4ce9718d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+    "image": "assets/animalShelter/galleryPictures/Cat_Beautifullonghaired.jpg"
   }
 ]
