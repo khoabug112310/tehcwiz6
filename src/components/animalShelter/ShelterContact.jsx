@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import contactData from '../data/contactInfo.json';
-import '../css/Contact.css';
+import React, { useState } from 'react';
+import contactData from '../../data/contactInfo.json';
+import '../../css/ShelterContact.css';
 
-const Contact = () => {
-  const [currentTime, setCurrentTime] = useState(new Date());
-  const [location, setLocation] = useState(null);
+const ShelterContact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,35 +10,6 @@ const Contact = () => {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
-
-  // Update time every second
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  // Get user location
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-          });
-        },
-        (error) => {
-          console.log('Error getting location:', error);
-          setLocation({ latitude: 40.7128, longitude: -74.0060 }); // Default to New York
-        }
-      );
-    } else {
-      setLocation({ latitude: 40.7128, longitude: -74.0060 }); // Default to New York
-    }
-  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -84,11 +53,15 @@ const Contact = () => {
     }, 3000);
   };
 
+  const handleVolunteer = () => {
+    alert('Thank you for your interest in volunteering! We will contact you soon with more information.');
+  };
+
   return (
-    <div className="contact-container">
-      <div className="contact-header">
-        <h2>Contact Us</h2>
-        <p>We're here to help you and your furry friends. Reach out to us through any of the channels below.</p>
+    <div className="shelter-contact-container">
+      <div className="shelter-contact-header">
+        <h2>Animal Shelter Contact</h2>
+        <p>Get in touch with us for adoptions, volunteering, or questions.</p>
       </div>
 
       <div className="contact-content">
@@ -204,31 +177,12 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="team-section">
-        <h3>Our Team</h3>
-        <div className="team-grid">
-          {contactData.team.map((member) => (
-            <div key={member.id} className="team-member">
-              <div className="team-member-avatar">
-                {member.avatar}
-              </div>
-              <h4>{member.name}</h4>
-              <p className="team-member-role">{member.role}</p>
-              <p className="team-member-contact">
-                <span>📧 {member.email}</span>
-                <span>📞 {member.phone}</span>
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="real-time-info">
-        <h3>Real-time Information</h3>
-        <p><strong>Current Time:</strong> {currentTime.toLocaleTimeString()}</p>
-        {location && (
-          <p><strong>Your Location:</strong> {location.latitude.toFixed(4)}, {location.longitude.toFixed(4)}</p>
-        )}
+      <div className="volunteer-section">
+        <h3>Volunteer With Us</h3>
+        <p>Make a difference in the lives of animals by volunteering at our shelter. We welcome volunteers of all ages and backgrounds to help with animal care, events, and administrative tasks.</p>
+        <button className="volunteer-button" onClick={handleVolunteer}>
+          Sign Up to Volunteer
+        </button>
       </div>
 
       <div className="map-section">
@@ -243,4 +197,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ShelterContact;

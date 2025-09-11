@@ -26,6 +26,7 @@ function App() {
   const [userName, setUserName] = useState("");
   const [userType, setUserType] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -77,6 +78,28 @@ function App() {
       setShowPopup(false);
     }
   }, []);
+
+  // Handle scroll to top button visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <Router>
@@ -204,6 +227,13 @@ function App() {
               </div>
             </footer>
             <ScrollingTicker />
+            
+            {/* Scroll to Top Button */}
+            {showScrollTop && (
+              <button className="scroll-to-top" onClick={scrollToTop}>
+                ↑
+              </button>
+            )}
           </div>
         )}
       </div>

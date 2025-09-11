@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import vetsData from '../data/veterinarians.json';
-import '../css/TimeSlots.css';
+import vetsData from '../../data/veterinarians.json';
+import '../../css/TimeSlots.css';
 
 const TimeSlots = () => {
   const [selectedVet, setSelectedVet] = useState('');

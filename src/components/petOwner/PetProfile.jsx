@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../css/PetProfile.css';
+import '../../css/PetProfile.css';
 
 const PetProfile = () => {
   const [petProfile, setPetProfile] = useState(null);
