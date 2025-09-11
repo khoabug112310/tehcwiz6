@@ -60,7 +60,7 @@ const Gallery = () => {
   return (
     <div className="gallery-container">
       <div className="gallery-header">
-        <h2>Pet Adoption Gallery</h2>
+        <h2 className='fs-2 fw-bold'>Pet Adoption Gallery</h2>
         <p>Find your new best friend from our available pets for adoption.</p>
       </div>
       

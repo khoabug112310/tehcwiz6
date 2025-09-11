@@ -45,7 +45,7 @@ const TimeSlots = () => {
   return (
     <div className="time-slots-container">
       <div className="time-slots-header">
-        <h2>Book an Appointment</h2>
+        <h2 className='fw-bold fs-1'>Book an Appointment</h2>
         <p>Select a veterinarian, date, and available time slot to schedule your pet's appointment.</p>
       </div>
 

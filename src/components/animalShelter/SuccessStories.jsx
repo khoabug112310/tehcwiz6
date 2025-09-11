@@ -14,7 +14,7 @@ const SuccessStories = () => {
   return (
     <div className="success-stories-container">
       <div className="success-stories-header">
-        <h2>Success Stories</h2>
+        <h2 className='fs-1 fw-bold'>Success Stories</h2>
         <p>Hear about the happy endings for pets who found their forever homes.</p>
       </div>
       

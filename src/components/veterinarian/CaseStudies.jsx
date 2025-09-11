@@ -15,7 +15,7 @@ const CaseStudies = () => {
   return (
     <div className="case-studies-container">
       <div className="case-studies-header">
-        <h2>Veterinary Case Studies</h2>
+        <h2 className='fs-1 fw-bold'>Veterinary Case Studies</h2>
         <p>Explore real examples of pet medical cases and treatments from our veterinary practice.</p>
       </div>
 
