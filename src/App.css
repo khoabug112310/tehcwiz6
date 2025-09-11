@@ -125,7 +125,7 @@ body {
   padding: 0px 30px;
   text-transform: uppercase;
   background-color: #205781;
-  border: 1px solid;
+  border: 1px solid #205781;
   cursor: pointer;
   color: #fff;
   border-radius: 5px;
@@ -135,8 +135,9 @@ body {
   -o-border-radius: 5px;
 }
 .button2:hover {
-  background-color: #eef2f7;
-  color: #205781;
+  background-color: #073e6c;
+  border-color: #073e6c;
+  color: #fff;
 }
 .button3 {
   transition: 0.3s ease-out;
