@@ -144,6 +144,10 @@
   -ms-transform: translate(0, 0);
   -o-transform: translate(0, 0);
 }
+.promise-right {
+  margin-top: 150px;
+}
+
 .promise .promise-right video {
   width: 90%;
   border-radius: 25px;
