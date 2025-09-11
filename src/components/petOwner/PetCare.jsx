@@ -231,32 +231,61 @@ const PetCare = () => {
         <h3>Feeding Guide</h3>
         {savedProfile ? (
           <div className="feeding-guide-content">
-            <h4>{feedingGuide.title}</h4>
-            <p>{feedingGuide.content}</p>
-            <div className="feeding-tips">
-              <h5>Feeding Tips:</h5>
-              <ul>
-                <li>Always provide fresh, clean water</li>
-                <li>Feed at consistent times to establish a routine</li>
-                <li>Monitor your pet's weight and adjust portions accordingly</li>
-                <li>Avoid feeding table scraps or human foods that may be harmful</li>
-                <li>Consult your veterinarian about special dietary needs</li>
-              </ul>
+            <div className="feeding-top-section">
+              <div className="nutritional-requirements">
+                <h4>Nutritional Requirements for {savedProfile.type}s</h4>
+                <div className="nutritional-info">
+                  <p>{feedingGuide.content}</p>
+                  <div className="nutrition-highlights">
+                    <div className="nutrition-item">
+                      <span className="nutrition-label">Protein:</span>
+                      <span className="nutrition-value">25-30%</span>
+                    </div>
+                    <div className="nutrition-item">
+                      <span className="nutrition-label">Fat:</span>
+                      <span className="nutrition-value">15-20%</span>
+                    </div>
+                    <div className="nutrition-item">
+                      <span className="nutrition-label">Carbs:</span>
+                      <span className="nutrition-value">50-55%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="feeding-recommendations">
+                <h4>Feeding Recommendations</h4>
+                <div className="feeding-tips">
+                  <ul>
+                    <li>Always provide fresh, clean water</li>
+                    <li>Feed at consistent times to establish a routine</li>
+                    <li>Monitor your pet's weight and adjust portions accordingly</li>
+                    <li>Avoid feeding table scraps or human foods that may be harmful</li>
+                    <li>Consult your veterinarian about special dietary needs</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div className="feeding-video">
-              <h5>Feeding Demonstration:</h5>
-              <video 
-                controls 
-                width="100%" 
-                style={{ maxWidth: '500px', borderRadius: '8px' }}
-                
-              >
-                <source src="./assets/Videos/feed_cat.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <p className="video-description">
-                Learn proper feeding techniques and portion control for your {savedProfile.type}.
-              </p>
+            
+            <div className="feeding-video-section">
+              <div className="feeding-video">
+                <h5>Feeding Demonstration:</h5>
+                <video 
+                  controls 
+                  width="100%" 
+                  style={{ maxWidth: '100%', borderRadius: '12px' }}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="./assets/Videos/feed_cat.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <p className="video-description">
+                  Learn proper feeding techniques and portion control for your {savedProfile.type}.
+                </p>
+              </div>
             </div>
           </div>
         ) : (
@@ -280,7 +309,10 @@ const PetCare = () => {
                 controls 
                 width="100%" 
                 style={{ maxWidth: '500px', borderRadius: '8px' }}
-                
+                autoPlay
+                loop
+                muted
+                playsInline
               >
                 <source src="./assets/Videos/Brushing.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -313,7 +345,10 @@ const PetCare = () => {
                   controls 
                   width="100%" 
                   style={{ maxWidth: '500px', borderRadius: '8px' }}
-                  
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 >
                   <source src="./assets/Videos/health-tips.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
@@ -350,7 +385,10 @@ const PetCare = () => {
                   controls 
                   width="100%" 
                   style={{ maxWidth: '500px', borderRadius: '8px' }}
-                  
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 >
                   <source src="./assets/Videos/trainning_dog.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
