@@ -4,15 +4,27 @@ import '../../css/PetProfile.css';
 const PetProfile = () => {
   const [petProfile, setPetProfile] = useState(null);
   const [location, setLocation] = useState(null);
+  const [address, setAddress] = useState(null);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [lastUpdated, setLastUpdated] = useState(null);
 
   // Load saved profile from localStorage on component mount
   useEffect(() => {
-    const saved = localStorage.getItem('petProfile');
-    if (saved) {
-      setPetProfile(JSON.parse(saved));
-      setLastUpdated(new Date(JSON.parse(saved).lastUpdated || Date.now()));
+    // For backward compatibility, check for single pet profile
+    const singlePet = localStorage.getItem('petProfile');
+    if (singlePet) {
+      const petData = JSON.parse(singlePet);
+      setPetProfile(petData);
+      setLastUpdated(new Date(petData.lastUpdated || Date.now()));
+      return;
+    }
+    
+    // Check for multi-pet profiles
+    const pets = JSON.parse(localStorage.getItem('petProfiles') || '[]');
+    if (pets.length > 0) {
+      // Use the first pet as the default
+      setPetProfile(pets[0]);
+      setLastUpdated(new Date(pets[0].lastUpdated || Date.now()));
     }
   }, []);
 
@@ -21,15 +33,41 @@ const PetProfile = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setLocation({
+          const locationData = {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
-          });
+          };
+          setLocation(locationData);
+          
+          // Convert coordinates to address using BigDataCloud API
+          fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en`)
+            .then(response => response.json())
+            .then(data => {
+              // Extract detailed address components
+              const ward = data.locality || '';
+              const city = data.city || data.locality || '';
+              const country = data.countryName || '';
+              
+              // Create detailed address string
+              const addressParts = [ward, city, country].filter(part => part);
+              if (addressParts.length > 0) {
+                setAddress(addressParts.join(', '));
+              } else {
+                setAddress('Address unavailable');
+              }
+            })
+            .catch(error => {
+              console.error('Error getting address:', error);
+              setAddress('Address unavailable');
+            });
         },
         (error) => {
           console.error('Error getting location:', error);
+          setAddress('Location unavailable');
         }
       );
+    } else {
+      setAddress('Geolocation not supported');
     }
   }, []);
 
@@ -260,8 +298,10 @@ const PetProfile = () => {
         <div className="profile-meta">
           <div className="location-info">
             <span className="meta-label">Location:</span>
-            {location ? (
-              <span>{location.latitude.toFixed(4)}, {location.longitude.toFixed(4)}</span>
+            {address ? (
+              <span>{address}</span>
+            ) : location ? (
+              <span>Getting address...</span>
             ) : (
               <span>Location unavailable</span>
             )}
@@ -358,6 +398,10 @@ const PetProfile = () => {
               controls 
               width="100%" 
               style={{ maxWidth: '500px', borderRadius: '8px' }}
+              autoPlay
+              loop
+              muted
+              playsInline
             >
               <source src="./assets/Videos/feed_cat.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -380,6 +424,10 @@ const PetProfile = () => {
                 controls 
                 width="100%" 
                 style={{ maxWidth: '500px', borderRadius: '8px' }}
+                autoPlay
+                loop
+                muted
+                playsInline
               >
                 <source src="./assets/Videos/Brushing.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -405,6 +453,10 @@ const PetProfile = () => {
                 controls 
                 width="100%" 
                 style={{ maxWidth: '500px', borderRadius: '8px' }}
+                autoPlay
+                loop
+                muted
+                playsInline
               >
                 <source src="./assets/Videos/bathing.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -455,6 +507,10 @@ const PetProfile = () => {
                 controls 
                 width="100%" 
                 style={{ maxWidth: '400px', borderRadius: '8px' }}
+                autoPlay
+                loop
+                muted
+                playsInline
               >
                 <source src="./assets/Videos/health-tips.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -498,6 +554,10 @@ const PetProfile = () => {
                 controls 
                 width="100%" 
                 style={{ maxWidth: '500px', borderRadius: '8px' }}
+                autoPlay
+                loop
+                muted
+                playsInline
               >
                 <source src="./assets/Videos/trainning_dog.mp4" type="video/mp4" />
                 Your browser does not support the video tag.

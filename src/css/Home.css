@@ -3,12 +3,6 @@
 .carousel {
   display: flex;
   padding-top: 60px;
-  /* background: #e9e8d4; */
-  /* background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.92)),
-    url(../img/banner.jpg); */
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: center;
-  background-attachment: fixed;
 }
 .carousel .container {
   display: flex;
@@ -52,24 +46,27 @@
 }
 
 .feature-card {
-  background: #f8f9fa;
+  background: #fff;
   border-radius: 10px;
   padding: 1.5rem;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e1e5eb;
+  border: 1px solid #205781;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  background: white;
+  box-shadow: 12px 12px 0 2px #205781;
+  border-radius: 20px;
+  transition: all ease 0.3s;
 }
 
 .feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #3498db;
+}
+.feature-icon img {
+  width: 250px;
 }
 
 .feature-card h4 {
@@ -109,10 +106,16 @@
   height: 100%;
 }
 
-
 /* promise */
 .promise .accordion-menu {
   position: relative;
+}
+.promise .accordion-menu li {
+  margin: 20px 20px 0px 0px;
+  padding: 2vw;
+  background-color: #f8f9fa;
+  box-shadow: 12px 12px 0 2px #205781;
+  border-radius: 20px;
 }
 .promise h2 {
   font-size: 20px;
@@ -141,10 +144,18 @@
   -ms-transform: translate(0, 0);
   -o-transform: translate(0, 0);
 }
-.promise {
-
+.promise .promise-right video {
+  width: 90%;
+  border-radius: 25px;
 }
- 
+
+.ready {
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .home-container {

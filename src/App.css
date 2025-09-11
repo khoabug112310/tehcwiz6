@@ -30,7 +30,7 @@ p {
 
 body {
   position: relative;
-  background-color: #e9e8d4;
+  background-color: #e4e9f2;
   color: #5a5a5a;
 }
 
@@ -71,7 +71,6 @@ body {
 
 .App {
   text-align: center;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
   font-family: "Arial", sans-serif;
   display: flex;
@@ -125,7 +124,7 @@ body {
   padding: 0px 30px;
   text-transform: uppercase;
   background-color: #205781;
-  border: 1px solid;
+  border: 1px solid #205781;
   cursor: pointer;
   color: #fff;
   border-radius: 5px;
@@ -135,8 +134,9 @@ body {
   -o-border-radius: 5px;
 }
 .button2:hover {
-  background-color: #eef2f7;
-  color: #205781;
+  background-color: #073e6c;
+  border-color: #073e6c;
+  color: #fff;
 }
 .button3 {
   transition: 0.3s ease-out;
@@ -429,7 +429,7 @@ body {
   accent-color: #3498db;
 }
 
-/* button {
+.button4 {
   background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
   color: white;
   border: none;
@@ -446,15 +446,15 @@ body {
   z-index: 10;
 }
 
-button:hover {
+.button4:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
 }
 
-button:active {
+.button4:active {
   transform: translateY(0);
   box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
-} */
+}
 
 /* Scrolling Ticker */
 .scrolling-ticker {
@@ -577,14 +577,6 @@ button:active {
 
   .header-title {
     font-size: 2rem;
-  }
-
-  .navigation ul {
-    flex-direction: column;
-  }
-
-  .nav-link {
-    padding: 0.75rem 1rem;
   }
 
   .footer-content {

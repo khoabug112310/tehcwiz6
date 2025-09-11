@@ -16,7 +16,7 @@
   color: white;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .pet-care-section {
@@ -33,7 +33,7 @@
 }
 
 .pet-care-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -62,7 +62,7 @@
 }
 
 .pet-care-section h3::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1px;
   left: 50%;
@@ -136,6 +136,70 @@
   box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
 }
 
+.pet-care-container .form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pet-care-container .cancel-button {
+  background: #95a5a6;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.pet-care-container .cancel-button:hover {
+  background: #7f8c8d;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(149, 165, 166, 0.3);
+}
+
+.pet-care-container .no-profile {
+  text-align: center;
+  padding: 2rem;
+}
+
+.pet-care-container .no-profile p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+}
+
+.pet-care-container .add-pet-button {
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.pet-care-container .add-pet-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+.pet-care-container .profile-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.pet-care-container .profile-actions button {
+  flex: 1;
+}
+
 /* Saved Profile Styles */
 .saved-profile {
   text-align: center;
@@ -147,7 +211,6 @@
   align-items: center;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #e1e5eb;
 }
 
 .profile-header h4 {
@@ -288,8 +351,6 @@
   background: white;
   padding: 1.2rem 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e1e5eb;
   margin: 0;
   list-style: none;
   transition: all 0.3s ease;
@@ -297,13 +358,6 @@
   font-size: 0.95rem;
 }
 
-.grooming-tips ul:hover,
-.grooming-guide-content ul:hover,
-.health-tips-content ul:hover,
-.training-tips-content ul:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-}
 
 .feeding-tips li,
 .grooming-tips li,
@@ -331,7 +385,7 @@
 .grooming-guide-content li:before,
 .health-tips-content li:before,
 .training-tips-content li:before {
-  content: '✓';
+  content: "✓";
   color: #27ae60;
   font-weight: bold;
   font-size: 1rem;
@@ -437,7 +491,7 @@
     height: calc(100vw * 9 / 16);
     max-height: 280px;
   }
-  
+
   @media (min-width: 1024px) {
     .grooming-video video,
     .health-video video,
@@ -446,7 +500,7 @@
       height: 320px;
     }
   }
-  
+
   @media (min-width: 1440px) {
     .grooming-video video,
     .health-video video,
@@ -499,7 +553,7 @@
 
 .health-resources h5::after,
 .training-resources h5::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -3px;
   left: 50%;
@@ -590,11 +644,21 @@
   }
 }
 
-.pet-care-section:nth-child(2) { animation-delay: 0.1s; }
-.pet-care-section:nth-child(3) { animation-delay: 0.2s; }
-.pet-care-section:nth-child(4) { animation-delay: 0.3s; }
-.pet-care-section:nth-child(5) { animation-delay: 0.4s; }
-.pet-care-section:nth-child(6) { animation-delay: 0.5s; }
+.pet-care-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.pet-care-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.pet-care-section:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.pet-care-section:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.pet-care-section:nth-child(6) {
+  animation-delay: 0.5s;
+}
 
 /* Desktop/PC Responsive Design */
 @media (min-width: 1024px) {
@@ -1143,7 +1207,7 @@
     padding: 1.5rem;
     margin-bottom: 2rem;
   }
-  
+
   .pet-care-section {
     padding: 1.8rem;
     margin-bottom: 2.5rem;
@@ -1249,7 +1313,7 @@
     width: 100%;
     text-align: center;
   }
-  
+
   .grooming-video video,
   .health-video video,
   .training-video video,
@@ -1277,7 +1341,7 @@
     max-width: 100%;
     text-align: left;
   }
-  
+
   /* Resources sections for mobile */
   .health-resources,
   .training-resources {
@@ -1293,7 +1357,7 @@
     margin-bottom: 1.2rem;
     padding: 1rem;
   }
-  
+
   /* Audio buttons for mobile */
   .audio-button {
     padding: 1rem 2rem;
@@ -1356,5 +1420,13 @@
   .text-tip p {
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  .pet-care-container .form-buttons {
+    flex-direction: column;
+  }
+
+  .pet-care-container .profile-actions {
+    flex-direction: column;
   }
 }

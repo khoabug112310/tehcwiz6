@@ -28,7 +28,7 @@ const Emergency = () => {
           <h3>Emergency Hotline</h3>
           <p>For immediate assistance with any pet emergency, contact our 24/7 emergency hotline.</p>
           <div className="emergency-number">+84967373148</div>
-          <button className="emergency-button" onClick={() => handleCall("+84967373148")}>
+          <button className="button2" onClick={() => handleCall("+84967373148")}>
             Call Now
           </button>
         </div>
@@ -38,7 +38,7 @@ const Emergency = () => {
           <h3>Emergency Vet</h3>
           <p>Our certified emergency veterinary team is available around the clock for critical care.</p>
           <div className="emergency-number">+84702513458</div>
-          <button className="emergency-button" onClick={() => handleCall("+84702513458")}>
+          <button className="button2" onClick={() => handleCall("+84702513458")}>
             Call Now
           </button>
         </div>
@@ -46,9 +46,9 @@ const Emergency = () => {
         <div className="emergency-card">
           <div className="emergency-icon">💊</div>
           <h3>Poison Control</h3>
-          <p>Immediate advice on toxic substances and poisoning emergencies for pets.</p>
+          <p>Immediate advice on toxic substances and poisoning emergencies for pets.Immediate advice</p>
           <div className="emergency-number">+84776391599</div>
-          <button className="emergency-button" onClick={() => handleCall("+84776391599")}>
+          <button className="button2" onClick={() => handleCall("+84776391599")}>
             Call Now
           </button>
         </div>
@@ -56,28 +56,31 @@ const Emergency = () => {
 
       <div className="symptoms-section">
         <h3>Emergency Symptoms to Watch For</h3>
-        <div className="symptoms-grid">
-          {symptoms.map((symptom) => (
-            <div className="symptom-card" key={symptom.id}>
-              <h4>{symptom.title}</h4>
-              <p>{symptom.description}</p>
+        <div className="symptoms-content">
+          <div className="symptoms-text">
+            <div className="symptoms-grid">
+              {symptoms.slice(0, 4).map((symptom) => (
+                <div className="symptom-card" key={symptom.id}>
+                  <h4>{symptom.title}</h4>
+                  <p>{symptom.description}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="guidelines-section">
-        <h3>Emergency Response Guidelines</h3>
-        <div className="guidelines-steps">
-          {guidelines.map((guideline) => (
-            <div className="guideline-step" key={guideline.id}>
-              <div className="step-number">{guideline.id}</div>
-              <div className="step-content">
-                <h4>{guideline.title}</h4>
-                <p>{guideline.description}</p>
-              </div>
+          </div>
+          <div className="symptoms-video">
+            <div className="video-container">
+              <iframe 
+                width="560" 
+                height="350" 
+                src="https://www.youtube.com/embed/eOY_qUSw2WA?si=hpIRj7HD9WPnjira&autoplay=1&loop=1&playlist=eOY_qUSw2WA&mute=1" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+              ></iframe>
             </div>
-          ))}
+          </div>
         </div>
       </div>
 
@@ -102,7 +105,7 @@ const Emergency = () => {
                 <td>{contact.description}</td>
                 <td>
                   <button 
-                    className="emergency-button" 
+                    className="button2" 
                     onClick={() => handleCall(contact.phone)}
                     style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}
                   >

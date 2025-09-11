@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Navigation from "./components/Navigation.jsx";
 import ScrollingTicker from "./components/ScrollingTicker.jsx";
 import "./App.css";
 
 // Import page components
-import Home from "./components/Home.jsx";
-import About from "./components/petOwner/About.jsx";
-import PetCare from "./components/petOwner/PetCare.jsx";
-import PetProfile from "./components/petOwner/PetProfile.jsx";
-import Products from "./components/petOwner/Products.jsx";
-import Emergency from "./components/petOwner/Emergency.jsx";
-import Feedback from "./components/petOwner/Feedback.jsx";
-import Contact from "./components/petOwner/Contact.jsx";
-import VetProfile from "./components/veterinarian/VetProfile.jsx";
-import TimeSlots from "./components/veterinarian/TimeSlots.jsx";
-import CaseStudies from "./components/veterinarian/CaseStudies.jsx";
-import Gallery from "./components/animalShelter/Gallery.jsx";
-import SuccessStories from "./components/animalShelter/SuccessStories.jsx";
-import Events from "./components/animalShelter/Events.jsx";
-import ShelterContact from "./components/animalShelter/ShelterContact.jsx";
+import Home from './components/Home.jsx';
+import About from './components/petOwner/About.jsx';
+import PetCare from './components/petOwner/PetCare.jsx';
+import PetProfile from './components/petOwner/PetProfile.jsx';
+import PetList from './components/petOwner/PetList.jsx';
+import FormAdd from './components/petOwner/FormAdd.jsx';
+import Products from './components/petOwner/Products.jsx';
+import Emergency from './components/petOwner/Emergency.jsx';
+import Feedback from './components/petOwner/Feedback.jsx';
+import Contact from './components/petOwner/Contact.jsx';
+import VetProfile from './components/veterinarian/VetProfile.jsx';
+import TimeSlots from './components/veterinarian/TimeSlots.jsx';
+import CaseStudies from './components/veterinarian/CaseStudies.jsx';
+import Gallery from './components/animalShelter/Gallery.jsx';
+import SuccessStories from './components/animalShelter/SuccessStories.jsx';
+import Events from './components/animalShelter/Events.jsx';
+import ShelterContact from './components/animalShelter/ShelterContact.jsx';
 
 function App() {
   const [showPopup, setShowPopup] = useState(true);
@@ -161,7 +163,7 @@ function App() {
                     </label>
                   </div>
                 </div>
-                <button type="submit">Enter</button>
+                <button className="button4" type="submit">Enter</button>
               </form>
             </div>
           </div>
@@ -171,29 +173,30 @@ function App() {
           <div>
             <header className="app-header">
               <div className="header-logo-container">
-                <img
-                  src="/image/logo/logo_furever_care_nonbackground.png"
-                  alt="FurEver Care Logo"
-                  className="header-logo"
-                />
+                <Link to="/">
+                  <img
+                    src="/image/logo/logo_furever_care_nonbackground.png"
+                    alt="FurEver Care Logo"
+                    className="header-logo"
+                  />
+                </Link>
               </div>
               <Navigation userType={userType} />
               <div className="user-info">
                 <span>Welcome, {userName}!</span>
-                <button onClick={handleLogout} className="logout-btn">
+                <button onClick={handleLogout} className="button1">
                   Logout
                 </button>
               </div>
             </header>
             <main>
               <Routes>
-                <Route
-                  path="/"
-                  element={<Home userName={userName} userType={userType} />}
-                />
+                <Route path="/" element={<Home userName={userName} userType={userType} />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/pet-care" element={<PetCare />} />
                 <Route path="/pet-profile" element={<PetProfile />} />
+                <Route path="/pet-list" element={<PetList />} />
+                <Route path="/form-add" element={<FormAdd />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/emergency" element={<Emergency />} />
                 <Route path="/feedback" element={<Feedback />} />

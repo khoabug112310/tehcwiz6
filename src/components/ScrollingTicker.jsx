@@ -3,7 +3,8 @@ import '../css/ScrollingTicker.css';
 
 const ScrollingTicker = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [location, setLocation] = useState({ latitude: 40.7128, longitude: -74.0060 });
+  // const [location, setLocation] = useState(null);
+  const [address, setAddress] = useState(null);
 
   // Update time every second
   useEffect(() => {
@@ -14,22 +15,53 @@ const ScrollingTicker = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Get user location (simplified for demo)
+  // Get user's location and convert to address
   useEffect(() => {
-    // In a real app, we would use the Geolocation API
-    // For demo purposes, we'll use a default location
-    setLocation({
-      latitude: 40.7128,
-      longitude: -74.0060
-    });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          // const locationData = {
+          //   latitude: position.coords.latitude,
+          //   longitude: position.coords.longitude
+          // };
+          // setLocation(locationData);
+          
+          // Convert coordinates to address using BigDataCloud API
+          fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en`)
+            .then(response => response.json())
+            .then(data => {
+              // Extract detailed address components
+              const street = data.locality || '';
+              const city = data.city || data.locality || '';
+              const country = data.countryName || '';
+              
+              // Create detailed address string
+              const addressParts = [street, city, country].filter(part => part);
+              if (addressParts.length > 0) {
+                setAddress(addressParts.join(', '));
+              } else {
+                setAddress('Address unavailable');
+              }
+            })
+            .catch(error => {
+              console.error('Error getting address:', error);
+              setAddress('Address unavailable');
+            });
+        },
+        (error) => {
+          console.error('Error getting location:', error);
+          setAddress('Location unavailable');
+        }
+      );
+    } else {
+      setAddress('Geolocation not supported');
+    }
   }, []);
 
   // Sample updates for the ticker
   const updates = [
-    "New pet products arriving this week!",
-    "Adoption event this Saturday from 10am-4pm",
     "Free vaccination clinic next Monday",
-    `${currentTime.toLocaleDateString()} - ${currentTime.toLocaleTimeString()} - Location: ${location.latitude.toFixed(4)}, ${location.longitude.toFixed(4)}`
+    `${currentTime.toLocaleDateString()} - ${currentTime.toLocaleTimeString()} - Location: ${address || 'Getting location...'}`
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,10 +70,10 @@ const ScrollingTicker = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % updates.length);
-    }, 3000);
+    }, 1000);
 
     return () => clearInterval(interval);
-  }, [updates.length]);
+  }, [updates.length, address, currentTime]);
 
   return (
     <div className="scrolling-ticker">
