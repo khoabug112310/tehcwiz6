@@ -180,7 +180,7 @@ function App() {
               <Navigation userType={userType} />
               <div className="user-info">
                 <span>Welcome, {userName}!</span>
-                <button onClick={handleLogout} className="logout-btn">
+                <button onClick={handleLogout} className="button1">
                   Logout
                 </button>
               </div>
