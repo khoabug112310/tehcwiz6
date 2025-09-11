@@ -149,6 +149,13 @@
   justify-content: center;
 }
 
+.team-member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .placeholder-avatar {
   font-size: 2rem;
   font-weight: bold;
@@ -219,6 +226,70 @@
   margin: 0.5rem 0;
 }
 
+/* Map Section Styles */
+.location-info {
+  text-align: center;
+}
+
+.address-text {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f1f8ff 100%);
+  border-radius: 10px;
+  border-left: 4px solid #3498db;
+}
+
+.address-text strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.map-container {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  border-radius: 12px;
+}
+
+.location-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.location-details p {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0;
+  font-size: 1rem;
+  color: #34495e;
+  border-left: 3px solid #3498db;
+  transition: all 0.3s ease;
+}
+
+.location-details p:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 /* Responsive Design for About Page */
 @media (max-width: 768px) {
   .about-page {
@@ -241,5 +312,18 @@
   .team-members,
   .values-list {
     grid-template-columns: 1fr;
+  }
+  
+  .map-container iframe {
+    height: 250px;
+  }
+  
+  .location-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .address-text {
+    font-size: 1.1rem;
+    padding: 0.8rem;
   }
 }

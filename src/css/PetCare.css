@@ -6,42 +6,74 @@
   animation: contentAppear 0.8s ease-out;
 }
 
+.pet-care-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
 .pet-care-section {
   background: white;
-  border-radius: 15px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e1e5eb;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.pet-care-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db 0%, #2c3e50 50%, #27ae60 100%);
 }
 
 .pet-care-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .pet-care-section h3 {
   color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
+  margin: 0 0 2rem 0;
+  font-size: 2rem;
+  font-weight: 700;
   text-align: center;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  border: 1px solid #e1e5eb;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .pet-care-section h3::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
+  width: 100px;
+  height: 4px;
   background: linear-gradient(90deg, #3498db, #2c3e50);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
+/* Pet Profile Form Styles */
 .pet-profile-form {
   display: grid;
   gap: 1.5rem;
@@ -104,6 +136,7 @@
   box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
 }
 
+/* Saved Profile Styles */
 .saved-profile {
   text-align: center;
 }
@@ -177,157 +210,1151 @@
   box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
 }
 
+/* Section Content Styling */
+.feeding-guide-content,
+.grooming-guide-content,
+.health-tips-content,
+.training-tips-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .feeding-guide-content h4 {
   color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  border-radius: 12px;
+  border-left: 5px solid #27ae60;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-.feeding-guide-content p {
-  line-height: 1.6;
-  color: #34495e;
-  margin-bottom: 1.5rem;
-}
-
-.feeding-tips h5 {
+.grooming-guide-content > p:first-of-type,
+.health-tips-content > p:first-of-type,
+.training-tips-content > p:first-of-type {
   color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.feeding-tips ul {
-  padding-left: 1.5rem;
-  margin: 0;
-}
-
-.feeding-tips li {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
-}
-
-.grooming-guide-content p,
-.health-tips-content p,
-.training-tips-content p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 12px;
+  border-left: 5px solid #3498db;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   line-height: 1.6;
-  color: #34495e;
-  margin-bottom: 1rem;
 }
 
+/* Tips Container */
+.feeding-tips,
+.grooming-tips {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e5eb;
+  transition: all 0.3s ease;
+}
+
+.feeding-tips:hover,
+.grooming-tips:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feeding-tips h5,
+.grooming-tips h5 {
+  color: #2c3e50;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  border-bottom: 3px solid #3498db;
+}
+
+/* Lists Styling */
+.feeding-tips ul,
+.grooming-tips ul,
 .grooming-guide-content ul,
 .health-tips-content ul,
 .training-tips-content ul {
-  padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
+  background: white;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e1e5eb;
+  margin: 0;
+  list-style: none;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  font-size: 0.95rem;
 }
 
+.grooming-tips ul:hover,
+.grooming-guide-content ul:hover,
+.health-tips-content ul:hover,
+.training-tips-content ul:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.feeding-tips li,
+.grooming-tips li,
 .grooming-guide-content li,
 .health-tips-content li,
 .training-tips-content li {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.8rem;
+  color: #34495e;
+  font-size: 0.95rem;
 }
 
-.grooming-video-placeholder {
+.feeding-tips li:last-child,
+.grooming-tips li:last-child,
+.grooming-guide-content li:last-child,
+.health-tips-content li:last-child,
+.training-tips-content li:last-child {
+  margin-bottom: 0;
+}
+
+.feeding-tips li:before,
+.grooming-tips li:before,
+.grooming-guide-content li:before,
+.health-tips-content li:before,
+.training-tips-content li:before {
+  content: '✓';
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #e8f5e8;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #27ae60;
+}
+
+/* Video Container Styling */
+.grooming-video,
+.health-video,
+.training-video,
+.feeding-video {
   text-align: center;
-  padding: 2rem;
-  background: #f8f9fa;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  margin-top: 2rem;
+  border: 1px solid #e1e5eb;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.grooming-video:hover,
+.health-video:hover,
+.training-video:hover,
+.feeding-video:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
+}
+
+.grooming-video h5,
+.health-video h6,
+.training-video h6,
+.feeding-video h5 {
+  color: #2c3e50;
+  margin: 0 0 2rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border-radius: 10px;
-  margin-top: 1.5rem;
+  border: 1px solid #e1e5eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.video-placeholder-icon {
-  font-size: 3rem;
-  color: #3498db;
-  margin: 1rem 0;
+.grooming-video video,
+.health-video video,
+.training-video video,
+.feeding-video video {
+  width: 100%;
+  max-width: 500px;
+  height: 280px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 3px solid #fff;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  object-position: center;
 }
 
+.grooming-video video:hover,
+.health-video video:hover,
+.training-video video:hover,
+.feeding-video video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  border-color: #3498db;
+}
+
+/* Video aspect ratio consistency */
+.grooming-video,
+.health-video,
+.training-video,
+.feeding-video {
+  position: relative;
+}
+
+.grooming-video video,
+.health-video video,
+.training-video video,
+.feeding-video video {
+  aspect-ratio: 16/9;
+  background-color: #000;
+}
+
+/* Ensure video fills container properly */
+@supports not (aspect-ratio: 16/9) {
+  .grooming-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    height: calc(100vw * 9 / 16);
+    max-height: 280px;
+  }
+  
+  @media (min-width: 1024px) {
+    .grooming-video video,
+    .health-video video,
+    .training-video video,
+    .feeding-video video {
+      height: 320px;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .grooming-video video,
+    .health-video video,
+    .training-video video,
+    .feeding-video video {
+      height: 365px;
+    }
+  }
+}
+
+.video-description {
+  font-size: 1rem;
+  color: #5a6c7d;
+  margin: 1rem auto 0;
+  max-width: 500px;
+  line-height: 1.6;
+  font-style: italic;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+  text-align: left;
+}
+
+/* Resources Sections */
 .health-resources,
 .training-resources {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #eee;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f1f8ff 0%, #e3f2fd 100%);
+  border-radius: 12px;
+  border: 1px solid #bbdefb;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .health-resources h5,
 .training-resources h5 {
   color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  padding: 0.8rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid #3498db;
 }
 
+.health-resources h5::after,
+.training-resources h5::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+  border-radius: 3px;
+}
+
+/* Audio Button */
 .audio-placeholder {
   text-align: center;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e1e5eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .audio-button {
-  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 25px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .audio-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4);
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
 }
 
-.video-placeholder {
-  padding: 1.5rem;
-  text-align: center;
-  background: #e3f2fd;
-  border-radius: 10px;
-  margin: 1rem 0;
-}
-
-.play-button {
-  font-size: 2rem;
-  color: #3498db;
-  margin: 0.5rem 0;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.play-button:hover {
-  transform: scale(1.1);
-}
-
+/* Text Tips */
 .text-tip {
-  background: #e3f2fd;
-  padding: 1rem;
-  border-radius: 8px;
-  border-left: 4px solid #3498db;
-  margin-top: 1rem;
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+  border: 1px solid #c3e6cb;
+  border-left: 5px solid #27ae60;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.text-tip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .text-tip p {
+  color: #155724;
+  font-weight: 500;
   margin: 0;
-  color: #2c3e50;
-  line-height: 1.5;
+  font-style: italic;
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
-/* Responsive Design for Pet Care Page */
+/* Animations */
+@keyframes contentAppear {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pet-care-section:nth-child(2) { animation-delay: 0.1s; }
+.pet-care-section:nth-child(3) { animation-delay: 0.2s; }
+.pet-care-section:nth-child(4) { animation-delay: 0.3s; }
+.pet-care-section:nth-child(5) { animation-delay: 0.4s; }
+.pet-care-section:nth-child(6) { animation-delay: 0.5s; }
+
+/* Desktop/PC Responsive Design */
+@media (min-width: 1024px) {
+  .pet-care-container {
+    max-width: 1400px;
+    padding: 3rem;
+  }
+
+  .pet-care-container h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    padding: 3rem;
+  }
+
+  .pet-care-section {
+    padding: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .pet-care-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+  }
+
+  /* Organized layout for content sections */
+  .feeding-guide-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .feeding-guide-content h4 {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+  }
+
+  .feeding-guide-content p {
+    grid-column: 1;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-left: 4px solid #3498db;
+  }
+
+  .feeding-tips {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .feeding-video {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    margin-top: 0;
+    align-self: start;
+    position: sticky;
+    top: 2rem;
+  }
+
+  /* Grooming section layout */
+  .grooming-guide-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .grooming-guide-content > p:first-of-type {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+  }
+
+  .grooming-tips,
+  .grooming-guide-content ul {
+    grid-column: 1;
+  }
+
+  .grooming-video {
+    grid-column: 2;
+    margin-top: 0;
+    position: sticky;
+    top: 2rem;
+  }
+
+  /* Health tips layout */
+  .health-tips-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .health-tips-content > p:first-of-type {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+  }
+
+  .health-tips-content ul {
+    grid-column: 1;
+  }
+
+  .health-resources {
+    grid-column: 2;
+    margin-top: 0;
+    position: sticky;
+    top: 2rem;
+  }
+
+  /* Training tips layout */
+  .training-tips-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .training-tips-content > p:first-of-type {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+  }
+
+  .training-tips-content ul {
+    grid-column: 1;
+  }
+
+  .training-resources {
+    grid-column: 2;
+    margin-top: 0;
+    position: sticky;
+    top: 2rem;
+  }
+
+  .training-video {
+    grid-column: 2;
+    margin-top: 1.5rem;
+    position: sticky;
+    top: 2rem;
+  }
+
+  /* Enhanced video containers for desktop */
+  .grooming-video,
+  .health-video,
+  .training-video,
+  .feeding-video {
+    padding: 2rem;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .grooming-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    max-width: 100%;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Profile section desktop layout */
+  .pet-profile-form {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .form-group:nth-child(1),
+  .form-group:nth-child(6),
+  .form-group:nth-child(7) {
+    grid-column: 1 / -1;
+  }
+
+  .save-button {
+    grid-column: 1 / -1;
+    max-width: 400px;
+    margin: 2rem auto 0;
+  }
+
+  .profile-details {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .view-profile-button {
+    max-width: 400px;
+    margin: 2rem auto 0;
+  }
+
+  /* Enhanced lists for desktop */
+  .feeding-tips ul,
+  .grooming-tips ul,
+  .grooming-guide-content ul,
+  .health-tips-content ul,
+  .training-tips-content ul {
+    padding: 1.5rem;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .feeding-tips li,
+  .grooming-tips li,
+  .grooming-guide-content li,
+  .health-tips-content li,
+  .training-tips-content li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    padding-left: 2rem;
+  }
+
+  /* Resources sections desktop layout */
+  .health-resources,
+  .training-resources {
+    padding: 1.5rem;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f1f8ff 0%, #e3f2fd 100%);
+    border-radius: 12px;
+    border: 1px solid #bbdefb;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .health-resources h5,
+  .training-resources h5 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    border-bottom: 2px solid #3498db;
+  }
+
+  /* Audio buttons desktop styling */
+  .audio-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    margin: 1.5rem auto;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  /* Text tips desktop styling */
+  .text-tip {
+    padding: 1.5rem;
+    max-width: 100%;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+  }
+
+  .text-tip p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Better spacing for desktop headers */
+  .feeding-guide-content h4,
+  .grooming-guide-content > p:first-of-type,
+  .health-tips-content > p:first-of-type,
+  .training-tips-content > p:first-of-type {
+    font-size: 1.5rem;
+    padding: 2rem;
+  }
+
+  .feeding-tips h5,
+  .grooming-tips h5 {
+    font-size: 1.4rem;
+    padding: 1.2rem;
+  }
+}
+
+/* Large Desktop Responsive Design */
+@media (min-width: 1440px) {
+  .pet-care-container {
+    max-width: 1600px;
+    padding: 4rem;
+  }
+
+  .pet-care-section {
+    padding: 4rem;
+  }
+
+  .feeding-guide-content,
+  .grooming-guide-content,
+  .health-tips-content,
+  .training-tips-content {
+    gap: 3rem;
+  }
+
+  .grooming-video,
+  .health-video,
+  .training-video,
+  .feeding-video {
+    padding: 3rem;
+  }
+
+  .grooming-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    max-width: 650px;
+    width: 100%;
+    height: 365px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .feeding-tips ul,
+  .grooming-tips ul,
+  .grooming-guide-content ul,
+  .health-tips-content ul,
+  .training-tips-content ul {
+    padding: 2rem;
+  }
+}
+
+/* Tablet Responsive Design - Comprehensive */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .pet-care-container {
+    max-width: 900px;
+    padding: 2.5rem;
+  }
+
+  .pet-care-container h2 {
+    font-size: 2.3rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+  }
+
+  .pet-care-section {
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .pet-care-section h3 {
+    font-size: 1.9rem;
+    margin-bottom: 2.5rem;
+    padding: 1.8rem;
+  }
+
+  /* Two-column layout for tablets - balanced 50/50 */
+  .feeding-guide-content,
+  .grooming-guide-content,
+  .health-tips-content,
+  .training-tips-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* Headers spanning full width on tablet */
+  .feeding-guide-content h4,
+  .grooming-guide-content > p:first-of-type,
+  .health-tips-content > p:first-of-type,
+  .training-tips-content > p:first-of-type {
+    grid-column: 1 / -1;
+    font-size: 1.4rem;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  /* Left column content - text and lists */
+  .feeding-guide-content p:not(h4),
+  .feeding-tips,
+  .grooming-tips,
+  .grooming-guide-content ul,
+  .health-tips-content ul,
+  .training-tips-content ul {
+    grid-column: 1;
+  }
+
+  .health-resources {
+    grid-column: 1;
+    margin-top: 0;
+  }
+
+  .training-resources {
+    grid-column: 1;
+    margin-top: 0;
+  }
+
+  .audio-placeholder {
+    grid-column: 1;
+    margin-top: 1rem;
+  }
+
+  /* Right column content - videos */
+  .feeding-video,
+  .grooming-video,
+  .health-video,
+  .training-video {
+    grid-column: 2;
+    margin-top: 0;
+    padding: 2rem;
+    align-self: start;
+  }
+
+  /* Video standardization for tablet */
+  .grooming-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Lists and content styling for tablet */
+  .feeding-tips,
+  .grooming-tips {
+    padding: 1.8rem;
+    margin-top: 0;
+  }
+
+  .feeding-tips ul,
+  .grooming-tips ul,
+  .grooming-guide-content ul,
+  .health-tips-content ul,
+  .training-tips-content ul {
+    padding: 1.8rem;
+    font-size: 1rem;
+    margin-top: 0;
+  }
+
+  .feeding-tips li,
+  .grooming-tips li,
+  .grooming-guide-content li,
+  .health-tips-content li,
+  .training-tips-content li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .feeding-tips h5,
+  .grooming-tips h5 {
+    font-size: 1.3rem;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Resources sections for tablet */
+  .health-resources,
+  .training-resources {
+    padding: 1.8rem;
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, #f1f8ff 0%, #e3f2fd 100%);
+    border-radius: 12px;
+    border: 1px solid #bbdefb;
+  }
+
+  .health-resources h5,
+  .training-resources h5 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+
+  /* Audio buttons for tablet */
+  .audio-button {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 25px;
+  }
+
+  /* Profile sections for tablet */
+  .pet-profile-form {
+    max-width: 800px;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .form-group:nth-child(1),
+  .form-group:nth-child(6),
+  .form-group:nth-child(7) {
+    grid-column: 1 / -1;
+  }
+
+  .save-button {
+    grid-column: 1 / -1;
+    max-width: 350px;
+    margin: 2rem auto 0;
+  }
+
+  .profile-details {
+    max-width: 800px;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .view-profile-button {
+    max-width: 350px;
+    margin: 2rem auto 0;
+  }
+
+  .profile-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Video containers styling for tablet */
+  .grooming-video h5,
+  .health-video h6,
+  .training-video h6,
+  .feeding-video h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+
+  .video-description {
+    font-size: 0.95rem;
+    margin: 1rem auto 0;
+    max-width: 400px;
+    padding: 1rem;
+  }
+}
+
+/* Mobile Responsive Design - Comprehensive */
 @media (max-width: 768px) {
   .pet-care-container {
-    padding: 1rem;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .pet-care-container h2 {
+    font-size: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
   }
   
   .pet-care-section {
+    padding: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .pet-care-section h3 {
+    font-size: 1.6rem;
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Single column layout for mobile */
+  .feeding-guide-content,
+  .grooming-guide-content,
+  .health-tips-content,
+  .training-tips-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Reset all grid positioning for mobile */
+  .feeding-guide-content h4,
+  .feeding-guide-content p,
+  .feeding-tips,
+  .feeding-video,
+  .grooming-guide-content > p:first-of-type,
+  .grooming-tips,
+  .grooming-guide-content ul,
+  .grooming-video,
+  .health-tips-content > p:first-of-type,
+  .health-tips-content ul,
+  .health-resources,
+  .health-video,
+  .training-tips-content > p:first-of-type,
+  .training-tips-content ul,
+  .training-resources,
+  .training-video {
+    grid-column: auto;
+    grid-row: auto;
+    position: relative;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  /* Headers for mobile */
+  .feeding-guide-content h4,
+  .grooming-guide-content > p:first-of-type,
+  .health-tips-content > p:first-of-type,
+  .training-tips-content > p:first-of-type {
     padding: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* Lists and content containers for mobile */
+  .feeding-tips,
+  .grooming-tips {
+    padding: 1.5rem;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .feeding-tips ul,
+  .grooming-tips ul,
+  .grooming-guide-content ul,
+  .health-tips-content ul,
+  .training-tips-content ul {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    margin-top: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .feeding-tips li,
+  .grooming-tips li,
+  .grooming-guide-content li,
+  .health-tips-content li,
+  .training-tips-content li {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    padding-left: 1.8rem;
+  }
+
+  .feeding-tips h5,
+  .grooming-tips h5 {
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Video containers for mobile */
+  .grooming-video,
+  .health-video,
+  .training-video,
+  .feeding-video {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    text-align: center;
   }
   
+  .grooming-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    max-width: 100%;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .grooming-video h5,
+  .health-video h6,
+  .training-video h6,
+  .feeding-video h5 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+  }
+
+  .video-description {
+    font-size: 0.9rem;
+    margin: 1rem auto 0;
+    padding: 1rem;
+    max-width: 100%;
+    text-align: left;
+  }
+  
+  /* Resources sections for mobile */
+  .health-resources,
+  .training-resources {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .health-resources h5,
+  .training-resources h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+  }
+  
+  /* Audio buttons for mobile */
+  .audio-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto;
+    display: block;
+  }
+
+  .audio-placeholder {
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  /* Profile sections for mobile */
   .profile-header {
     flex-direction: column;
     gap: 1rem;
+    text-align: center;
   }
-  
+
+  .pet-profile-form {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .save-button {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
+
   .profile-details {
-    text-align: left;
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 1rem;
+  }
+
+  .view-profile-button {
+    width: 100%;
+    max-width: 100%;
+    margin: 1.5rem auto 0;
+  }
+
+  /* Text tips for mobile */
+  .text-tip {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+  }
+
+  .text-tip p {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 }

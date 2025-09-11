@@ -236,6 +236,14 @@
   font-weight: bold;
   margin-right: 1rem;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .testimonial-info h4 {

@@ -45,25 +45,28 @@ const Feedback = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      pet: "Golden Retriever",
+      name: "Bé Ly",
+      pet: "Golden",
       avatar: "SJ",
+      image: "./assets/pet-owner/golden.jpg",
       rating: 5,
       content: "The pet care advice I received was exceptional. My dog's health has improved dramatically since following their recommendations."
     },
     {
       id: 2,
-      name: "Michael Chen",
-      pet: "Persian Cat",
+      name: "Sơn tùng Mtp",
+      pet: "Mèo",
       avatar: "MC",
+      image: "./assets/pet-owner/sontung.jpg",
       rating: 5,
       content: "The grooming tips saved me hundreds of dollars. My cat looks and feels better than ever. Highly recommend their services!"
     },
     {
       id: 3,
-      name: "Emma Rodriguez",
-      pet: "Bulldog & Parrot",
+      name: "Snoopdog",
+      pet: "Bulldog",
       avatar: "ER",
+      image: "./assets/pet-owner/snoop.jpg",
       rating: 4,
       content: "Professional, caring, and knowledgeable staff. They helped me through a difficult time when my pet was sick."
     }
@@ -157,7 +160,7 @@ const Feedback = () => {
               <div className="testimonial-card" key={testimonial.id}>
                 <div className="testimonial-header">
                   <div className="testimonial-avatar">
-                    {testimonial.avatar}
+                    <img src={testimonial.image} alt={testimonial.name} />
                   </div>
                   <div className="testimonial-info">
                     <h4>{testimonial.name}</h4>

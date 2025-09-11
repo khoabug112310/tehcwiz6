@@ -27,8 +27,8 @@ const Emergency = () => {
           <div className="emergency-icon">📞</div>
           <h3>Emergency Hotline</h3>
           <p>For immediate assistance with any pet emergency, contact our 24/7 emergency hotline.</p>
-          <div className="emergency-number">(555) 911-PETS</div>
-          <button className="emergency-button" onClick={() => handleCall("(555) 911-PETS")}>
+          <div className="emergency-number">+84967373148</div>
+          <button className="emergency-button" onClick={() => handleCall("+84967373148")}>
             Call Now
           </button>
         </div>
@@ -37,8 +37,8 @@ const Emergency = () => {
           <div className="emergency-icon">🏥</div>
           <h3>Emergency Vet</h3>
           <p>Our certified emergency veterinary team is available around the clock for critical care.</p>
-          <div className="emergency-number">(555) 911-0001</div>
-          <button className="emergency-button" onClick={() => handleCall("(555) 911-0001")}>
+          <div className="emergency-number">+84702513458</div>
+          <button className="emergency-button" onClick={() => handleCall("+84702513458")}>
             Call Now
           </button>
         </div>
@@ -47,8 +47,8 @@ const Emergency = () => {
           <div className="emergency-icon">💊</div>
           <h3>Poison Control</h3>
           <p>Immediate advice on toxic substances and poisoning emergencies for pets.</p>
-          <div className="emergency-number">(555) 911-0002</div>
-          <button className="emergency-button" onClick={() => handleCall("(555) 911-0002")}>
+          <div className="emergency-number">+84776391599</div>
+          <button className="emergency-button" onClick={() => handleCall("+84776391599")}>
             Call Now
           </button>
         </div>

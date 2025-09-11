@@ -52,27 +52,27 @@ const About = () => {
         <div className="team-members">
           <div className="team-member">
             <div className="team-member-image">
-              <div className="placeholder-avatar">AJ</div>
+              <img src="./assets/image-pet-owner/tai.jpg" alt="Minh Tài - Project Manager" />\n
             </div>
-            <h4>Alex Johnson</h4>
+            <h4>Minh Tài</h4>
             <p className="team-role">Project Manager</p>
-            <p className="team-bio">With over 10 years of experience in project management, Alex ensures our development process runs smoothly and efficiently.</p>
+            <p className="team-bio">With over 5 years of experience in project management, Tài ensures our development process runs smoothly and efficiently.</p>
           </div>
           <div className="team-member">
             <div className="team-member-image">
-              <div className="placeholder-avatar">MG</div>
+              <img src="./assets/image-pet-owner/hung.jpg" alt="Hùng - Lead/Senior Veterinarian" />
             </div>
-            <h4>Maria Garcia</h4>
-            <p className="team-role">Lead Developer</p>
-            <p className="team-bio">Maria brings her full-stack development expertise to create robust and user-friendly features.</p>
+            <h4>Hùng</h4>
+            <p className="team-role">Lead/Senior Veterinarian</p>
+            <p className="team-bio">A Lead Veterinarian with over 8 years of hands-on experience in diagnosing, treating, and managing complex medical cases in small animals</p>
           </div>
           <div className="team-member">
             <div className="team-member-image">
-              <div className="placeholder-avatar">DS</div>
+              <img src="./assets/image-pet-owner/phong.jpg" alt="Lâm Phong - Medical Director" />
             </div>
-            <h4>David Smith</h4>
-            <p className="team-role">UI/UX Designer</p>
-            <p className="team-bio">David focuses on creating intuitive and visually appealing interfaces that enhance user experience.</p>
+            <h4>Lâm Phong</h4>
+            <p className="team-role">Medical Director</p>
+            <p className="team-bio">A Medical Director with 6 years of clinical experience and 3 years in veterinary hospital management and operations</p>
           </div>
         </div>
       </div>
@@ -99,11 +99,37 @@ const About = () => {
         </div>
       </div>
       
+      <div className="about-section">
+        <h3>Find Us</h3>
+        <div className="location-info">
+          <p className="address-text">
+            <strong>Our Location:</strong> 21 Hậu Giang, Tân Bình, Hồ Chí Minh, Việt Nam
+          </p>
+          <div className="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0636479687845!2d106.62663331533507!3d10.79904399230163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529c1c8c8c8c5%3A0x1234567890abcdef!2s21%20H%E1%BA%ADu%20Giang%2C%20T%C3%A2n%20B%C3%ACnh%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vi%E1%BB%87t%20Nam!5e0!3m2!1sen!2s!4v1642345678901!5m2!1sen!2s"
+              width="100%"
+              height="350"
+              style={{ border: 0, borderRadius: '12px' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="FurEver Care Location"
+            ></iframe>
+          </div>
+          <div className="location-details">
+            <p>📍 We're conveniently located in the heart of Tân Bình district, easily accessible by public transportation.</p>
+            <p>🚗 Parking is available nearby for your convenience.</p>
+            <p>🏥 Close to several veterinary clinics and pet supply stores.</p>
+          </div>
+        </div>
+      </div>
+      
       <div className="contact-section">
         <h3>Get In Touch</h3>
         <p>Have questions or feedback? We'd love to hear from you!</p>
-        <p>Email: info@furevercare.com</p>
-        <p>Phone: (555) 123-4567</p>
+        <p>Email: lamphong0110@furevercare.com</p>
+        <p>Phone: +84967373148</p>
       </div>
     </div>
   );

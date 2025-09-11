@@ -2,42 +2,42 @@
   {
     "id": 1,
     "service": "Emergency Veterinary Services",
-    "phone": "(555) 911-0001",
+    "phone": "+84967373148",
     "hours": "24/7",
     "description": "Immediate veterinary care for life-threatening conditions"
   },
   {
     "id": 2,
     "service": "Pet Poison Control",
-    "phone": "(555) 911-0002",
+    "phone": "+84967373148",
     "hours": "24/7",
     "description": "Expert advice on toxic substances and poisoning emergencies"
   },
   {
     "id": 3,
     "service": "Animal Ambulance",
-    "phone": "(555) 911-0003",
+    "phone": "+84776391599",
     "hours": "24/7",
     "description": "Transportation services for injured or critically ill pets"
   },
   {
     "id": 4,
     "service": "Lost Pet Hotline",
-    "phone": "(555) 911-0004",
+    "phone": "+84702513458",
     "hours": "9AM-9PM",
     "description": "Assistance with finding lost pets and reporting found animals"
   },
   {
     "id": 5,
     "service": "Wildlife Rescue",
-    "phone": "(555) 911-0005",
+    "phone": "+84967373148",
     "hours": "24/7",
     "description": "Rescue and rehabilitation services for wild animals"
   },
   {
     "id": 6,
     "service": "Emergency Boarding",
-    "phone": "(555) 911-0006",
+    "phone": "+84776391599",
     "hours": "24/7",
     "description": "Temporary care for pets when owners are in emergency situations"
   }
