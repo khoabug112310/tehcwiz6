@@ -19,8 +19,6 @@ const Navigation = ({ userType }) => {
       case 'veterinarian':
         return [
           { name: 'My Profile', path: '/vet-profile' },
-          { name: 'Time Slots', path: '/time-slots' },
-          { name: 'Case Studies', path: '/case-studies' }
         ];
       case 'animal-shelter':
         return [
@@ -50,12 +48,12 @@ const Navigation = ({ userType }) => {
           <span></span>
         </div>
       </div>
-      
+
       {/* Navigation Menu */}
       <ul className={isMenuOpen ? 'nav-menu open' : 'nav-menu'}>
         {menuItems.map((item, index) => (
           <li key={index}>
-            <Link 
+            <Link
               to={item.path}
               className="nav-link"
               onClick={() => setIsMenuOpen(false)} // Close menu when item is clicked

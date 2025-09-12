@@ -2,288 +2,869 @@
 .vet-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  animation: contentAppear 0.8s ease-out;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, #e3f2fd 0%, #f5f7fa 100%);
 }
 
 .vet-header {
   text-align: center;
-  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.vet-header:before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  transform: rotate(30deg);
 }
 
 .vet-header h2 {
-  color: #2c3e50;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
+  margin: 0 0 10px 0;
+  font-size: 2.5em;
+  position: relative;
 }
 
 .vet-header p {
-  color: #7f8c8d;
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
+  font-size: 1.3em;
+  opacity: 0.9;
+  position: relative;
 }
 
-.vet-intro {
-  background: white;
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.vet-intro h3 {
-  color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.vet-intro p {
-  color: #7f8c8d;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
+/* Portfolio-style profile section */
 .vet-profiles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 3rem;
 }
 
 .vet-profile-card {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  margin: 20px 0;
+  border: none;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .vet-profile-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.vet-profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+}
+
+.profile-header {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+.profile-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+
+.profile-header p {
+  font-size: 1.3em;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.profile-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
 }
 
 .vet-image-container {
-  height: 250px;
+  flex: 1;
+  min-width: 300px;
+  background: linear-gradient(135deg, #e3f2fd, #f5f7fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  position: relative;
   overflow: hidden;
 }
 
-.vet-image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.3s ease;
-  display: block;
+.vet-image-container::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  transform: rotate(30deg);
 }
 
-.vet-profile-card:hover .vet-image-container img {
+.vet-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border: 5px solid white;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.vet-image-container img:hover {
   transform: scale(1.05);
 }
 
 .vet-info {
-  padding: 1.5rem;
-  flex-grow: 1;
+  flex: 2;
+  min-width: 300px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
 }
 
-.vet-info h3 {
-  color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.4rem;
-}
-
-.vet-specialization {
-  color: #3498db;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
 .vet-contact {
-  background: #f8f9fa;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #3498db;
 }
 
 .vet-contact h4 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
   color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 12px;
+  font-size: 1.4em;
 }
 
 .vet-contact p {
-  margin: 0.25rem 0;
-  color: #7f8c8d;
-  font-size: 0.9rem;
+  margin: 15px 0;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  font-size: 1.1em;
 }
 
-.vet-bio {
-  color: #7f8c8d;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  flex-grow: 1;
+.vet-contact p::before {
+  margin-right: 15px;
+  font-weight: bold;
+  color: #3498db;
+  font-size: 1.3em;
 }
 
 .vet-education {
-  margin-top: auto;
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #e74c3c;
+  flex-grow: 1;
 }
 
 .vet-education h4 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
   color: #2c3e50;
+  border-bottom: 2px solid #e74c3c;
+  padding-bottom: 12px;
+  margin-top: 0;
+  font-size: 1.4em;
 }
 
 .vet-education ul {
-  padding-left: 1.2rem;
-  margin: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .vet-education li {
-  margin-bottom: 0.25rem;
-  color: #7f8c8d;
-  font-size: 0.9rem;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1em;
 }
 
-.vet-services {
-  background: white;
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 3rem;
+.vet-education li:last-child {
+  border-bottom: none;
 }
 
-.vet-services h3 {
-  color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  text-align: center;
-  position: relative;
-  padding-bottom: 0.5rem;
+.vet-education strong {
+  color: #e74c3c;
 }
 
-.vet-services h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background: linear-gradient(90deg, #3498db, #2c3e50);
-  border-radius: 3px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.service-card {
-  background: #f8f9fa;
-  border-radius: 10px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  background: white;
-}
-
-.service-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #3498db;
-}
-
-.service-card h4 {
-  color: #2c3e50;
-  margin: 0 0 0.5rem 0;
-}
-
-.service-card p {
-  color: #7f8c8d;
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.booking-section {
-  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
-  border-radius: 15px;
-  padding: 3rem 2rem;
-  text-align: center;
+.edit-profile-button {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
   color: white;
-  margin-bottom: 3rem;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  align-self: flex-start;
+}
+
+.edit-profile-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.edit-profile-button:active {
+  transform: translateY(0);
+}
+
+/* Booking Section */
+.booking-section {
+  text-align: center;
+  background: linear-gradient(135deg, #e3f2fd, #f5f7fa);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 40px 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.booking-section:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #3498db, #2c3e50);
 }
 
 .booking-section h3 {
+  color: #2c3e50;
   margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
 }
 
 .booking-section p {
+  color: #555;
+  font-size: 1.1em;
   max-width: 600px;
-  margin: 0 auto 2rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  margin: 0 auto 20px;
 }
 
 .booking-button {
-  background: white;
-  color: #2c3e50;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
   border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .booking-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.booking-button:active {
+  transform: translateY(0);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .vet-container {
-    padding: 1rem;
+    padding: 10px;
+  }
+  
+  .vet-header {
+    padding: 20px;
   }
   
   .vet-header h2 {
-    font-size: 1.8rem;
+    font-size: 2em;
   }
   
-  .vet-profiles {
-    grid-template-columns: 1fr;
+  .vet-header p {
+    font-size: 1.1em;
   }
   
-  .services-grid {
-    grid-template-columns: 1fr;
+  .vet-profile-card {
+    flex-direction: column;
   }
   
-  .vet-intro,
-  .vet-services,
-  .booking-section {
-    padding: 1.5rem;
+  .vet-image-container,
+  .vet-info {
+    min-width: 100%;
   }
+  
+  .vet-info {
+    padding: 20px;
+  }
+  
+  .specialization-banner {
+    margin: 15px 0;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vet-header h2 {
+    font-size: 1.8em;
+  }
+  
+  .vet-info h3 {
+    font-size: 1.5em;
+  }
+  
+  .vet-specialization {
+    font-size: 1.1em;
+  }
+  
+  .vet-contact p {
+    font-size: 0.9em;
+  }
+}
+
+/* Time Slots Section */
+.time-slots-section {
+  margin: 40px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.time-slots-section:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #3498db, #2c3e50);
+}
+
+.time-slots-section h3 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Time Slots Grid */
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.time-slot {
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+  position: relative;
+  cursor: pointer;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-slot:hover {
+  transform: scale(1.05);
+}
+
+.time-slot.available {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 2px solid #4caf50;
+}
+
+.time-slot.booked {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 2px solid #f44336;
+}
+
+.time {
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.status {
+  display: block;
+  font-size: 0.8em;
+  margin: 5px 0;
+}
+
+.detail {
+  display: block;
+  font-size: 0.75em;
+  margin-top: 5px;
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+/* Custom Tooltip for Time Slots */
+.time-slot::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  white-space: nowrap;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  white-space: normal;
+  width: 200px;
+  text-align: center;
+}
+
+.time-slot::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #333;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  margin-bottom: 5px;
+}
+
+.time-slot:hover::after,
+.time-slot:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.booking-summary {
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 4px solid #3498db;
+}
+
+.booking-summary h3 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.booking-summary p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Case Studies Section */
+.case-studies-container {
+  margin: 40px 0;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.case-studies-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #3498db, #2c3e50);
+}
+
+.case-studies-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.case-studies-header h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.case-studies-header p {
+  color: #7f8c8d;
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.case-studies-intro {
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.case-studies-intro h3 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.case-studies-intro p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Case Study Cards */
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.case-study-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.case-study-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #3498db, #2c3e50);
+}
+
+.case-study-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.case-study-header {
+  padding: 20px;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  position: relative;
+}
+
+.case-study-header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
+}
+
+.pet-category {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  display: inline-block;
+  margin-bottom: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.case-study-header h3 {
+  margin: 10px 0 0 0;
+  font-size: 1.3em;
+}
+
+.pet-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.pet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-study-content {
+  padding: 20px;
+}
+
+.case-study-content p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.outcome {
+  background-color: #e8f5e9;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  border-left: 3px solid #4caf50;
+}
+
+.outcome strong {
+  color: #1b5e20;
+}
+
+.outcome-text {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* Services Section */
+.vet-services {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.vet-services h3 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.service-card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.service-card h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Treatment Section */
+.treatment-section {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.treatment-section h3 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.treatment-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.treatment-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #3498db, #2c3e50);
+}
+
+.treatment-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.treatment-icon {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #3498db;
+}
+
+.treatment-card h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.treatment-card p {
+  color: #555;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* Stats Section */
+.stats-section {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.stats-section h3 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.stat-item {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #2c3e50, #3498db);
+}
+
+.stat-item:hover {
+  transform: scale(1.05);
+}
+
+.stat-item h4 {
+  font-size: 1.8em;
+  margin: 0 0 5px 0;
+}
+
+.stat-item p {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* Section Headers */
+.time-slots-section h3,
+.case-studies-header h2,
+.treatment-section h3,
+.stats-section h3,
+.vet-services h3,
+.booking-section h3 {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.time-slots-section h3:after,
+.case-studies-header h2:after,
+.treatment-section h3:after,
+.stats-section h3:after,
+.vet-services h3:after,
+.booking-section h3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  border-radius: 3px;
 }
