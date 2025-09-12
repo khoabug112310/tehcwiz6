@@ -155,55 +155,6 @@ const VetProfile = () => {
           </div>
         </div>
       </div>
-      
-      {/* Services Section */}
-      <div className="vet-services">
-        <h3>Specialized Services</h3>
-        <div className="services-grid">
-          {treatmentsData.map(treatment => (
-            <div className="service-card" key={treatment.id}>
-              <div className="service-icon">{treatment.icon}</div>
-              <h4>{treatment.title}</h4>
-              <p>{treatment.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {/* Stats Section */}
-      <div className="stats-section">
-        <h3>Practice Statistics</h3>
-        <div className="stats-grid">
-          {stats.map((stat, index) => (
-            <div className="stat-item" key={index}>
-              <h4>{stat.value}</h4>
-              <p>{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {/* Booking Section */}
-      <div className="booking-section">
-        <h3>Schedule an Appointment</h3>
-        <p>
-          Ready to schedule a visit for your pet? Our team is here to provide the highest quality care for your beloved companion.
-          Contact us today to book an appointment or discuss your pet's healthcare needs.
-        </p>
-        <button className="booking-button" onClick={handleBooking}>
-          Book Appointment
-        </button>
-      </div>
-      
-      <div className="booking-summary">
-        <h3>Why Choose Our Practice?</h3>
-        <p>
-          Our veterinary practice combines state-of-the-art technology with compassionate care to ensure the best possible outcomes for your pets. 
-          With extended hours and emergency services available, we're always here when you need us most. 
-          Our team of dedicated professionals is committed to providing personalized attention to each patient, 
-          treating your pets as if they were our own.
-        </p>
-      </div>
     </div>
   );
 };

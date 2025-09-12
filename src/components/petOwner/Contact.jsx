@@ -244,30 +244,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      <div className="real-time-info">
-        <h3>Real-time Information</h3>
-        <p><strong>Current Time:</strong> {currentTime.toLocaleTimeString()}</p>
-        {location && (
-          <p><strong>Your Location:</strong> {location.latitude.toFixed(4)}, {location.longitude.toFixed(4)}</p>
-        )}
-      </div>
-
-      <div className="map-section">
-        <h3>Find Us on the Map</h3>
-        <div className="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0636479687845!2d106.62663331533507!3d10.79904399230163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529c1c8c8c8c5%3A0x1234567890abcdef!2s21%20H%E1%BA%ADu%20Giang%2C%20T%C3%A2n%20B%C3%ACnh%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vi%E1%BB%87t%20Nam!5e0!3m2!1sen!2s!4v1642345678901!5m2!1sen!2s"
-            width="100%"
-            height="400"
-            style={{ border: 0, borderRadius: '15px' }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="FurEver Care Location - 21 Hậu Giang, Tân Bình"
-          ></iframe>
-        </div>
-      </div>
     </div>
   );
 };

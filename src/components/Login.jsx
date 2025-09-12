@@ -84,7 +84,7 @@ const Login = ({ onLoginSuccess }) => {
                   value="pet-owner"
                   checked={userType === "pet-owner"}
                   onChange={(e) => setUserType(e.target.value)}
-                />
+                /> &nbsp; &nbsp; 
                 Pet Owner
               </label>
               <label>
@@ -94,7 +94,7 @@ const Login = ({ onLoginSuccess }) => {
                   value="veterinarian"
                   checked={userType === "veterinarian"}
                   onChange={(e) => setUserType(e.target.value)}
-                />
+                /> &nbsp; &nbsp; 
                 Veterinarian
               </label>
               <label>
@@ -104,7 +104,7 @@ const Login = ({ onLoginSuccess }) => {
                   value="animal-shelter"
                   checked={userType === "animal-shelter"}
                   onChange={(e) => setUserType(e.target.value)}
-                />
+                /> &nbsp; &nbsp; 
                 Animal Shelter
               </label>
             </div>

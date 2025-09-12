@@ -24,57 +24,6 @@ const Home = ({ userName, userType }) => {
     }
   }, []);
 
-  const getUserTypeText = () => {
-    switch (userType) {
-      case "pet-owner":
-        return "Pet Owner";
-      case "veterinarian":
-        return "Veterinarian";
-      case "animal-shelter":
-        return "Animal Shelter";
-      default:
-        return "User";
-    }
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setPetProfile((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Save to localStorage
-    const profileToSave = {
-      ...petProfile,
-      lastUpdated: new Date().toISOString(),
-    };
-
-    localStorage.setItem("petProfile", JSON.stringify(profileToSave));
-    setShowPreview(true);
-
-    // Navigate to PetProfile page after saving
-    navigate("/pet-profile");
-  };
-
-  const getPetTypeIcon = (type) => {
-    switch (type) {
-      case "Dog":
-        return "🐕";
-      case "Cat":
-        return "🐈";
-      case "Bird":
-        return "🐦";
-      case "Rabbit":
-        return "🐇";
-      default:
-        return "🐾";
-    }
-  };
 
   return (
     <div>
