@@ -19,6 +19,8 @@ const Navigation = ({ userType }) => {
       case 'veterinarian':
         return [
           { name: 'My Profile', path: '/vet-profile' },
+          { name: 'Time Slots', path: '/time-slots' },
+          { name: 'Case Studies', path: '/case-studies' },
         ];
       case 'animal-shelter':
         return [

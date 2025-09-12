@@ -13,6 +13,17 @@ const Login = ({ onLoginSuccess }) => {
     const trimmedName = userName.trim();
     const trimmedType = userType.trim();
 
+    // For veterinarians, validate that the name is one of the allowed names
+    if (trimmedType === "veterinarian") {
+      const validVetNames = ["Phong", "Tai", "Hung", "Phuc"];
+      const normalizedInputName = trimmedName.charAt(0).toUpperCase() + trimmedName.slice(1).toLowerCase();
+      
+      if (!validVetNames.includes(normalizedInputName)) {
+        alert("For veterinarians, please enter one of the following names: Phong, Tai, Hung, or Phuc");
+        return;
+      }
+    }
+
     if (trimmedName && trimmedType) {
       console.log("Login successful"); // Debug log
       // Save to localStorage for persistence
@@ -59,6 +70,9 @@ const Login = ({ onLoginSuccess }) => {
               onChange={(e) => setUserName(e.target.value)}
               required
             />
+            {userType === "veterinarian" && (
+              <small className="vet-name-hint">Veterinarians must enter: Phong, Tai, Hung, or Phuc</small>
+            )}
           </div>
           <div className="form-group">
             <label>Select User Type:</label>

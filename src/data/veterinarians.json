@@ -1,56 +1,62 @@
 [
   {
     "id": 1,
-    "name": "Dr. Lâm Phong",
+    "name": "Dr. Phong",
     "specialization": "Small Animal Medicine",
-    "bio": "Dr. Lâm Phong has over 7 years of experience in small animal medicine. She specializes in preventive care, internal medicine, and geriatric care for cats and dogs. He is passionate about building long-term relationships with pets and their families.",
+    "email": "john.smith@vethospital.com",
+    "phone": "+1 (555) 123-4567",
+    "office": "Main Street Veterinary Clinic",
     "image": "/assets/image-pet-owner/phong.jpg",
-    "education": [
-      "DVM, University of Veterinary Medicine",
-      "Board Certified in Small Animal Internal Medicine",
-      "Advanced Certificate in Geriatric Care"
-    ],
-    "contact": {
-      "email": "lamphong@furevercare.com",
-      "phone": "+84967373148",
-      "office": "Building A, Room 101"
-    },
-    "availability": "Monday, Wednesday, Friday: 8AM-4PM"
+    "bio": "Dr. Smith is a dedicated veterinarian with over 10 years of experience in small animal medicine. He specializes in preventive care, surgery, and treatment of chronic conditions in dogs and cats.",
+    "philosophy": "I believe in a compassionate, holistic approach to veterinary medicine. My practice focuses on preventive care, early detection of health issues, and building long-term relationships with both pets and their owners.",
+    "experience": "10+ years",
+    "certification": "Licensed Veterinarian",
+    "licenses": "State Veterinary Medical License",
+    "certificates": "Advanced Surgical Procedures, Emergency Care Certification"
   },
   {
     "id": 2,
-    "name": "Dr. Minh Tài",
-    "specialization": "Veterinary Surgery",
-    "bio": "Dr. Minh tài is a board-certified veterinary surgeon with expertise in orthopedic and soft tissue surgeries. He has performed over 2000 surgical procedures and is known for his meticulous approach and compassionate care.",
+    "name": "Dr. Tai",
+    "specialization": "Exotic Pet Care",
+    "email": "emily.johnson@vethospital.com",
+    "phone": "+1 (555) 234-5678",
+    "office": "Exotic Animal Specialty Clinic",
     "image": "/assets/image-pet-owner/tai.jpg",
-    "education": [
-      "DVM, State University Veterinary School",
-      "Board Certified in Veterinary Surgery",
-      "Fellowship in Orthopedic Surgery"
-    ],
-    "contact": {
-      "email": "minhtaicare@furevercare.com",
-      "phone": "+84776391599",
-      "office": "Building B, Room 205"
-    },
-    "availability": "Tuesday, Thursday: 9AM-5PM"
+    "bio": "Dr. Johnson is a specialist in exotic pet care with extensive experience treating birds, reptiles, and small mammals. She has published research on nutrition and habitat requirements for exotic animals.",
+    "philosophy": "Exotic pets have unique needs that require specialized knowledge and care. I am committed to providing the highest quality care for these special animals through continuous education and research.",
+    "experience": "8+ years",
+    "certification": "Board Certified Exotic Animal Specialist",
+    "licenses": "State Veterinary Medical License",
+    "certificates": "Avian Medicine Certification, Reptile Care Specialist"
   },
   {
     "id": 3,
-    "name": "Dr. Hùng",
-    "specialization": "Exotic Pet Medicine",
-    "bio": "Dr. Hùng specializes in the care of exotic pets including birds, reptiles, and small mammals. He has extensive experience with unique species and is dedicated to providing specialized care for these special companions.",
+    "name": "Dr. Hung",
+    "specialization": "Veterinary Surgery",
+    "email": "michael.brown@vethospital.com",
+    "phone": "+1 (555) 345-6789",
+    "office": "Surgical Specialty Center",
     "image": "/assets/image-pet-owner/hung.jpg",
-    "education": [
-      "DVM, Exotic Animal Medicine University",
-      "Certificate in Avian Medicine",
-      "Advanced Training in Reptile Care"
-    ],
-    "contact": {
-      "email": "hung@furevercare.com",
-      "phone": "+84702513458",
-      "office": "Building C, Room 301"
-    },
-    "availability": "Monday, Wednesday: 10AM-6PM"
+    "bio": "Dr. Brown is a board-certified veterinary surgeon with expertise in complex orthopedic and soft tissue procedures. He has successfully performed over 500 surgeries with a high success rate.",
+    "philosophy": "Surgical intervention should always be approached with careful consideration and planning. I strive to provide the most effective surgical solutions with the least invasive techniques possible.",
+    "experience": "12+ years",
+    "certification": "Board Certified Veterinary Surgeon",
+    "licenses": "State Veterinary Medical License",
+    "certificates": "Advanced Surgical Techniques, Minimally Invasive Surgery"
+  },
+  {
+    "id": 4,
+    "name": "Dr. Phuc",
+    "specialization": "Veterinary Dentistry",
+    "email": "sarah.davis@vethospital.com",
+    "phone": "+1 (555) 456-7890",
+    "office": "Dental Specialty Clinic",
+    "image": "/assets/image-pet-owner/phuc.jpg",
+    "bio": "Dr. Davis is a specialist in veterinary dentistry and oral surgery. She focuses on preventive dental care and treatment of complex oral conditions in pets of all sizes.",
+    "philosophy": "Oral health is a critical component of overall pet wellness. I emphasize preventive dental care and patient education to maintain optimal oral health throughout a pet's life.",
+    "experience": "9+ years",
+    "certification": "Board Certified Veterinary Dentist",
+    "licenses": "State Veterinary Medical License",
+    "certificates": "Advanced Dental Surgery, Oral Pathology"
   }
 ]

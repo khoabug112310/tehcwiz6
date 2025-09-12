@@ -17,11 +17,12 @@ import Emergency from "./components/petOwner/Emergency.jsx";
 import Feedback from "./components/petOwner/Feedback.jsx";
 import Contact from "./components/petOwner/Contact.jsx";
 import VetProfile from "./components/veterinarian/VetProfile.jsx";
+import TimeSlots from "./components/veterinarian/TimeSlots.jsx";
+import CaseStudies from "./components/veterinarian/CaseStudies.jsx";
 import Gallery from "./components/animalShelter/Gallery.jsx";
 import SuccessStories from "./components/animalShelter/SuccessStories.jsx";
 import Events from "./components/animalShelter/Events.jsx";
 import ShelterContact from "./components/animalShelter/ShelterContact.jsx";
-import FormVer from "./components/veterinarian/FormVer.jsx";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -98,7 +99,7 @@ function App() {
                   setRedirectTo("/home");
                   break;
                 case "veterinarian":
-                  setRedirectTo("/form-ver");
+                  setRedirectTo("/vet-profile");
                   break;
                 case "animal-shelter":
                   setRedirectTo("/gallery");
@@ -172,11 +173,12 @@ function App() {
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/vet-profile" element={<VetProfile />} />
+            <Route path="/time-slots" element={<TimeSlots />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/stories" element={<SuccessStories />} />
             <Route path="/events" element={<Events />} />
             <Route path="/shelter-contact" element={<ShelterContact />} />
-            <Route path="/form-ver" element={<FormVer />} />
             <Route path="*" element={<Navigate to="/home" replace />} />
           </Routes>
         </main>
