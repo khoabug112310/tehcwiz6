@@ -341,3 +341,19 @@
     font-size: 0.9rem;
   }
 }
+
+.pet-info-grid {
+  border: #2c3e50 1px solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Tạo 2 cột có độ rộng bằng nhau */
+  gap: 10px; /* Khoảng cách giữa các hàng và cột */
+  text-align: left;
+}
+
+.pet-info-grid  strong {
+  text-align: left;
+}
+
+.pet-info-grid span {
+  text-align: left;
+}

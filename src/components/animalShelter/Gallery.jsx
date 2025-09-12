@@ -7,6 +7,7 @@ const Gallery = () => {
   const [filteredPets, setFilteredPets] = useState([]);
   const [selectedType, setSelectedType] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedPet, setSelectedPet] = useState(null); // Thêm state cho popup
 
   // Load pets from JSON file
   useEffect(() => {
@@ -101,7 +102,9 @@ const Gallery = () => {
               <div className="gallery-image">
                 <img src={pet.image} alt={pet.name} />
                 <div className="gallery-overlay">
-                  <button className="view-button">View Details</button>
+                  <button className="view-button" onClick={() => setSelectedPet(pet)}>
+                    View Details
+                  </button>
                 </div>
               </div>
               <div className="gallery-info">
@@ -121,6 +124,33 @@ const Gallery = () => {
           </div>
         )}
       </div>
+      
+      {/* Popup modal hiển thị thông tin thú cưng */}
+      {selectedPet && (
+        <div className="modal-overlay" onClick={() => setSelectedPet(null)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedPet(null)}>&times;</button>
+            <img src={selectedPet.image} alt={selectedPet.name} style={{width: '100%', borderRadius: '12px', marginBottom: '1rem'}} />
+            <h2>{selectedPet.name}</h2>
+            <form action=" ">
+              <div class="pet-info-grid">
+            <p class="label"><strong>Type:</strong> </p><p class="value">{selectedPet.type}</p>
+            <p class="label"><strong>Breed:</strong> </p><p class="value">{selectedPet.breed}</p>
+            <p class="label"><strong>Gender: </strong></p><p class="value">{selectedPet.gender }</p>
+            <p class="label"><strong>Age:</strong> </p><p class="value">{selectedPet.age}</p>
+            <p class="label"><strong>Weight:</strong></p><p class="value">{selectedPet.weight}</p>
+            <p class="label"><strong>Description:</strong></p><p class="value"> {selectedPet.description}</p>
+            <p class="label"><strong>Health Status:</strong> </p><p class="value">{selectedPet.healthStatus}</p>
+            <p class="label"><strong>Distinguishing Marks:</strong></p><p class="value"> {selectedPet.distinguishingMarks}</p>
+            <p class="label"><strong>Vaccination History:</strong> </p><p class="value">{selectedPet.vaccinationHistory}</p>
+            <p class="label"><strong>Medical History:</strong> </p><p class="value">{selectedPet.medicalHistory}</p>
+            <p class="label"  ><strong>Personality Traits:</strong> </p><p class="value">{selectedPet.personalityTraits}</p>
+            </div>
+            </form>
+          
+          </div>
+        </div>
+      )}
     </div>
   );
 };
