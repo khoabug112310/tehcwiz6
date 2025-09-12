@@ -3,7 +3,13 @@ import '../css/ScrollingTicker.css';
 
 const ScrollingTicker = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [location, setLocation] = useState({ latitude: 40.7128, longitude: -74.0060 });
+  const [userLocation, setUserLocation] = useState({
+    city: '',
+    region: '',
+    country: '',
+    loading: true,
+    error: false
+  });
 
   // Update time every second
   useEffect(() => {
@@ -14,22 +20,68 @@ const ScrollingTicker = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Get user location (simplified for demo)
+  // Fetch user location using IP-API
   useEffect(() => {
-    // In a real app, we would use the Geolocation API
-    // For demo purposes, we'll use a default location
-    setLocation({
-      latitude: 40.7128,
-      longitude: -74.0060
-    });
+    const fetchLocation = async () => {
+      try {
+        const response = await fetch('http://ip-api.com/json/');
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+          setUserLocation({
+            city: data.city,
+            region: data.regionName,
+            country: data.country,
+            loading: false,
+            error: false
+          });
+        } else {
+          setUserLocation(prev => ({
+            ...prev,
+            loading: false,
+            error: true
+          }));
+        }
+      } catch (error) {
+        console.error('Error fetching location:', error);
+        setUserLocation(prev => ({
+          ...prev,
+          loading: false,
+          error: true
+        }));
+      }
+    };
+
+    fetchLocation();
   }, []);
+
+  const getLocationDisplay = () => {
+    if (userLocation.loading) {
+      return 'Loading location...';
+    }
+    
+    if (userLocation.error) {
+      return 'Location unavailable';
+    }
+    
+    const { city, region, country } = userLocation;
+    if (city && region && country) {
+      return `${city}, ${region}, ${country}`;
+    } else if (city && country) {
+      return `${city}, ${country}`;
+    } else if (country) {
+      return country;
+    } else {
+      return 'Location unavailable';
+    }
+  };
 
   // Sample updates for the ticker
   const updates = [
     "New pet products arriving this week!",
     "Adoption event this Saturday from 10am-4pm",
     "Free vaccination clinic next Monday",
-    `${currentTime.toLocaleDateString()} - ${currentTime.toLocaleTimeString()} - Location: ${location.latitude.toFixed(4)}, ${location.longitude.toFixed(4)}`
+    `${currentTime.toLocaleDateString()} - ${currentTime.toLocaleTimeString()} - Location: ${getLocationDisplay()}`
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

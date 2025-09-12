@@ -111,32 +111,8 @@ const About = () => {
         </div>
       </div>
 
-      <div className="about-section">
-        <h3 className="fw-bold fs-1">Find Us</h3>
-        <div className="location-info">
-          <div className="location-details">
-            <p className="address-text">
-              📍 <strong>Our Location:</strong> 21 Hậu Giang, Tân Bình, Hồ Chí
-              Minh, Việt Nam
-            </p>
-            <p>🚗 Parking is available nearby for your convenience.</p>
-            <p>🏥 Close to several veterinary clinics and pet supply stores.</p>
-          </div>
-          <div className="map-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0636479687845!2d106.62663331533507!3d10.79904399230163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529c1c8c8c8c5%3A0x1234567890abcdef!2s21%20H%E1%BA%ADu%20Giang%2C%20T%C3%A2n%20B%C3%ACnh%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vi%E1%BB%87t%20Nam!5e0!3m2!1sen!2s!4v1642345678901!5m2!1sen!2s"
-              width="100%"
-              height="350"
-              style={{ border: 0, borderRadius: "12px" }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="FurEver Care Location"
-            ></iframe>
-          </div>
-        </div>
       </div>
-    </div>
+    
   );
 };
 

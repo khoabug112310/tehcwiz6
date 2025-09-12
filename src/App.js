@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Navigation from "./components/Navigation.jsx";
 import ScrollingTicker from "./components/ScrollingTicker.jsx";
+import Footer from "./components/Footer.jsx";
 import "./App.css";
 
 // Import page components
@@ -210,25 +211,7 @@ function App() {
                 <Route path="/shelter-contact" element={<ShelterContact />} />
               </Routes>
             </main>
-            <footer className="app-footer">
-              <div className="footer-content">
-                <div className="footer-logo-container">
-                  <img
-                    src="/image/logo/logo_furever_care_icon.png"
-                    alt="FurEver Care Icon"
-                    className="footer-logo"
-                  />
-                  <p className="footer-copyright">
-                    &copy; 2025 FurEver Care. They Deserve Forever Love.
-                  </p>
-                </div>
-                <div className="footer-links">
-                  <a href="/about">About Us</a>
-                  <a href="/contact">Contact</a>
-                  <a href="/feedback">Feedback</a>
-                </div>
-              </div>
-            </footer>
+            <Footer userType={userType} />
             <ScrollingTicker />
 
             {/* Scroll to Top Button */}
