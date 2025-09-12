@@ -89,13 +89,13 @@
 }
 
 .pet-profile-container .pet-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-color: #3498db;
+  box-shadow: 12px 12px 0 2px #205781;
+  border-radius: 20px;
+  transition: all ease 0.3s;
 }
 
 .pet-profile-container .pet-card-header {
-  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  background: #205781;
   color: white;
   padding: 1.5rem;
   text-align: center;
@@ -141,6 +141,7 @@
   justify-content: space-between;
   padding: 0 1.5rem 1.5rem;
   gap: 0.5rem;
+  height: 75px;
 }
 
 .pet-profile-container .pet-card-actions button {
@@ -152,6 +153,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 0 0.25rem;
+  height: 75px;
 }
 
 .pet-profile-container .view-button {
@@ -196,27 +198,25 @@
 }
 
 .profile-header {
+  background: linear-gradient(135deg, #205781 0%, #2c3e50 100%);
   text-align: center;
   margin-bottom: 2rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
   border-radius: 15px;
-  color: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .profile-header::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-  transform: rotate(30deg);
-  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700, #FFA500);
 }
 
 .profile-header h2 {
@@ -225,7 +225,7 @@
   font-size: 2.2rem;
   position: relative;
   z-index: 1;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .profile-meta {
@@ -234,16 +234,84 @@
   flex-wrap: wrap;
   gap: 1rem;
   background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 10px;
+  padding: 1.5rem;
+  border-radius: 12px;
   backdrop-filter: blur(5px);
   position: relative;
   z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+.location-info,
+.time-info,
+.update-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(32, 87, 129, 0.7); /* Using the theme color with transparency */
+  padding: 1rem;
+  border-radius: 10px;
+  min-width: 160px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.location-info:hover,
+.time-info:hover,
+.update-info:hover {
+  background: rgba(32, 87, 129, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .meta-label {
   font-weight: bold;
-  margin-right: 0.5rem;
+  color: #FFD700; /* Gold color for labels to make them stand out */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.location-info span:not(.meta-label),
+.time-info span:not(.meta-label),
+.update-info span:not(.meta-label) {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.location-info .loading-state {
+  color: #FFA500; /* Orange color for loading state */
+  font-style: italic;
+}
+
+.location-info .unavailable-state {
+  color: #FF6B6B; /* Red color for unavailable state */
+  font-style: italic;
+}
+
+/* Add a special icon or styling for the location info */
+.location-info::before {
+  content: "📍";
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.time-info::before {
+  content: "⏰";
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.update-info::before {
+  content: "🔄";
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 .profile-detail-card {
@@ -687,7 +755,7 @@
 }
 
 .pet-care-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -713,7 +781,7 @@
 }
 
 .pet-care-section h3::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -746,20 +814,20 @@
 }
 
 /* Responsive Design for Pet Profile Page */
-@media (max-width: 1023px) {
-  /* Tablet Layout */
+@media (max-width: 1200px) {
+  .pet-profile-container {
+    padding: 1.5rem;
+  }
+  
+  .pet-care-section {
+    padding: 2.5rem;
+  }
+  
   .feeding-guide-content,
   .grooming-content,
   .health-tips-content,
   .training-tips-content {
-    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-  }
-  
-  .feeding-video {
-    position: static;
-    top: auto;
-    grid-row: auto;
   }
   
   .grooming-video video,
@@ -772,28 +840,135 @@
   }
 }
 
+@media (max-width: 1024px) {
+  /* Tablet Layout */
+  .feeding-guide-content,
+  .grooming-content,
+  .health-tips-content,
+  .training-tips-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .feeding-video {
+    position: static;
+    top: auto;
+    grid-row: auto;
+  }
+
+  .grooming-video video,
+  .bathing-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    height: 300px;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 992px) {
+  .profile-header h2 {
+    font-size: 2rem;
+  }
+  
+  .profile-meta {
+    padding: 1.2rem;
+  }
+  
+  .location-info,
+  .time-info,
+  .update-info {
+    min-width: 140px;
+    padding: 0.9rem;
+  }
+  
+  .meta-label {
+    font-size: 0.85rem;
+  }
+  
+  .location-info span:not(.meta-label),
+  .time-info span:not(.meta-label),
+  .update-info span:not(.meta-label) {
+    font-size: 0.9rem;
+  }
+  
+  .pet-care-section h3 {
+    font-size: 1.8rem;
+  }
+  
+  .profile-details-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .profile-detail-card {
+    padding: 1.2rem;
+  }
+  
+  .profile-detail-card h4 {
+    font-size: 1.1rem;
+  }
+  
+  .profile-detail-card p {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet Portrait Mode */
 @media (max-width: 768px) {
   .pet-profile-container {
     padding: 1rem;
   }
-  
+
   .profile-header {
     padding: 1.5rem;
   }
-  
+
   .profile-header h2 {
     font-size: 1.8rem;
   }
-  
+
   .profile-meta {
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
   }
   
+  .location-info,
+  .time-info,
+  .update-info {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 0.5rem;
+  }
+
+  .location-info::before,
+  .time-info::before,
+  .update-info::before {
+    font-size: 1.1rem;
+  }
+  
+  .location-info span:not(.meta-label),
+  .time-info span:not(.meta-label),
+  .update-info span:not(.meta-label) {
+    font-size: 0.9rem;
+  }
+  
+  .meta-label {
+    font-size: 0.8rem;
+  }
+  
+  .location-info,
+  .time-info,
+  .update-info {
+    min-width: auto;
+    padding: 0.8rem;
+  }
+
   .profile-details-grid {
     grid-template-columns: 1fr;
   }
-  
+
   /* Mobile - Single Column Layout */
   .feeding-guide-content,
   .grooming-content,
@@ -802,7 +977,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .feeding-recommendations,
   .feeding-video,
   .grooming-video,
@@ -811,12 +986,12 @@
   .training-video {
     grid-column: 1;
   }
-  
+
   .feeding-video {
     position: static;
     top: auto;
   }
-  
+
   .grooming-video video,
   .bathing-video video,
   .health-video video,
@@ -825,57 +1000,566 @@
     height: 250px;
     max-width: 100%;
   }
-  
+
   .pet-care-section {
     padding: 2rem;
   }
-  
+
   .vaccination-table {
     grid-template-columns: 1fr;
   }
-  
+
   .table-header,
   .table-row {
     display: flex;
     flex-direction: column;
   }
-  
+
   .table-header > div,
   .table-row > div {
     padding: 0.5rem;
     border-bottom: 1px solid #eee;
   }
-  
+
   .pet-profile-container .pets-header {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
   }
-  
+
   .pet-profile-container .pets-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .pet-profile-container .no-pets-container {
     padding: 1.5rem;
   }
-  
+
   .pet-profile-container .no-pets-content h3 {
     font-size: 1.5rem;
   }
-  
+
   .pet-profile-container .add-pet-button {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
-  
+
   .pet-profile-container .pet-card-actions {
     flex-direction: column;
     padding: 0 1rem 1rem;
   }
-  
+
   .pet-profile-container .pet-card-actions button {
     width: 100%;
     margin: 0.25rem 0;
+    height: 75px;
+  }
+  
+  .pet-care-section h3 {
+    font-size: 1.7rem;
+  }
+  
+  .feeding-chart,
+  .feeding-recommendations,
+  .grooming-video,
+  .bathing-video,
+  .health-video,
+  .training-video {
+    padding: 1.2rem;
+  }
+  
+  .feeding-video h5 {
+    font-size: 1.2rem;
+  }
+  
+  .video-card h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile Landscape Mode */
+@media (max-width: 640px) {
+  .pet-profile-container {
+    padding: 0.8rem;
+  }
+  
+  .profile-header {
+    padding: 1.2rem;
+  }
+  
+  .profile-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .profile-meta {
+    padding: 0.8rem;
+  }
+  
+  .location-info,
+  .time-info,
+  .update-info {
+    padding: 0.7rem;
+    max-width: 280px;
+  }
+  
+  .meta-label {
+    font-size: 0.75rem;
+  }
+  
+  .location-info span:not(.meta-label),
+  .time-info span:not(.meta-label),
+  .update-info span:not(.meta-label) {
+    font-size: 0.85rem;
+  }
+  
+  .pet-care-section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .pet-care-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-detail-card {
+    padding: 1rem;
+  }
+  
+  .profile-detail-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .profile-detail-card p {
+    font-size: 0.95rem;
+  }
+  
+  .vaccination-section h4 {
+    font-size: 1.2rem;
+  }
+  
+  .table-header > div,
+  .table-row > div {
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+  
+  .feeding-chart h4,
+  .feeding-recommendations h4 {
+    font-size: 1.1rem;
+  }
+  
+  .grooming-video video,
+  .bathing-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    height: 220px;
+  }
+  
+  .video-description {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+  
+  .tip-card {
+    padding: 1.2rem;
+  }
+  
+  .tip-card h4 {
+    font-size: 1.1rem;
+  }
+  
+  .tip-card p {
+    font-size: 0.95rem;
+  }
+  
+  .button4 {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Portrait Mode */
+@media (max-width: 480px) {
+  .pet-profile-container {
+    padding: 0.7rem;
+  }
+  
+  .profile-header {
+    padding: 1rem;
+  }
+  
+  .profile-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .profile-meta {
+    padding: 0.7rem;
+    gap: 0.7rem;
+  }
+  
+  .location-info,
+  .time-info,
+  .update-info {
+    padding: 0.6rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .location-info::before,
+  .time-info::before,
+  .update-info::before {
+    font-size: 1rem;
+  }
+  
+  .meta-label {
+    font-size: 0.7rem;
+  }
+  
+  .location-info span:not(.meta-label),
+  .time-info span:not(.meta-label),
+  .update-info span:not(.meta-label) {
+    font-size: 0.8rem;
+  }
+  
+  .pet-care-section {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+  }
+  
+  .pet-care-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .pet-care-section h3::after {
+    width: 60px;
+    height: 2px;
+  }
+  
+  .profile-detail-card {
+    padding: 0.8rem;
+  }
+  
+  .profile-detail-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+  }
+  
+  .profile-detail-card p {
+    font-size: 0.9rem;
+  }
+  
+  .vaccination-section {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+  }
+  
+  .vaccination-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .table-header > div,
+  .table-row > div {
+    padding: 0.3rem;
+    font-size: 0.85rem;
+  }
+  
+  .feeding-guide-content,
+  .grooming-content,
+  .health-tips-content,
+  .training-tips-content {
+    gap: 1.5rem;
+  }
+  
+  .feeding-chart,
+  .feeding-recommendations,
+  .grooming-video,
+  .bathing-video,
+  .health-video,
+  .training-video {
+    padding: 1rem;
+  }
+  
+  .feeding-chart h4,
+  .feeding-recommendations h4 {
+    font-size: 1rem;
+    padding-bottom: 0.4rem;
+  }
+  
+  .feeding-video h5 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .grooming-video video,
+  .bathing-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    height: 200px;
+  }
+  
+  .video-card h4 {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+  
+  .video-description {
+    font-size: 0.85rem;
+    padding: 0.7rem;
+  }
+  
+  .tip-card {
+    padding: 1rem;
+  }
+  
+  .tip-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .tip-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .tip-card ul {
+    padding-left: 1rem;
+    margin: 0.8rem 0;
+  }
+  
+  .button4 {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .view-profile-button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
+  
+  .pet-profile-container .pets-header h3 {
+    font-size: 1.4rem;
+  }
+  
+  .pet-profile-container .no-pets-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  .pet-profile-container .no-pets-content p {
+    font-size: 1rem;
+  }
+  
+  .pet-profile-container .add-pet-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .pet-profile-container .pet-card-header {
+    padding: 1.2rem;
+  }
+  
+  .pet-profile-container .pet-card-header h4 {
+    font-size: 1.2rem;
+  }
+  
+  .pet-profile-container .pet-icon {
+    font-size: 1.8rem;
+  }
+  
+  .pet-profile-container .pet-card-details {
+    padding: 1.2rem;
+  }
+  
+  .pet-profile-container .pet-detail {
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+  
+  .pet-profile-container .detail-label {
+    font-size: 0.9rem;
+  }
+  
+  .pet-profile-container .pet-card-actions button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    height: 65px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 360px) {
+  .pet-profile-container {
+    padding: 0.5rem;
+  }
+  
+  .profile-header {
+    padding: 0.8rem;
+  }
+  
+  .profile-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .profile-meta {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .location-info,
+  .time-info,
+  .update-info {
+    padding: 0.5rem;
+  }
+  
+  .location-info::before,
+  .time-info::before,
+  .update-info::before {
+    font-size: 0.9rem;
+  }
+  
+  .meta-label {
+    font-size: 0.65rem;
+  }
+  
+  .location-info span:not(.meta-label),
+  .time-info span:not(.meta-label),
+  .update-info span:not(.meta-label) {
+    font-size: 0.75rem;
+  }
+  
+  .pet-care-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .pet-care-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-detail-card {
+    padding: 0.7rem;
+  }
+  
+  .profile-detail-card h4 {
+    font-size: 0.9rem;
+  }
+  
+  .profile-detail-card p {
+    font-size: 0.85rem;
+  }
+  
+  .vaccination-section h4 {
+    font-size: 1rem;
+  }
+  
+  .table-header > div,
+  .table-row > div {
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .feeding-chart,
+  .feeding-recommendations,
+  .grooming-video,
+  .bathing-video,
+  .health-video,
+  .training-video {
+    padding: 0.8rem;
+  }
+  
+  .feeding-chart h4,
+  .feeding-recommendations h4 {
+    font-size: 0.95rem;
+  }
+  
+  .feeding-video h5 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .grooming-video video,
+  .bathing-video video,
+  .health-video video,
+  .training-video video,
+  .feeding-video video {
+    height: 180px;
+  }
+  
+  .video-card h4 {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+  
+  .video-description {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+  }
+  
+  .tip-card {
+    padding: 0.8rem;
+  }
+  
+  .tip-card h4 {
+    font-size: 0.95rem;
+  }
+  
+  .tip-card p {
+    font-size: 0.85rem;
+  }
+  
+  .button4 {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .view-profile-button {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .pet-profile-container .pets-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .pet-profile-container .no-pets-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .pet-profile-container .no-pets-content p {
+    font-size: 0.9rem;
+  }
+  
+  .pet-profile-container .add-pet-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .pet-profile-container .pet-card-header {
+    padding: 1rem;
+  }
+  
+  .pet-profile-container .pet-card-header h4 {
+    font-size: 1rem;
+  }
+  
+  .pet-profile-container .pet-icon {
+    font-size: 1.5rem;
+  }
+  
+  .pet-profile-container .pet-card-details {
+    padding: 1rem;
+  }
+  
+  .pet-profile-container .pet-card-actions button {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    height: 60px;
   }
 }
