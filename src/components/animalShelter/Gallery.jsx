@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 import petsData from '../../data/pets.json';
 import '../../css/Gallery.css';
 
@@ -56,6 +57,43 @@ const Gallery = () => {
       case 'rabbit': return '🐇';
       default: return '🐾';
     }
+  };
+
+  // Handle adoption request
+  const handleAdopt = (pet) => {
+    Swal.fire({
+      title: 'Adopt a Pet',
+      html: `
+        <p>You are interested in adopting <strong>${pet.name}</strong>.</p>
+        <p>Please provide your email address so we can contact you about the adoption process.</p>
+        <input type="email" id="email" class="swal2-input" placeholder="Enter your email address">
+      `,
+      confirmButtonText: 'Submit Request',
+      showCancelButton: true,
+      cancelButtonText: 'Cancel',
+      focusConfirm: false,
+      preConfirm: () => {
+        const email = Swal.getPopup().querySelector('#email').value;
+        if (!email) {
+          Swal.showValidationMessage('Please enter your email address');
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          Swal.showValidationMessage('Please enter a valid email address');
+        }
+        return { email: email };
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Adoption Request Submitted!',
+          html: `Thank you for your interest in adopting <strong>${pet.name}</strong>.<br>We will contact you at <strong>${result.value.email}</strong> soon to discuss the adoption process.`,
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          // Close the popup modal after the user clicks OK
+          setSelectedPet(null);
+        });
+      }
+    });
   };
 
   return (
@@ -133,21 +171,36 @@ const Gallery = () => {
             <img src={selectedPet.image} alt={selectedPet.name} style={{width: '100%', borderRadius: '12px', marginBottom: '1rem'}} />
             <h2>{selectedPet.name}</h2>
             <form action=" ">
-              <div class="pet-info-grid">
-            <p class="label"><strong>Type:</strong> </p><p class="value">{selectedPet.type}</p>
-            <p class="label"><strong>Breed:</strong> </p><p class="value">{selectedPet.breed}</p>
-            <p class="label"><strong>Gender: </strong></p><p class="value">{selectedPet.gender }</p>
-            <p class="label"><strong>Age:</strong> </p><p class="value">{selectedPet.age}</p>
-            <p class="label"><strong>Weight:</strong></p><p class="value">{selectedPet.weight}</p>
-            <p class="label"><strong>Description:</strong></p><p class="value"> {selectedPet.description}</p>
-            <p class="label"><strong>Health Status:</strong> </p><p class="value">{selectedPet.healthStatus}</p>
-            <p class="label"><strong>Distinguishing Marks:</strong></p><p class="value"> {selectedPet.distinguishingMarks}</p>
-            <p class="label"><strong>Vaccination History:</strong> </p><p class="value">{selectedPet.vaccinationHistory}</p>
-            <p class="label"><strong>Medical History:</strong> </p><p class="value">{selectedPet.medicalHistory}</p>
-            <p class="label"  ><strong>Personality Traits:</strong> </p><p class="value">{selectedPet.personalityTraits}</p>
+              <div className="pet-info-grid">
+            <p className="label"><strong>Type:</strong> </p><p className="value">{selectedPet.type}</p>
+            <p className="label"><strong>Breed:</strong> </p><p className="value">{selectedPet.breed}</p>
+            <p className="label"><strong>Gender: </strong></p><p className="value">{selectedPet.gender }</p>
+            <p className="label"><strong>Age:</strong> </p><p className="value">{selectedPet.age}</p>
+            <p className="label"><strong>Weight:</strong></p><p className="value">{selectedPet.weight}</p>
+            <p className="label"><strong>Description:</strong></p><p className="value"> {selectedPet.description}</p>
+            <p className="label"><strong>Health Status:</strong> </p><p className="value">{selectedPet.healthStatus}</p>
+            <p className="label"><strong>Distinguishing Marks:</strong></p><p className="value"> {selectedPet.distinguishingMarks}</p>
+            <p className="label"><strong>Vaccination History:</strong> </p><p className="value">{selectedPet.vaccinationHistory}</p>
+            <p className="label"><strong>Medical History:</strong> </p><p className="value">{selectedPet.medicalHistory}</p>
+            <p className="label"  ><strong>Personality Traits:</strong> </p><p className="value">{selectedPet.personalityTraits}</p>
             </div>
             </form>
-          
+            <div className="modal-actions" style={{textAlign: 'center', marginTop: '1rem'}}>
+              <button className="adopt-button" onClick={() => handleAdopt(selectedPet)} style={{
+                background: 'linear-gradient(135deg, #3498db 0%, #2c3e50 100%)',
+                color: 'white',
+                border: 'none',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '25px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+                fontSize: '1rem'
+              }}>
+                Adopt {selectedPet.name}
+              </button>
+            </div>
           </div>
         </div>
       )}

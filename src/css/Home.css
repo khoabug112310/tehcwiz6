@@ -361,26 +361,28 @@
   }
   
   .promise {
+    padding: 0;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .promise-left,
+  .promise-right {
+    width: 100%;
     padding: 0 1rem;
   }
   
-  .promise .accordion-menu li {
-    margin: 15px 10px 0px 0px;
-    padding: 3vw;
+  .promise .title {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   
-  .promise h2 {
-    font-size: 18px;
-    line-height: 30px;
-  }
-  
-  .promise p {
-    font-size: 14px;
-    line-height: 24px;
+  .promise .content {
+    padding: 0 1rem;
   }
   
   .promise-right {
-    margin-top: 80px;
+    margin-top: 2rem;
     padding: 0 1rem;
   }
   
@@ -391,6 +393,12 @@
   
   .ready {
     min-height: 300px;
+  }
+  
+  .ready .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
   }
 }
 
@@ -460,8 +468,30 @@
     margin-top: 10px;
   }
   
+  .promise-left,
+  .promise-right {
+    padding: 0 0.9rem;
+  }
+  
+  .promise .title {
+    margin-left: 0.9rem;
+    margin-right: 0.9rem;
+  }
+  
+  .promise .content {
+    padding: 0 0.9rem;
+  }
+  
   .promise-right {
     margin-top: 60px;
+  }
+  
+  .ready {
+    min-height: 250px;
+  }
+  
+  .ready .container {
+    padding: 0 0.9rem;
   }
 }
 
@@ -537,12 +567,31 @@
     margin-top: 8px;
   }
   
+  .promise-left,
   .promise-right {
-    margin-top: 50px;
+    padding: 0 0.8rem;
+  }
+  
+  .promise .title {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+  }
+  
+  .promise .content {
+    padding: 0 0.8rem;
+  }
+  
+  .promise-right {
+    margin-top: 1.5rem;
+    padding: 0 0.8rem;
   }
   
   .ready {
-    min-height: 250px;
+    min-height: 200px;
+  }
+  
+  .ready .container {
+    padding: 0 0.8rem;
   }
 }
 
@@ -606,7 +655,7 @@
     box-shadow: 6px 6px 0 1px #205781;
     border-radius: 12px;
   }
-  
+
   .promise h2 {
     font-size: 14px;
     line-height: 24px;
@@ -618,11 +667,46 @@
     margin-top: 6px;
   }
   
+  .promise-left,
   .promise-right {
-    margin-top: 40px;
+    padding: 0 0.6rem;
+  }
+  
+  .promise .title {
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+  }
+  
+  .promise .content {
+    padding: 0 0.6rem;
+  }
+  
+  .promise-right {
+    margin-top: 1.2rem;
+    padding: 0 0.6rem;
   }
   
   .ready {
-    min-height: 200px;
+    min-height: 150px;
+  }
+  
+  .ready .container {
+    padding: 0 0.6rem;
+  }
+}
+
+/* Extra small mobile devices - stacked buttons */
+@media (max-width: 480px) {
+  .ready .items {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .ready .items .button1,
+  .ready .items .button2 {
+    margin: 0;
+    width: 100%;
+    max-width: 200px;
   }
 }

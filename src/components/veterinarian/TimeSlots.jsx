@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import veterinariansData from '../../data/veterinarians.json';
-import '../../css/VetProfile.css';
+import React, { useState, useEffect } from "react";
+import Swal from 'sweetalert2';
+import { useNavigate } from "react-router-dom";
+import "../../css/VetProfile.css"; // Using existing CSS file since TimeSlots.css is missing
+import veterinariansData from "../../data/veterinarians.json";
 
 const TimeSlots = () => {
-  const navigate = useNavigate();
   const [vetData, setVetData] = useState(null);
 
   // Static time slots for display with detailed examples
@@ -89,8 +89,13 @@ const TimeSlots = () => {
     }
   }, []);
 
-  const handleBooking = () => {
-    alert('Redirecting to appointment booking system. In a real application, this would take you to our online booking portal.');
+  const handleBookAppointment = () => {
+    Swal.fire({
+      title: 'Redirecting...',
+      text: 'Redirecting to appointment booking system. In a real application, this would take you to our online booking portal.',
+      icon: 'info',
+      confirmButtonText: 'OK'
+    });
   };
 
   // Since we're validating at login, we should always have data
@@ -169,7 +174,7 @@ const TimeSlots = () => {
         </div>
         
         <div className="booking-cta">
-          <button className="booking-button" onClick={handleBooking}>
+          <button className="booking-button" onClick={handleBookAppointment}>
             Request Appointment
           </button>
           <p className="booking-note">

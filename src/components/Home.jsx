@@ -1,53 +1,31 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import "../css/Home.css";
 
 const Home = ({ userName, userType }) => {
-  const [petProfile, setPetProfile] = useState({
-    name: "",
-    type: "",
-    breed: "",
-    age: "",
-    weight: "",
-    dietaryNeeds: "",
-    medicalHistory: "",
-  });
-  const [showPreview, setShowPreview] = useState(false);
-  const navigate = useNavigate();
-
-  // Load saved profile from localStorage on component mount
-  useEffect(() => {
-    const saved = localStorage.getItem("petProfile");
-    if (saved) {
-      setPetProfile(JSON.parse(saved));
-      setShowPreview(true);
-    }
-  }, []);
-
-
   return (
     <div>
-      <div class="carousel home-container">
-        <div class="carousel-left d-flex flex-column justify-content-center">
-          <div class="title">
+      <div className="carousel home-container">
+        <div className="carousel-left d-flex flex-column justify-content-center">
+          <div className="title">
             <h3>Explore professional pet service</h3>
           </div>
-          <div class="content">
+          <div className="content">
             <p>
               We provide a variety of services such as bathing, trimming,
               daytime care and periodic health care, with experienced staff and
               modern facilities, ensuring your pet is always healthy, clean and
               happy.
             </p>
-            <a href="about.html">
-              <button class="button1">get started</button>
-            </a>
+            <Link to="/about">
+              <button className="button1">get started</button>
+            </Link>
           </div>
         </div>
-        <div class="carousel-right">
+        <div className="carousel-right">
           <img
             src="https://petservicehcm.com/wp-content/uploads/2024/08/pet-care-slide3-img-1.webp"
-            alt=""
+            alt="Professional pet care service"
           />
         </div>
       </div>
@@ -65,7 +43,7 @@ const Home = ({ userName, userType }) => {
 
         <div className="features-grid">
           <div className="feature-card">
-            <div className="feature-icon"><img src="/assets/pet-medicine.png" alt="" /></div>
+            <div className="feature-icon"><img src="/assets/pet-medicine.png" alt="Pet medicine" /></div>
             <h4>Pet Medicines</h4>
             <p>
               Access comprehensive guides on pet nutrition, grooming, and
@@ -74,7 +52,7 @@ const Home = ({ userName, userType }) => {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon"><img src="/assets/pet-food.png" alt="" /></div>
+            <div className="feature-icon"><img src="/assets/pet-food.png" alt="Pet food" /></div>
             <h4>Pet Food</h4>
             <p>
               Purr-fect Bites, Wag-Worthy Delights!
@@ -82,15 +60,15 @@ const Home = ({ userName, userType }) => {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon"><img src="/assets/pet-treat.png" alt="" /></div>
+            <div className="feature-icon"><img src="/assets/pet-treat.png" alt="Pet treats" /></div>
             <h4>Pet Treats</h4>
             <p>Purr-fect Nibbles, Wag-Worthy Thrills!</p>
           </div>
         </div>
       </div>
 
-      <section class="carousel2">
-        <div class="content title2 home-container">
+      <section className="carousel2">
+        <div className="content title2 home-container">
           <h3 className="text-white">
             We are true to ourselves, and commit to always perform at our best.
           </h3>
@@ -100,19 +78,19 @@ const Home = ({ userName, userType }) => {
             ipsum iste consequuntur et vitae voluptas temporibus? Maxime dolores
             amet voluptatum illo consequatur placeat fugit ducimus.
           </p>
-          <a href="about.html">
-            <button class="button2">Read more</button>
-          </a>
+          <Link to="/about">
+            <button className="button2">Read more</button>
+          </Link>
         </div>
       </section>
 
-      <div class="promise d-flex align-items-center home-container">
-        <div class="promise-left w-50 d-flex flex-column align-items-start">
-          <div class="title me-1 mt-5">
+      <div className="promise d-flex align-items-center">
+        <div className="promise-left w-50 d-flex flex-column align-items-start">
+          <div className="title me-1 mt-5">
             <h3>The Furever Care Promise</h3>
           </div>
-          <div class="content me-2">
-            <div class="accordion-menu">
+          <div className="content me-2">
+            <div className="accordion-menu">
               <ul>
                 <li className="d-flex flex-column align-items-start ">
                   <h2>TOP NOTCH QUALITY</h2>
@@ -139,32 +117,34 @@ const Home = ({ userName, userType }) => {
             </div>
           </div>
         </div>
-        <div class="promise-right w-50">
+        <div className="promise-right w-50">
           <figure>
-            <video autoPlay loop muted src="/assets/0911.mp4"></video>
+            <video autoPlay loop muted src="/assets/0911.mp4">
+              Your browser does not support the video tag.
+            </video>
           </figure>
         </div>
       </div>
 
-      <section class="ready">
-        <div class="container">
-          <div class="title text-center">
+      <section className="ready">
+        <div className="container">
+          <div className="title text-center">
             <h3>Ready to make your pet happy</h3>
           </div>
-          <div class="content text-center my-3">
+          <div className="content text-center my-3">
             <p>
               Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
               posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus
               turpis sodales quis. Integer sit amet mattis quam.
             </p>
           </div>
-          <div class="items d-flex justify-content-center">
-            <a href="contact.html">
-              <button class="button1 mx-2">Book now</button>
-            </a>
-            <a href="contact.html">
-              <button class="button2 mx-2">get started</button>
-            </a>
+          <div className="items d-flex justify-content-center">
+            <Link to="/contact" className="mx-2">
+              <button className="button1">Book now</button>
+            </Link>
+            <Link to="/contact" className="mx-2">
+              <button className="button2">get started</button>
+            </Link>
           </div>
         </div>
       </section>

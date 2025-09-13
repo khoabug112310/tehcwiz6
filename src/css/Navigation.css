@@ -3,6 +3,10 @@
   background: #205781;
   padding: 0;
   position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 
 .navigation ul {
@@ -50,9 +54,10 @@
 /* Hamburger Menu Styles */
 .hamburger-menu {
   display: none;
-  position: fixed;
-  top: 20px; /* Align with the header */
-  left: 20px; /* Position at the left edge */
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1001;
   cursor: pointer;
   padding: 10px;
@@ -78,7 +83,7 @@
 
 /* Animation for hamburger icon when menu is open */
 .hamburger-icon.open span:nth-child(1) {
-  transform: translateY(8.5px) rotate(45deg);
+  transform: translateX(90px) rotate(-45deg);
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -86,11 +91,15 @@
 }
 
 .hamburger-icon.open span:nth-child(3) {
-  transform: translateY(-8.5px) rotate(-45deg);
+  transform: translateX(90px) translateY(-13px) rotate(45deg);
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .navigation {
+    justify-content: flex-end;
+  }
+  
   .navigation ul {
     display: none;
   }
@@ -141,8 +150,12 @@
 /* Tablet Portrait Mode */
 @media (max-width: 768px) {
   .hamburger-menu {
-    top: 20px;
-    left: 20px;
+    padding: 8px;
+  }
+  
+  .hamburger-icon {
+    width: 28px;
+    height: 18px;
   }
   
   .navigation ul {
@@ -160,14 +173,12 @@
 /* Mobile Portrait Mode */
 @media (max-width: 480px) {
   .hamburger-menu {
-    top: 20px;
-    left: 15px;
-    padding: 8px;
+    padding: 6px;
   }
   
   .hamburger-icon {
     width: 25px;
-    height: 18px;
+    height: 16px;
   }
   
   .navigation ul {

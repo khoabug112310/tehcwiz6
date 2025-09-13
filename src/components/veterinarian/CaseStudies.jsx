@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import veterinariansData from '../../data/veterinarians.json';
 import '../../css/VetProfile.css';
 
 const CaseStudies = () => {
-  const navigate = useNavigate();
   const [vetData, setVetData] = useState(null);
 
   // Static case studies data

@@ -70,7 +70,6 @@ const About = () => {
                 src="./assets/image-pet-owner/tai.jpg"
                 alt="Minh Tài - Project Manager"
               />
-              \n
             </div>
             <h4>Minh Tài</h4>
             <p className="team-role">Project Manager</p>
@@ -110,9 +109,7 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      </div>
-    
+    </div>
   );
 };
 

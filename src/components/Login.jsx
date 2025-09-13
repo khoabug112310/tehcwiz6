@@ -1,52 +1,57 @@
-import React, { useState } from 'react';
-import '../css/Login.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
+import "../css/Login.css";
 
 const Login = ({ onLoginSuccess }) => {
-  const [userName, setUserName] = useState("");
+  const [name, setName] = useState("");
   const [userType, setUserType] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Form submitted", { userName, userType }); // Debug log
-
-    // Trim whitespace from inputs
-    const trimmedName = userName.trim();
-    const trimmedType = userType.trim();
-
-    // For veterinarians, validate that the name is one of the allowed names
-    if (trimmedType === "veterinarian") {
-      const validVetNames = ["Phong", "Tai", "Hung", "Phuc"];
-      const normalizedInputName = trimmedName.charAt(0).toUpperCase() + trimmedName.slice(1).toLowerCase();
-      
-      if (!validVetNames.includes(normalizedInputName)) {
-        alert("For veterinarians, please enter one of the following names: Phong, Tai, Hung, or Phuc");
+    
+    // Validate input
+    if (!name.trim()) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please enter your name',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
+    
+    if (!userType) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please select a user type',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
+    
+    // Special validation for veterinarians
+    if (userType === "veterinarian") {
+      const validNames = ["Phong", "Tai", "Hung", "Phuc"];
+      if (!validNames.includes(name)) {
+        Swal.fire({
+          title: 'Veterinarian Access',
+          text: 'For veterinarians, please enter one of the following names: Phong, Tai, Hung, or Phuc',
+          icon: 'info',
+          confirmButtonText: 'OK'
+        });
         return;
       }
     }
-
-    if (trimmedName && trimmedType) {
-      console.log("Login successful"); // Debug log
-      // Save to localStorage for persistence
-      localStorage.setItem("userName", trimmedName);
-      localStorage.setItem("userType", trimmedType);
-      
-      // Notify the parent App component about successful login
-      // The App component will handle navigation based on user type
-      if (onLoginSuccess) {
-        onLoginSuccess(trimmedName, trimmedType);
-      }
-    } else {
-      console.log("Login failed: missing data", {
-        userName: trimmedName,
-        userType: trimmedType,
-      }); // Debug log
-      // Show an alert if form is incomplete
-      if (!trimmedName) {
-        alert("Please enter your name");
-      } else if (!trimmedType) {
-        alert("Please select a user type");
-      }
-    }
+    
+    // If validation passes, call the success callback and store user info
+    onLoginSuccess(name, userType);
+    
+    // Store user info in localStorage
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userType", userType);
   };
 
   return (
@@ -66,8 +71,8 @@ const Login = ({ onLoginSuccess }) => {
             <input
               type="text"
               id="userName"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
             />
             {userType === "veterinarian" && (

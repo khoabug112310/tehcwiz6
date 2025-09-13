@@ -188,7 +188,7 @@ function App() {
 
         {/* Scroll to Top Button */}
         {showScrollTop && (
-          <button className="scroll-to-top button2 p-4" onClick={scrollToTop}>
+          <button className="scroll-to-top" onClick={scrollToTop}>
             ↑
           </button>
         )}

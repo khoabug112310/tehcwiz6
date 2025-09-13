@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 import emergencyContacts from '../../data/emergencyContacts.json';
 import emergencySymptoms from '../../data/emergencySymptoms.json';
-import emergencyGuidelines from '../../data/emergencyGuidelines.json';
-import '../../css/Emergency.css';
+import "../../css/Emergency.css";
 
 const Emergency = () => {
   const [contacts] = useState(emergencyContacts);
   const [symptoms] = useState(emergencySymptoms);
-  const [guidelines] = useState(emergencyGuidelines);
 
   // Function to handle calling emergency services
-  const handleCall = (phoneNumber) => {
-    // In a real application, this would initiate a call
-    alert(`Calling ${phoneNumber} - In a real application, this would initiate a phone call.`);
+  const handleCall = (phoneNumber, clinicName) => {
+    Swal.fire({
+      title: 'Calling...',
+      text: `Calling ${phoneNumber} - In a real application, this would initiate a phone call.`,
+      icon: 'info',
+      confirmButtonText: 'OK'
+    });
   };
 
   return (

@@ -1,46 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import contactData from '../../data/contactInfo.json';
-import '../../css/Contact.css';
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
+import "../../css/Contact.css";
+import contactData from "../../data/contactInfo.json";
 
 const Contact = () => {
-  const [currentTime, setCurrentTime] = useState(new Date());
-  const [location, setLocation] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
-  const [submitted, setSubmitted] = useState(false);
-
-  // Update time every second
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  // Get user location
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-          });
-        },
-        (error) => {
-          console.log('Error getting location:', error);
-          setLocation({ latitude: 40.7128, longitude: -74.0060 }); // Default to New York
-        }
-      );
-    } else {
-      setLocation({ latitude: 40.7128, longitude: -74.0060 }); // Default to New York
-    }
-  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -53,35 +22,44 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Basic validation
+    // Validation
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      alert('Please fill in all fields.');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please fill in all fields.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
       return;
     }
     
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      alert('Please enter a valid email address.');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please enter a valid email address.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
       return;
     }
     
-    // In a real app, we would send this data to a server
-    console.log('Contact form submitted:', formData);
+    // Success message (in a real app, you would send the data to a server here)
+    Swal.fire({
+      title: 'Message Sent!',
+      text: 'Thank you for contacting us. We will get back to you as soon as possible.',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
     
-    // Show success message
-    setSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      setSubmitted(false);
-    }, 3000);
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   return (
@@ -198,7 +176,7 @@ const Contact = () => {
             </div>
             
             <button type="submit" className="button2">
-              {submitted ? "Message Sent! Thank You" : "Send Message"}
+              Send Message
             </button>
           </form>
         </div>

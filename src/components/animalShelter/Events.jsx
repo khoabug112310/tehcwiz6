@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 import eventsData from '../../data/events.json';
 import '../../css/Events.css';
 
@@ -7,11 +8,18 @@ const Events = () => {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [selectedMonth, setSelectedMonth] = useState('all');
   const [selectedYear, setSelectedYear] = useState('all');
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   // Load events from JSON file
   useEffect(() => {
-    setEvents(eventsData);
-    setFilteredEvents(eventsData);
+    // Add sample details to events for demonstration
+    const eventsWithDetails = eventsData.map(event => ({
+      ...event,
+      details: event.details || `Join us for "${event.title}" on ${event.date} at ${event.time}. This event promises to be an exciting opportunity for pet lovers and professionals alike. Come and enjoy a day filled with activities, exhibitions, and opportunities to learn more about pet care and welfare.`
+    }));
+    
+    setEvents(eventsWithDetails);
+    setFilteredEvents(eventsWithDetails);
   }, []);
 
   // Get unique months and years from events
@@ -34,21 +42,21 @@ const Events = () => {
   // Filter events based on selected month and year
   useEffect(() => {
     let filtered = events;
-    
+
     if (selectedMonth !== 'all') {
       filtered = filtered.filter(event => {
         const eventDate = new Date(event.date);
         return eventDate.toLocaleString('default', { month: 'long' }) === selectedMonth;
       });
     }
-    
+
     if (selectedYear !== 'all') {
       filtered = filtered.filter(event => {
         const eventDate = new Date(event.date);
         return eventDate.getFullYear().toString() === selectedYear;
       });
     }
-    
+
     setFilteredEvents(filtered);
   }, [selectedMonth, selectedYear, events]);
 
@@ -63,19 +71,59 @@ const Events = () => {
     return "⏰";
   };
 
+  // Function to handle registration
+  const handleRegister = (event) => {
+    Swal.fire({
+      title: 'Register for Event',
+      html: `
+        <p>You are registering for:</p>
+        <h3>${event.title}</h3>
+        <p><strong>Date:</strong> ${formatDate(event.date)}</p>
+        <p><strong>Time:</strong> ${event.time}</p>
+        <p>Please confirm your registration.</p>
+      `,
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonText: 'Confirm Registration',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Registration Confirmed!',
+          text: `You have successfully registered for "${event.title}". We look forward to seeing you at the event!`,
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          // Close the popup modal after the user clicks OK
+          setSelectedEvent(null);
+        });
+      }
+    });
+  };
+
+  // Function to show event details
+  const showDetails = (event) => {
+    setSelectedEvent(event);
+  };
+
+  // Function to close popup
+  const closePopup = () => {
+    setSelectedEvent(null);
+  };
+
   return (
     <div className="events-container">
       <div className="events-header">
         <h2 className='fs-1 fw-bold'>Upcoming Events</h2>
         <p>Join us for these exciting events at our animal shelter!</p>
       </div>
-      
+
       <div className="events-filter">
         <div className="filter-group">
           <label htmlFor="month-filter">Filter by Month:</label>
-          <select 
+          <select
             id="month-filter"
-            value={selectedMonth} 
+            value={selectedMonth}
             onChange={(e) => setSelectedMonth(e.target.value)}
           >
             <option value="all">All Months</option>
@@ -84,12 +132,12 @@ const Events = () => {
             ))}
           </select>
         </div>
-        
+
         <div className="filter-group">
           <label htmlFor="year-filter">Filter by Year:</label>
-          <select 
+          <select
             id="year-filter"
-            value={selectedYear} 
+            value={selectedYear}
             onChange={(e) => setSelectedYear(e.target.value)}
           >
             <option value="all">All Years</option>
@@ -99,16 +147,16 @@ const Events = () => {
           </select>
         </div>
       </div>
-      
+
       <div className="events-grid">
         {filteredEvents.length > 0 ? (
           filteredEvents.map((event, index) => (
-            <div key={event.id} className="event-card" style={{animationDelay: `${index * 0.1}s`}}>
+            <div key={event.id} className="event-card" style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="event-image">
-               <img
-  src={event.image ? `/${event.image}` : "/assets/animalShelter/eventsPictures/interfest2026.png"}
-  alt={event.title}
-/>
+                <img
+                  src={event.image ? `/${event.image}` : "/assets/animalShelter/eventsPictures/interfest2026.png"}
+                  alt={event.title}
+                />
               </div>
               <div className="event-content">
                 <span className="event-date">{formatDate(event.date)}</span>
@@ -120,8 +168,8 @@ const Events = () => {
                   </div>
                 </div>
                 <div className="event-actions">
-                  <button className="register-button">Register Now</button>
-                  <button className="details-button">Details</button>
+                  <button className="register-button" onClick={() => handleRegister(event)}>Register Now</button>
+                  <button className="details-button" onClick={() => showDetails(event)}>Details</button>
                 </div>
               </div>
             </div>
@@ -133,6 +181,31 @@ const Events = () => {
           </div>
         )}
       </div>
+
+      {/* Event Details Popup */}
+      {selectedEvent && (
+        <div className="modal-overlay" onClick={closePopup}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closePopup}>&times;</button>
+            <h2>{selectedEvent.title}</h2>
+            <div className="event-detail-image">
+              <img
+                src={selectedEvent.image ? `/${selectedEvent.image}` : "/assets/animalShelter/eventsPictures/interfest2026.png"}
+                alt={selectedEvent.title}
+              />
+            </div>
+            <div className="event-detail-info">
+              <p><strong>Date:</strong> {formatDate(selectedEvent.date)}</p>
+              <p><strong>Time:</strong> {selectedEvent.time}</p>
+              <p><strong>Description:</strong> {selectedEvent.description}</p>
+              <p><strong>Additional Details:</strong> {selectedEvent.details}</p>
+            </div>
+            <div className="event-detail-actions">
+              <button className="register-button" onClick={() => handleRegister(selectedEvent)}>Register Now</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

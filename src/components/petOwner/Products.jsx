@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import productsData from "../../data/products.json";
+import Swal from 'sweetalert2';
 import "../../css/Products.css";
+import productsData from "../../data/products.json";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -8,7 +9,6 @@ const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("name");
-  const [cart, setCart] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 9;
 
@@ -79,26 +79,23 @@ const Products = () => {
     setSortBy(e.target.value);
   };
 
-  const handleBuyNow = (product) => {
-    alert(
-      `You selected to buy: ${product.name}\nNote: This is a demonstration. No actual purchase will be made.`
-    );
+  const handleAddToCart = (product) => {
+    // Add to cart logic here
+    Swal.fire({
+      title: 'Added to Cart!',
+      text: `${product.name} added to cart!`,
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
   };
 
-  const handleAddToCart = (product) => {
-    setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === product.id);
-      if (existingItem) {
-        return prevCart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      } else {
-        return [...prevCart, { ...product, quantity: 1 }];
-      }
+  const handleBuyNow = (product) => {
+    Swal.fire({
+      title: 'Product Purchased!',
+      text: `Thank you for purchasing ${product.name}! This is a demo, so no actual transaction occurred.`,
+      icon: 'success',
+      confirmButtonText: 'OK'
     });
-    alert(`${product.name} added to cart!`);
   };
 
   const getUniqueCategories = () => {
@@ -112,10 +109,10 @@ const Products = () => {
     const categoryMap = {
       "dog-food": "Dog Food",
       "cat-food": "Cat Food",
-      toys: "Toys",
-      grooming: "Grooming",
-      bedding: "Bedding",
-      health: "Health",
+      "toys": "Toys",
+      "grooming": "Grooming",
+      "bedding": "Bedding",
+      "health": "Health",
     };
     return categoryMap[categoryKey] || categoryKey;
   };
@@ -124,10 +121,10 @@ const Products = () => {
     const iconMap = {
       "dog-food": "🍖",
       "cat-food": "🐟",
-      toys: "🎾",
-      grooming: "🛁",
-      bedding: "🛏️",
-      health: "💊",
+      "toys": "🎾",
+      "grooming": "🛁",
+      "bedding": "🛏️",
+      "health": "💊",
     };
     return iconMap[categoryKey] || "📦";
   };

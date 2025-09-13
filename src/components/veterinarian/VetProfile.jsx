@@ -1,69 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import veterinariansData from '../../data/veterinarians.json';
-import '../../css/VetProfile.css';
+import Swal from 'sweetalert2';
+import { useNavigate } from "react-router-dom";
+import "../../css/VetProfile.css";
+import veterinariansData from "../../data/veterinarians.json";
 
 const VetProfile = () => {
   const [vetData, setVetData] = useState(null);
-  const navigate = useNavigate();
-
-  // Static treatments data
-  const treatmentsData = [
-    {
-      id: 1,
-      title: "Surgical Procedures",
-      description: "Advanced surgical techniques for various conditions including orthopedic, soft tissue, and emergency surgeries.",
-      icon: "🔪"
-    },
-    {
-      id: 2,
-      title: "Dental Care",
-      description: "Comprehensive dental services including cleanings, extractions, and oral surgery.",
-      icon: "🦷"
-    },
-    {
-      id: 3,
-      title: "Emergency Care",
-      description: "24/7 emergency services with specialized equipment and critical care support.",
-      icon: "🚨"
-    },
-    {
-      id: 4,
-      title: "Avian Medicine",
-      description: "Specialized care for birds including nutrition counseling, disease prevention, and treatment.",
-      icon: "🦜"
-    },
-    {
-      id: 5,
-      title: "Exotic Pet Care",
-      description: "Comprehensive veterinary services for reptiles, small mammals, and other exotic pets.",
-      icon: "🦎"
-    },
-    {
-      id: 6,
-      title: "Behavioral Therapy",
-      description: "Professional assessment and modification programs for pets with behavioral issues.",
-      icon: "🧠"
-    },
-    {
-      id: 7,
-      title: "Nutritional Counseling",
-      description: "Customized dietary plans and nutritional advice for pets of all ages and conditions.",
-      icon: "🥗"
-    }
-  ];
-
-  // Statistics for the stats section
-  const stats = [
-    { value: "500+", label: "Successful Surgeries" },
-    { value: "98%", label: "Patient Recovery Rate" },
-    { value: "15+", label: "Years Experience" },
-    { value: "24/7", label: "Emergency Care" },
-    { value: "50+", label: "Exotic Pet Species Treated" },
-    { value: "200+", label: "Happy Pet Owners" },
-    { value: "5000+", label: "Pets Treated" },
-    { value: "95%", label: "Client Satisfaction" }
-  ];
 
   // Function to find veterinarian by name (exact matching since we validate at login)
   const findVeterinarianByName = (name) => {
@@ -92,10 +34,6 @@ const VetProfile = () => {
       }
     }
   }, []);
-
-  const handleBooking = () => {
-    alert('Redirecting to appointment booking system. In a real application, this would take you to our online booking portal.');
-  };
 
   // Since we're validating at login, we should always have data
   // But we'll keep a simple check for edge cases

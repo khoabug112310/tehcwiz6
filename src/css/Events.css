@@ -210,6 +210,93 @@
   color: #7f8c8d;
 }
 
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050; /* Reduced from 9999 to be below SweetAlert2's default z-index of 1060 */
+  overflow: hidden;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.event-detail-image {
+  margin-bottom: 1.5rem;
+}
+
+.event-detail-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.event-detail-info {
+  margin-bottom: 1.5rem;
+}
+
+.event-detail-info p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.event-detail-info strong {
+  color: #2c3e50;
+}
+
+.event-detail-actions {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .events-container {

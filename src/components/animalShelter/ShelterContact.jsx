@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import contactData from '../../data/contactInfo.json';
-import '../../css/ShelterContact.css';
+import React, { useState } from "react";
+import Swal from 'sweetalert2';
+import "../../css/ShelterContact.css";
+import contactData from "../../data/contactInfo.json";
 
 const ShelterContact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,39 +22,44 @@ const ShelterContact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      alert('Please fill in all fields.');
+    // Validation
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please fill in all fields.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
       return;
     }
     
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      alert('Please enter a valid email address.');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please enter a valid email address.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
       return;
     }
     
-    // In a real app, we would send this data to a server
-    console.log('Contact form submitted:', formData);
+    // Success message
+    Swal.fire({
+      title: 'Thank you!',
+      text: 'Thank you for your interest in volunteering! We will contact you soon with more information.',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
     
-    // Show success message
-    setSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      setSubmitted(false);
-    }, 3000);
-  };
-
-  const handleVolunteer = () => {
-    alert('Thank you for your interest in volunteering! We will contact you soon with more information.');
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
   };
 
   return (
@@ -145,14 +150,14 @@ const ShelterContact = () => {
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="subject">Subject *</label>
+                    <label htmlFor="phone">Phone Number *</label>
                     <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="What is this regarding?"
+                      placeholder="Enter your phone number"
                       required
                     />
                   </div>
@@ -171,7 +176,7 @@ const ShelterContact = () => {
                   </div>
                   
                   <button type="submit" className="button2">
-                    {submitted ? "Message Sent! Thank You" : "Send Message"}
+                    Send Message
                   </button>
                 </form>
               </div>
@@ -180,7 +185,7 @@ const ShelterContact = () => {
       <div className="volunteer-section">
         <h3>Volunteer With Us</h3>
         <p>Make a difference in the lives of animals by volunteering at our shelter. We welcome volunteers of all ages and backgrounds to help with animal care, events, and administrative tasks.</p>
-        <button className="button2" onClick={handleVolunteer}>
+        <button className="button2" onClick={handleSubmit}>
           Sign Up to Volunteer
         </button>
       </div>

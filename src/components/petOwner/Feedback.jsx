@@ -1,44 +1,65 @@
-import React, { useState } from 'react';
-import '../../css/Feedback.css';
+import React, { useState } from "react";
+import Swal from 'sweetalert2';
+import "../../css/Feedback.css";
 
 const Feedback = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [feedback, setFeedback] = useState('');
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
-  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Basic validation
-    if (!name || !email || !feedback || rating === 0) {
-      alert('Please fill in all fields and provide a rating.');
+    // Validation
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message ||
+      rating === 0
+    ) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please fill in all fields and provide a rating.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
       return;
     }
     
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address.');
+    if (!emailRegex.test(formData.email)) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please enter a valid email address.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
       return;
     }
     
-    // In a real app, we would send this data to a server
-    console.log('Feedback submitted:', { name, email, feedback, rating });
+    // Success message
+    Swal.fire({
+      title: 'Thank You!',
+      text: 'Your feedback has been submitted successfully. We appreciate your input!',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
     
-    // Show success message
-    setSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setName('');
-      setEmail('');
-      setFeedback('');
-      setRating(0);
-      setSubmitted(false);
-    }, 3000);
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+    setRating(0);
   };
 
   // Sample testimonials data
@@ -89,8 +110,8 @@ const Feedback = () => {
               <input
                 type="text"
                 id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="Enter your full name"
                 required
               />
@@ -101,9 +122,21 @@ const Feedback = () => {
               <input
                 type="email"
                 id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="Enter your email address"
+                required
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="subject">Subject *</label>
+              <input
+                type="text"
+                id="subject"
+                value={formData.subject}
+                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                placeholder="Enter the subject of your feedback"
                 required
               />
             </div>
@@ -139,8 +172,8 @@ const Feedback = () => {
               <label htmlFor="feedback">Your Feedback *</label>
               <textarea
                 id="feedback"
-                value={feedback}
-                onChange={(e) => setFeedback(e.target.value)}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder="Please share your experience with our services..."
                 required
                 rows="5"
@@ -148,7 +181,7 @@ const Feedback = () => {
             </div>
             
             <button type="submit" className="button2 w-100">
-              {submitted ? "Thank You! Feedback Submitted" : "Submit Feedback"}
+              Submit Feedback
             </button>
           </form>
         </div>
