@@ -65,8 +65,12 @@ body {
   line-height: 20px;
   font-weight: 700;
   color: #205781;
-  text-transform: uppercase;
+  text-transform: lowercase;
   margin-bottom: 5px;
+}
+
+.title2 p::first-letter {
+  text-transform: uppercase;
 }
 
 .title2 h3 {
@@ -247,7 +251,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../public/assets/home/backgorund-popup.jpg);
+  background-image: url(../public/assets/background/8.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

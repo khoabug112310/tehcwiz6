@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import "../css/Home.css";
 
 const Home = ({ userName, userType }) => {
+  const handleReadMoreClick = () => {
+    // Scroll to top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   return (
     <div>
       <div className="carousel home-container">
@@ -73,12 +80,9 @@ const Home = ({ userName, userType }) => {
             We are true to ourselves, and commit to always perform at our best.
           </h3>
           <p className="text-white my-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Necessitatibus, doloribus atque. Corrupti exercitationem voluptatem
-            ipsum iste consequuntur et vitae voluptas temporibus? Maxime dolores
-            amet voluptatum illo consequatur placeat fugit ducimus.
+            Grounded in authenticity, we commit to delivering excellence. Being true to ourselves means you get genuine partnership. Performing at our best means you get superior results. This is our promise—a foundation of integrity and quality you can trust.
           </p>
-          <Link to="/about">
+          <Link to="/about" onClick={handleReadMoreClick}>
             <button className="button2">Read more</button>
           </Link>
         </div>
