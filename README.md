@@ -6,8 +6,6 @@ Thus, there is a need for a centralized platform that integrates pet care manage
 
 ## 2. Project Scope
 
-**Includes:**
-
 - Home page (Landing Page) with popup form for entering user name (Name) and selecting user type (radio buttons: Pet Owner, Veterinarian, Animal Shelter).
 - Dynamic menu based on user type, displaying personalized welcome message and user name in the upper corner.
 - Multimedia support: Embedded grooming videos, audio/video health tips, text-based training tips.
@@ -15,13 +13,6 @@ Thus, there is a need for a centralized platform that integrates pet care manage
 - Product filtering, sorting, and searching features (using client-side JS).
 - Display of geolocation (HTML5 Geolocation), real-time clock, and scrolling ticker with updates.
 - About Us, Contact Us, and Feedback pages (form UI only, no actual submission).
-
-**Excludes (Constraints from SRS):**
-
-- Server-side data storage (only read from JSON, no writing).
-- Actual form submission functionality (e.g., Buy Now button non-functional).
-- Use of ready-made templates or AI/GPT copied code (except AI-generated images with credit).
-- Full backend; focus on responsive frontend.
 
 ## 3. User Types and Functional Requirements
 
