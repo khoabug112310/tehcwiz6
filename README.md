@@ -52,7 +52,7 @@ Thus, there is a need for a centralized platform that integrates pet care manage
 ## 4. Project Installation Instructions
 - Open sourcecode folder named “Up&Down_FurEverCare” by Visual Studio Code
 - Run new terminal and run below commands:
--npm install
--npm start
+ - npm install
+ - npm start
 - Get link http://localhost:3000/ to see home page.
 
